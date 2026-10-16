@@ -13,3 +13,6 @@ Baseline pulled 2026-10-16 07:30 UTC (lifetime):
 | 10-12 | AI agent fake murder tip | Reel | 115 | 96 | 0 | 0 | 2 | 5.2 | 89.9 | |
 | 10-12 | TypeSafe stealth to $7xM | Reel | 40 | 37 | 0 | 0 | 3 | 5.4 | 88.2 | |
 Takeaway: almost everyone skips in the first 3 s; average watch ≈ 6 s on 55-70 s Reels; zero saves. Fix the first frame, shorten, make it send-worthy.
+| 10-16 update | AI bots 138M (Reel, 24h+) | 120 views, reach 101, 0 shares/saves, avg watch 7.2 s, skip 67.3% |
+| 10-16 update | Stop typing into ChatGPT (carousel) | 97 views, reach 29, 0 saves |
+Line 10-16: carousels reach only ~30 people (mostly followers) vs ~100+ for Reels → Reels carry discovery; carousels must win on saves (cheat-sheet value) and slide-1 promise. Today: 2 Reels (owner court Reel + 1 short ElevenLabs Reel ≤40 s), 1 carousel.
