@@ -30,6 +30,8 @@ def ipa(word):
 def main(spec_path, out_dir):
     spec = json.load(open(spec_path))
     voice_name, speed = spec.get("voice", "af_heart"), float(spec.get("speed", 1.0))
+    BANNED_VOICES = {"am_michael"}  # owner 10-16: sounds non-human
+    if voice_name in BANNED_VOICES: sys.exit(f"voice {voice_name} is banned by the owner")
     voices = np.load(os.path.join(MODELS, "voices-v1.0.bin"))
     voice = voices[voice_name]
     sess = ort.InferenceSession(os.path.join(MODELS, "kokoro-v1.0.onnx"), providers=["CPUExecutionProvider"])

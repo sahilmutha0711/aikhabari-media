@@ -19,3 +19,4 @@
 | 2026-10-14 | Gemini 4 Argon carousel | Sundar Pichai (2023) cropped 2.jpg cut-out on teal disc | Sundar Pichai (calm near-black + mint) |
 | 2026-10-15 | AI agents 138M payments Reel (Laura/ElevenLabs) | custom cover: Brian Armstrong - TechCrunch Disrupt 2018 01.jpg cut-out on sun mesh; reel uses ...2018 03.jpg | Brian Armstrong (voice: Laura; palette: sun/sea/neon/alert) |
 | 2026-10-15 | Prompt carousel "Stop typing these into ChatGPT" | no photo; chat-window UI | — (palette: cobalt #2340F5 + lime #D4FF3F) |
+| 2026-10-16 | Modal $750M Reel (Kokoro am_michael — voice now banned; original music bed) | custom cover: Spotify HQ.jpg duotone + $15.75B | — (no face; palette sun/sea/neon/alert) |
