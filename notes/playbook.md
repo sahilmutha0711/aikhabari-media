@@ -1,6 +1,55 @@
 # THE AI KHABARI — Content Playbook (single source of truth)
 Read this FIRST before making any Reel, carousel or cover. Where older notes (style.md, the daily message) disagree, THIS FILE WINS. After every round of owner feedback, update this file and the feedback log at the bottom in the same session.
 
+## 00. GROWTH ENGINE (owner, 10-16) — read before choosing or scripting anything
+Goal: reach + SHARES (DM sends) first, saves second, likes last. Instagram's ranking for non-followers leans on: watch time / completion and the 3-second hold, sends per reach, saves per reach, then likes/comments. Everything below serves those.
+
+**Baseline (10-16, 17 posts):** reels 90-195 views, avg watch 4-8 s, SKIP RATE 66-90% (most people leave in the first 3 s), 1 share and 0 saves in total. Diagnosis: openings too slow (logo flash + whisper intro before the payoff), Reels too long (55-70 s), nothing "send-worthy". The new 10-15 style already improved skip rate to 66% (best so far).
+
+### A. The first 2 seconds (fixes the skip rate)
+- Frame 1 = the payoff promise as BIG on-screen text + a moving visual. No logo, no title card, no "today's AI news". The sound logo plays UNDER the hook; the whisper "Psst... the AI Khabri here" moves to AFTER the first reveal (~4-6 s), or is skipped on short Reels.
+- On-screen hook text ≤ 7 words, scroll-stopping, honest: "This AI tool is basically cheating", "Your smart TV could hide an AI", "He built Spotify's recs. Now he's worth billions", "Delete this app before Monday" (only if true). Must be literally true or clearly framed as a take.
+- Spoken hook and text hook can differ; text = curiosity, voice = context.
+- Pattern interrupt every 2-3 s (cut, zoom, number pop, new box). No static frame longer than 3 s.
+
+### B. Length and loops (fixes watch time)
+- Default Reel length 25-40 s (hard max 50 s). One story, one idea. Cut background ruthlessly.
+- End on a line that loops back into the first frame (last words lead into the hook sentence) so replays count.
+- Put the best reveal at ~70% of the runtime, "wait for it" promised in the hook.
+
+### C. Make it SEND-WORTHY (fixes shares)
+Before building any piece, answer in one line: "Who would the viewer send this to, and why?" If there's no clear answer, change the angle or drop the story. Send-worthy angles that work for tech news:
+- "My coworker needs this": a tool or trick that saves hours or money (tool swaps, free alternatives, prompt fixes).
+- "Whoa" factor: an unbelievable but true number or event (dead man speaks in court, 0.81 s 0-60).
+- "Warn someone": something that affects their money, privacy or job (surveillance pricing, scams, kids + AI).
+- "Settle an argument": a clear verdict (X vs Y ranked), "you were right about...".
+- Identity: "only people in tech will get this", "for every founder who...".
+Share trigger names the PERSON TYPE + reason ("send this to the coworker still paying for X"); on-screen near the end AND in the caption's last line. Never generic.
+
+### D. Carousels (built for saves + sends)
+- Slide 1 = a bold promise with a number ("7 free AI tools that replace $200/month of apps", "Stop typing these into ChatGPT"). ≤ 8 words, huge type, one visual.
+- Slide 2 delivers value immediately (no intro slide).
+- One idea per slide, readable in 2 s; a "SCREENSHOT THIS" cheat-sheet slide near the end.
+- Last slide: "SAVE THIS for later" + "Follow @theaikhabari for daily AI news you'll actually use" + the send trigger.
+- 6-10 slides for value packs (swipes count as engagement); 4-5 for quick news.
+
+### E. Captions, SEO, timing
+- Caption line 1 = the hook again (shows above the fold). Then 3-6 short lines of value, then the share trigger, then ONE question that invites an opinion comment.
+- Instagram search reads captions and on-screen text: include 2-3 plain keywords people search ("ChatGPT tips", "AI tools", "Tesla Roadster"). 3-5 relevant hashtags max.
+- Alt text on carousels (API alt_text) with the keywords.
+- Post Reels at 7-9 AM PT or 5-7 PM PT; carousels evenings. Space posts ≥ 3 h apart; never 2 Reels in the same hour.
+
+### F. Legit algorithm levers we automate (API) — NO fake engagement
+- Daily metrics loop (step 0 of every run): pull insights for every post from the last 7 days (views, reach, shares, saved, likes, ig_reels_avg_watch_time, reels_skip_rate) via INSTAGRAM_GET_IG_MEDIA_INSIGHTS, append to notes/metrics.md, and write one line "what worked / what didn't" that changes today's choices (hook type, length, topic, voice). Monday: weekly summary to the owner (one short message).
+- Comment-keyword DMs: on value posts say "Comment TOOLS and I'll DM you the full list" (only when we actually have the list ready). Reply privately to each commenter (official private-reply/messaging API, inside Instagram's 24 h window; follow the instagram:qualification playbook). Comments + DMs are strong signals and the DM gets forwarded.
+- Reply to every comment within the first hours (INSTAGRAM_POST_IG_COMMENT_REPLIES), ending with a question to keep threads going.
+- Post our own first comment with the extra fact / source (INSTAGRAM_POST_IG_MEDIA_COMMENTS); ask the owner to pin it in the app.
+- Owner-side (suggest, can't automate): share each Reel to Stories with a poll, use "Trial Reels" for risky hooks, invite collab posts with friendly AI pages.
+- NEVER: bots, bought likes/followers, follow-unfollow, engagement pods, mass DMs, scraping or auto-commenting on other accounts. These violate Instagram's terms and get accounts throttled or banned.
+
+### G. Quality gate before sending posts to the owner
+Every piece must pass: (1) hook text stops the scroll in frame 1, (2) one clear "send to ___ because ___", (3) a smart line / takeaway, (4) ≤ 40 s for Reels unless the story truly needs more, (5) facts verified with 2 sources, theories labelled. If any fails, fix it or drop the piece. Quality over quantity: 2 great posts beat 4 average ones.
+
 ## 0. NORTH STAR (owner, 10-15): make the viewer feel smarter than everyone around them
 Every Reel and post must leave the viewer holding something most people DON'T know yet, so they feel ahead and want to show it off ("wait, you didn't know this?"). Shares come from that feeling, not from asking.
 - **Insider-knowledge framing.** Position every story as early, inside information: "90% of people using ChatGPT don't know...", "Your friends will hear about this next month. You're hearing it now.", "Investors just quietly bet $X on this. Here's why." Make it true (cite the data/source on screen), never fake scarcity.
@@ -43,9 +92,9 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Honesty guardrail: bold, never false. Label opinions ("I think", "our take"); never invent claims or misrepresent the story.
 
 ## 4. Reel structure, voice, pronunciation
-- Order: sound logo (0-0.5 s owl-eye flash + "hoo-hoot" + whoosh, synthesised locally, under the hook) → knowledge-gap hook → whisper "[whispering] Psst... the AI Khabri here." → the news in one line → the thing nobody's saying → why it matters for YOU → the catch → do THIS instead / try THIS → SMART LINE (on-screen box) → specific share trigger (see §0, never generic "send this to a friend").
+- Order: hook text + visual in frame 1 with the sound logo UNDER it (no separate logo beat) → knowledge-gap hook → first reveal → whisper (after the first reveal, ~4-6 s, or skip on short Reels) "[whispering] Psst... the AI Khabri here." → the news in one line → the thing nobody's saying → why it matters for YOU → the catch → do THIS instead / try THIS → SMART LINE (on-screen box) → specific share trigger (see §0, never generic "send this to a friend").
 - **Chaos Meter only in ~1 of 3 Reels** ("Today's AI chaos level? Stick around." gauge stops on "?", number revealed before the CTA). Not every Reel.
-- Length 45-60 s, hard max 70 s. Calm pace, cut filler not context.
+- Length 25-40 s, hard max 50 s (10-16: 55-70 s Reels had 4-8 s average watch). Fast pace, cut filler.
 - Name: always the FULL "the AI Khabari". Pronunciation (owner, 10-15): "kh-bbb-ri" — a near-silent vowel after KH, straight into a hard "bri" (like Hindi "khabri"). NOT "kha-baaa-ree" (10-14) and NOT "khoo-bree" (the "Khubree" spelling made ElevenLabs say "oo" — retired). In ElevenLabs scripts spell it "the AI Khabri"; if a voice still stretches it, try "the AI Kh'bri". Kokoro IPA override: kˈəbɹi (tools/reel/tts.py).
 - Voices: ElevenLabs free plan, ONE Reel/day max, generations_count=1, eleven_v4; rotate Laura (FGY2WhTYpPnrIDTdsKH5, female quirky — use first), Matilda (XrExE9yKIg1WjnnlVkGX, female pro), Roger (CwhRBWXzGAHq8TQ4Fs17, male laid-back), Harry (SOYHLrjzK2X1ezoPC6cr, male fierce); never the same voice twice in a row; caption credit "Voice: ElevenLabs". Other Reels: Kokoro. Log voice per Reel in covers.md; Mondays compare performance by voice (one-line report).
 - ElevenLabs timings: one call per script; phrase boundaries via ffmpeg silencedetect; spread words in a phrase by character length.
@@ -71,6 +120,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 10-16: Growth engine (§00): optimise for shares/saves and watch time; catchy scroll-stopping text hooks in frame 1; carousels = bold promise slide 1 + "save this / follow" last slide; daily metrics loop; legit API levers only. Baseline skip rate 66-90%, avg watch 4-8 s → Reels now 25-40 s.
 - 10-15 eve: New north star: viewers should crave feeling smarter than others and share to show it (§0). From 10-16: daily startup-funding piece + "use this instead of that" tool swaps alongside top-company news; engineered share triggers, not "share with friends"; labelled hypotheses allowed, never untrue.
 - 10-15: Paper & Cobalt prompt carousel = "no colours, bland" → vivid cobalt + lime with chat-window UI. Green-mesh agents Reel + robot cover rejected (bad gradients, weak fonts, cover not clickable) → rebuilt in approved sun/sea/neon style with Brian Armstrong photo. Voice (Laura) liked. Name said "khoo-bri" → must be "kh-bbb-ri"; spell "Khabri".
 - 10-14: Hooks should make people wait for the ending (rankings, bold takes, "playing dumb or real?"); sometimes go wild. Prompt carousels on alternate days; variable slide counts; contrast-tested single-accent palettes; purple/yellow OK sometimes.
