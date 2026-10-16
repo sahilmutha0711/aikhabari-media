@@ -1,3 +1,5 @@
+> NOTE (10-15): notes/playbook.md is the source of truth. Its §0 (make viewers feel smarter, share triggers, hypotheses) and §0b (startup-money + tool-swap mix) override any script guidance below.
+
 # AI Khabari visual style (v2, approved by owner 2026-10-13)
 
 Owner direction: "not simple pics behind text but proper unique video clips, relatable enough, and new color codes and formats every time."

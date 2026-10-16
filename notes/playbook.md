@@ -1,6 +1,30 @@
 # THE AI KHABARI — Content Playbook (single source of truth)
 Read this FIRST before making any Reel, carousel or cover. Where older notes (style.md, the daily message) disagree, THIS FILE WINS. After every round of owner feedback, update this file and the feedback log at the bottom in the same session.
 
+## 0. NORTH STAR (owner, 10-15): make the viewer feel smarter than everyone around them
+Every Reel and post must leave the viewer holding something most people DON'T know yet, so they feel ahead and want to show it off ("wait, you didn't know this?"). Shares come from that feeling, not from asking.
+- **Insider-knowledge framing.** Position every story as early, inside information: "90% of people using ChatGPT don't know...", "Your friends will hear about this next month. You're hearing it now.", "Investors just quietly bet $X on this. Here's why." Make it true (cite the data/source on screen), never fake scarcity.
+- **The "smart line".** Every piece ends its body with ONE quotable, repeatable sentence the viewer can say at work or in the group chat (on screen in a box labelled "SAY THIS AT WORK" / "SOUND SMART:"). E.g. "AI agents already spend money on their own; the question is who sets the limit."
+- **Voice tone.** Confident, slightly conspiratorial insider, like a friend leaning in with a secret; quick, no hedging filler, but opinions labelled. Use [whispering] for the reveal line and [excited] for the "most people missed this" turn. Talk TO the viewer ("you"), and position them above the crowd ("most people scroll past this; you won't").
+- **Script spine (Reels):** hook (knowledge gap: "Most people think X. They're wrong.") → whisper intro → the news in 1 line → the thing nobody's saying (hidden number, second-order effect, who really wins/loses) → why it matters for YOU (money, job, tools) → the catch → "do THIS instead / try THIS" (concrete action or tool swap) → SMART LINE → share trigger.
+- **Share triggers (replace "send this to a friend").** Make sharing a status move or a useful favour, specific to the story and named to a person type:
+  - test/challenge: "Send this to the friend who thinks they know AI. Bet they didn't know number 3."
+  - tag-the-person: "Tag the one person in your team still paying for X."
+  - saved-them-money/time: "Someone you know is overpaying for this. Send it."
+  - quiz moment on screen: "Pause. Guess the number before I say it." (reveal → people share to test others)
+  - "Screenshot this slide" on the most useful carousel slide (cheat-sheet slides, tool-swap tables, prompt boxes).
+  Rotate them; never the same line twice in a row. Captions open with the hook, end with the share trigger + one question that invites a hot-take comment.
+- **Hypotheses / predictions are allowed (~1 in 4 posts), clearly labelled.** Section titled "MY THEORY" / "HYPOTHESIS" / "PREDICTION" on screen and said aloud ("here's my theory — not confirmed"). Build only on verified facts, give the reasoning in 2-3 steps, name what would prove it wrong. Never state a theory as fact, never invent numbers, quotes or deals.
+
+## 0b. CONTENT MIX from 10-16 (owner)
+Daily, across the 2-4 pieces, keep a balance of:
+1. **Top companies** (OpenAI, Google, Anthropic, Meta, Apple, Microsoft, Nvidia, Amazon) — still covered, major launches always.
+2. **Startup money** — at least ONE piece per day on startup funding / investments / acquisitions from the last 24-48 h (sources: TechCrunch funding, Crunchbase News, The Information, Axios Pro Rata, company blogs, SEC/press releases; verify amount, round, lead investor with 2 sources). Always answer "why should YOU care": what the startup does, which tool you can use today, what this money signals (where jobs/opportunities are moving), and who it threatens. Formats: "$X just went into Y. Here's what they know that you don't", "3 startups that raised this week that you can use for free today", investor "follow the money" breakdowns.
+3. **New tech / new tools** — fresh launches people can try today, with a **"Stop using X, use Y instead" tool-swap** angle: compare the new tool to the one people already use (price, what it does better, what it does worse, who should switch). Honest: say where the old tool still wins. No paid tool pushes without the Paid Partnership label; no affiliate claims.
+4. Prompt carousels on alternate days (unchanged).
+Rule of thumb per day: 1 big-company story + 1 startup-money story + 1 tool-swap/prompt piece (+ optional 4th of any type).
+Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? Use Y"), "Startups that raised this week + what they do in 1 line", "Before vs after" prompt swaps, "Explain this news to your boss in 3 lines" cheat sheets. Put a "SCREENSHOT THIS" tag on the cheat-sheet slide.
+
 ## 1. Owner communication
 - Don't overwhelm. Research and decide silently. Send only finished posts: preview, caption, suggested time, then "Reply 'post' to publish all, or 'post 1,3' / tell me what to change."
 - Never publish without the owner's "post". Instagram's API can't delete posts; if a redo is needed, the owner deletes the old one in the app.
@@ -19,7 +43,7 @@ Read this FIRST before making any Reel, carousel or cover. Where older notes (st
 - Honesty guardrail: bold, never false. Label opinions ("I think", "our take"); never invent claims or misrepresent the story.
 
 ## 4. Reel structure, voice, pronunciation
-- Order: sound logo (0-0.5 s owl-eye flash + "hoo-hoot" + whoosh, synthesised locally, under the hook) → hook → whisper "[whispering] Psst... the AI Khabri here." → who/what → what happened → why it matters (comparison) → the catch → what you can take from this → CTA question + "send this to a friend who...".
+- Order: sound logo (0-0.5 s owl-eye flash + "hoo-hoot" + whoosh, synthesised locally, under the hook) → knowledge-gap hook → whisper "[whispering] Psst... the AI Khabri here." → the news in one line → the thing nobody's saying → why it matters for YOU → the catch → do THIS instead / try THIS → SMART LINE (on-screen box) → specific share trigger (see §0, never generic "send this to a friend").
 - **Chaos Meter only in ~1 of 3 Reels** ("Today's AI chaos level? Stick around." gauge stops on "?", number revealed before the CTA). Not every Reel.
 - Length 45-60 s, hard max 70 s. Calm pace, cut filler not context.
 - Name: always the FULL "the AI Khabari". Pronunciation (owner, 10-15): "kh-bbb-ri" — a near-silent vowel after KH, straight into a hard "bri" (like Hindi "khabri"). NOT "kha-baaa-ree" (10-14) and NOT "khoo-bree" (the "Khubree" spelling made ElevenLabs say "oo" — retired). In ElevenLabs scripts spell it "the AI Khabri"; if a voice still stretches it, try "the AI Kh'bri". Kokoro IPA override: kˈəbɹi (tools/reel/tts.py).
@@ -46,6 +70,7 @@ Read this FIRST before making any Reel, carousel or cover. Where older notes (st
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 10-15 eve: New north star: viewers should crave feeling smarter than others and share to show it (§0). From 10-16: daily startup-funding piece + "use this instead of that" tool swaps alongside top-company news; engineered share triggers, not "share with friends"; labelled hypotheses allowed, never untrue.
 - 10-15: Paper & Cobalt prompt carousel = "no colours, bland" → vivid cobalt + lime with chat-window UI. Green-mesh agents Reel + robot cover rejected (bad gradients, weak fonts, cover not clickable) → rebuilt in approved sun/sea/neon style with Brian Armstrong photo. Voice (Laura) liked. Name said "khoo-bri" → must be "kh-bbb-ri"; spell "Khabri".
 - 10-14: Hooks should make people wait for the ending (rankings, bold takes, "playing dumb or real?"); sometimes go wild. Prompt carousels on alternate days; variable slide counts; contrast-tested single-accent palettes; purple/yellow OK sometimes.
 - 10-14: Dialogue Reels with a second character (Bunty) ~2/week.
