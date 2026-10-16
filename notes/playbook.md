@@ -67,6 +67,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 
 ## 7. Production rules
 - No emoji in artwork (fonts show boxes); fine in captions. Photos ≥1080 px from Commons/press kits, credited; Wikimedia UA 'AIKhabariBot/1.0 (https://instagram.com/theaikhabari)'. No other creators' footage or movie/TV clips. Verify facts with 2+ sources.
+- Cut-outs: tools/reel/cutout.py (u2net; copy to /home/claude/tools/ if missing). Model at /home/claude/models/u2net.onnx.
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
