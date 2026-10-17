@@ -16,3 +16,6 @@ Takeaway: almost everyone skips in the first 3 s; average watch ≈ 6 s on 55-70
 | 10-16 update | AI bots 138M (Reel, 24h+) | 120 views, reach 101, 0 shares/saves, avg watch 7.2 s, skip 67.3% |
 | 10-16 update | Stop typing into ChatGPT (carousel) | 97 views, reach 29, 0 saves |
 Line 10-16: carousels reach only ~30 people (mostly followers) vs ~100+ for Reels → Reels carry discovery; carousels must win on saves (cheat-sheet value) and slide-1 promise. Today: 2 Reels (owner court Reel + 1 short ElevenLabs Reel ≤40 s), 1 carousel.
+| 10-17 | Modal $750M Reel (Kokoro male voice, no face) | 116 views, reach 99, 0 shares/saves, avg watch 3.0 s, skip 72.4% | worst hold yet |
+| 10-17 update | AI bots 138M Reel | 131 views, reach 112, avg 6.9 s, skip 66.7% |
+Line 10-17: the robotic voice + no-face opening halved watch time (3.0 s vs 6-7 s). Voice quality and a human/face in frame 1 matter. Today: no synthetic voice (owner ban) → text-led Reel where frame 1 shows a real recognisable face + the hook, music only, every 1.5-2 s a new on-screen line.
