@@ -1,0 +1,32 @@
+@font-face{font-family:'Brico';src:url('file://FONTDIRBricolage.ttf');font-weight:200 800}
+@font-face{font-family:'DMS';src:url('file://FONTDIRDMSans.ttf');font-weight:100 1000}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1080px;height:1350px;overflow:hidden;font-family:'DMS';color:#F4F1EA;background:#0B1030}
+.s{position:relative;width:1080px;height:1350px;overflow:hidden}
+.ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.ov{position:absolute;inset:0}
+.top{position:absolute;text-shadow:0 2px 10px rgba(0,0,0,.8);left:70px;right:70px;top:56px;display:flex;justify-content:space-between;font-weight:700;font-size:26px;letter-spacing:5px;color:#D9D6E8}
+.top b{color:#FFB400}
+.bot{position:absolute;text-shadow:0 2px 10px rgba(0,0,0,.8);left:70px;right:70px;bottom:44px;display:flex;justify-content:space-between;align-items:flex-end;font-size:21px;color:#B9B7CC}
+.bot .h{font-weight:700;font-size:26px;color:#F4F1EA;letter-spacing:1px}
+.c{position:absolute;left:70px;right:70px}
+.chips{display:flex;gap:14px;flex-wrap:wrap}
+.chip{display:inline-block;border:3px solid #FFB400;color:#FFB400;border-radius:40px;padding:8px 24px;font-weight:700;font-size:26px;letter-spacing:3px;background:rgba(11,16,48,.55);white-space:nowrap}
+.chip.f{background:#FFB400;color:#0B1030}
+h1{font-family:'Brico';font-weight:800;font-size:100px;line-height:.98;letter-spacing:-2px;text-shadow:0 6px 30px rgba(0,0,0,.5)}
+h2{font-family:'Brico';font-weight:800;font-size:72px;line-height:1.02;letter-spacing:-1.5px;text-shadow:0 4px 24px rgba(0,0,0,.5)}
+.am{color:#FFB400}.co{color:#FF6B5A}
+.lab{font-weight:700;font-size:26px;letter-spacing:6px;color:#FFB400;margin-bottom:18px}
+.p{font-size:32px;line-height:1.35;color:#ECE9F5}
+.box{display:inline-block;background:#FFB400;color:#0B1030;border-radius:16px;padding:4px 18px;font-family:'Brico';font-weight:800}
+.card{border-radius:26px;padding:24px 30px;background:rgba(11,16,48,.8);border:3px solid rgba(255,255,255,.18);margin-top:22px}
+.card.a{border-color:#FFB400;background:rgba(40,32,10,.82)}.card.r{border-color:#FF6B5A;background:rgba(50,16,20,.82)}
+.k{font-weight:700;font-size:22px;letter-spacing:4px;color:#B9B7CC;margin-bottom:8px}
+.swipe{font-weight:700;font-size:28px;color:#FFB400;letter-spacing:1px;margin-top:24px}
+.tag{display:inline-block;font-weight:700;font-size:21px;letter-spacing:3px;padding:6px 14px;border-radius:8px;border:2px solid #FFB400;color:#FFB400;margin-bottom:20px}
+.row{display:flex;justify-content:space-between;align-items:baseline;font-size:34px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.row b{font-family:'Brico';font-size:46px}
+.cta{display:inline-block;border-radius:40px;padding:14px 30px;font-weight:800;font-size:30px;letter-spacing:2px;background:#FFB400;color:#0B1030;margin-bottom:18px}
+.cta.o{background:transparent;border:3px solid #FFB400;color:#FFB400}
+.mono{font-family:ui-monospace,'DejaVu Sans Mono',Menlo,monospace;font-size:27px;line-height:1.45;background:rgba(0,0,0,.45);border:2px dashed rgba(255,180,0,.7);border-radius:16px;padding:20px 24px;color:#F4F1EA;margin-top:12px}
+.num{display:inline-block;width:46px;height:46px;border-radius:50%;background:#FFB400;color:#0B1030;font-family:'Brico';font-weight:800;font-size:28px;text-align:center;line-height:46px;margin-right:14px}
