@@ -6,7 +6,7 @@
 @font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
 :root{--ink:#07080C;--cream:#FFFFFF;--acc:#00E5FF;--red:#FF3D6E;--dim:#C9CCD6}
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{background:#11C25A}
+html,body{background:#F3EEE4}
 body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:var(--cream);position:relative}
 #cam{position:absolute;inset:0;transform-origin:50% 45%}
 .abs{position:absolute}
@@ -49,29 +49,31 @@ const BOX=(s,bg='#fff',fg='#07080C')=>`<span style="background:${bg};color:${fg}
 function AVA(t,x,y,s=1,col='#00E5FF'){const j=Math.sin(t*37)>0.85?((t*997)%14-7):0;let lines='';for(let i=0;i<24;i++){lines+=`<div style="position:absolute;left:0;right:0;top:${i*16}px;height:3px;background:rgba(255,255,255,.12)"></div>`}
  return `<div class=fig style="left:${x}px;top:${y}px;transform:scale(${s}) translateX(${j}px);filter:drop-shadow(0 0 30px ${col})"><div class=h style="background:${col};opacity:.9"></div><div class=b style="background:${col};opacity:.9"></div><div class=abs style="inset:0;overflow:hidden">${lines}</div><div class="abs mono" style="left:0;right:0;top:250px;text-align:center;font-size:44px;font-weight:700;color:#07080C">AI</div></div>`}
 const K='__OWLDIR__';
-const G='#11C25A',I='#06210F',R='#FF4D4D';
+const G='#2F6BFF',I='#111216',R='#FF4D4D',CR='#F3EEE4';
+const PAPER=(t)=>`<div class=abs style="inset:0;background:${CR}"></div><div class=abs style="right:-180px;top:-200px;width:620px;height:620px;border-radius:50%;background:${G};transform:translateY(${Math.sin(t*.8)*14}px)"></div><div class=abs style="left:-120px;top:1720px;width:1400px;height:300px;background:${I};transform:rotate(-3deg)"></div><div class=abs style="inset:0;background-image:linear-gradient(rgba(17,18,22,.06) 2px,transparent 2px);background-size:100% 64px"></div>`;
+const INK=(t)=>`<div class=abs style="inset:0;background:${I}"></div><div class=abs style="left:-240px;top:1180px;width:760px;height:760px;border-radius:50%;background:${G};opacity:.95;transform:translateX(${Math.sin(t*.7)*16}px)"></div><div class=abs style="inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 2px,transparent 2.5px);background-size:40px 40px"></div>`;
 const FLAT=c=>`<div class=abs style="inset:0;background:${c}"></div>`;
 const DOTS=(c,o=.12)=>`<div class=abs style="inset:0;background-image:radial-gradient(${c} 3px,transparent 3.5px);background-size:46px 46px;opacity:${o}"></div>`;
 const CARD=(img,x,y,w,h,rot,t,t0,cap,pos='center')=>{const p=B(t,t0,.5);return `<div class=abs style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:#fff;padding:16px 16px 64px;border-radius:10px;box-shadow:14px 14px 0 ${I};transform:rotate(${rot}deg) translateY(${(1-p)*500}px);opacity:${cl((t-t0)/.15)}"><div style="width:100%;height:100%;background:url(${D}/${img}) ${pos}/cover;border-radius:4px"></div><div class=mono style="position:absolute;left:18px;right:18px;bottom:16px;font-size:20px;color:#333">${cap}</div></div>`};
 const ILL=`<div class="abs mono" style="right:60px;top:1420px;font-size:20px;letter-spacing:3px;color:${I};background:#fff;padding:4px 10px;border:2px solid ${I}">ILLUSTRATION · RECREATED</div>`;
-const BUB=(txt,me,t,t0)=>`<div style="align-self:${me?'flex-end':'flex-start'};max-width:720px;background:${me?G:'#fff'};color:${I};border:4px solid ${I};border-radius:30px;padding:20px 28px;font-family:Sans;font-weight:700;font-size:46px;line-height:1.2;box-shadow:6px 6px 0 ${I};${pop(t,t0)};opacity:${t<t0?0:1}">${txt}</div>`;
+const BUB=(txt,me,t,t0)=>`<div style="align-self:${me?'flex-end':'flex-start'};max-width:720px;background:${me?G:'#fff'};color:${me?'#fff':I};border:4px solid ${I};border-radius:30px;padding:20px 28px;font-family:Sans;font-weight:700;font-size:46px;line-height:1.2;box-shadow:6px 6px 0 ${I};${pop(t,t0)};opacity:${t<t0?0:1}">${txt}</div>`;
 const S=[];
-S[0]=(t)=>{const m=W('meta',0);return `${FLAT(G)}${DOTS(I,.10)}
+S[0]=(t)=>{const m=W('meta',0);return `${PAPER(t)}
  <div class="abs mono" style="left:60px;top:190px;font-size:34px;font-weight:700;letter-spacing:4px;color:${I}">I'LL SAY IT</div>
- <div class="abs disp" style="left:60px;right:60px;top:240px;font-size:132px;line-height:.98;color:#fff;-webkit-text-stroke:5px ${I};text-shadow:10px 10px 0 ${I}">AI agents are ${BOX('not ready','#fff',I)} to talk to strangers for you</div>
+ <div class="abs disp" style="left:60px;right:60px;top:240px;font-size:132px;line-height:.98;color:${I};text-shadow:8px 8px 0 ${G}">AI agents are ${BOX('not ready',G,'#fff')} to talk to strangers for you</div>
  ${CARD('zuck.jpg',540,860,430,520,4,t,m-.3,'Mark Zuckerberg · A. Quintano / CC BY 2.0','center 30%')}
  <div class="abs disp" style="left:50px;top:1010px;font-size:112px;line-height:1.02;transform:rotate(-5deg);${pop(t,m-.1)}">${BOX('Meta just',I,'#fff')}<br>${BOX('proved it',R,'#fff')}</div>`};
-S[1]=(t)=>{const al=W('allow',1);const on=t>al;return `${FLAT('#fff')}${DOTS(I,.06)}
+S[1]=(t)=>{const al=W('allow',1);const on=t>al;return `${PAPER(t)}
  <div class="abs mono" style="left:60px;top:190px;font-size:32px;font-weight:700;letter-spacing:3px;color:${I};${rise(t,L[1])}">A TORONTO YOUTUBER LET META'S AGENT</div>
- <div class="abs disp" style="left:60px;top:240px;font-size:170px;color:${I};${pop(t,L[1]+.15)}">${BOX('MUSE',G,I)} sell his keyboard</div>
+ <div class="abs disp" style="left:60px;top:240px;font-size:170px;color:${I};${pop(t,L[1]+.15)}">${BOX('MUSE',G,'#fff')} sell his keyboard</div>
  <div class=abs style="left:110px;right:110px;top:720px;background:#fff;border:6px solid ${I};border-radius:36px;box-shadow:12px 12px 0 ${I};padding:40px;${pop(t,W('keyboard',1)-.3)}">
   <div class=mono style="font-size:28px;font-weight:700;color:#666">MARKETPLACE · LET MUSE HANDLE BUYERS?</div>
   <div style="display:flex;gap:24px;margin-top:30px">
    <div class=disp style="flex:1;text-align:center;font-size:64px;padding:18px;border:5px solid ${I};border-radius:20px;color:${I}">ASK ME</div>
-   <div class=disp style="flex:1;text-align:center;font-size:64px;padding:18px;border:5px solid ${I};border-radius:20px;color:${I};background:${on?G:'#fff'};transform:scale(${on?1.06:1})">ALLOW ALWAYS</div></div>
+   <div class=disp style="flex:1;text-align:center;font-size:64px;padding:18px;border:5px solid ${I};border-radius:20px;color:${on?'#fff':I};background:${on?G:'#fff'};transform:scale(${on?1.06:1})">ALLOW ALWAYS</div></div>
   ${on?`<svg class=abs style="left:${470+0}px;top:200px" width=110 height=110 viewBox="0 0 24 24"><path d="M5 2l14 12-6 1 4 7-3 1-4-7-5 4z" fill="#fff" stroke="${I}" stroke-width="1.6"/></svg>`:''}</div>
  ${ILL}`};
-S[2]=(t)=>`${FLAT(G)}${DOTS(I,.10)}
+S[2]=(t)=>`${PAPER(t)}
  <div class="abs mono" style="left:60px;top:190px;font-size:32px;font-weight:700;letter-spacing:3px;color:${I};${rise(t,L[2])}">THEN THE AGENT...</div>
  <div class=abs style="left:60px;right:60px;top:260px;display:flex;flex-direction:column;gap:34px">
   ${BUB('I can do $40?',false,t,L[2]+.1)}
@@ -80,29 +82,29 @@ S[2]=(t)=>`${FLAT(G)}${DOTS(I,.10)}
   ${BUB('Pickup booked. See you tonight.',true,t,W('pickup',2)-.2)}</div>
  <div class="abs disp" style="left:60px;top:1150px;font-size:80px;${pop(t,W('never',2)-.1)}">${BOX('He never approved it',R,'#fff')}</div>
  <div class="abs mono" style="left:60px;right:60px;top:1420px;font-size:20px;letter-spacing:2px;color:${I}">ILLUSTRATION · messages recreated, not the real chat</div>`;
-S[3]=(t)=>`${FLAT(I)}
+S[3]=(t)=>`${INK(t)}
  <div class="abs mono" style="left:60px;top:220px;font-size:40px;font-weight:700;letter-spacing:4px;color:${G};${rise(t,L[3])}">WITHIN A DAY</div>
  <svg class=abs style="left:340px;top:330px;${pop(t,W('stranger',3)-.3)}" width=400 height=560 viewBox="0 0 100 140"><rect x=8 y=6 width=84 height=128 rx=4 fill="#fff" stroke="${G}" stroke-width=5/><circle cx=72 cy=74 r=6 fill="${R}"/><rect x=26 y=22 width=48 height=34 rx=3 fill="none" stroke="${I}" stroke-width=4/></svg>
  <div class="abs disp" style="left:60px;right:60px;top:940px;text-align:center;font-size:130px;color:#fff;${pop(t,W('door.',3)-.4)}">a stranger at ${BOX('his door',R,'#fff')}</div>`;
-S[4]=(t)=>{const h=W('him.',4);return `${FLAT('#fff')}${DOTS(I,.06)}
+S[4]=(t)=>{const h=W('him.',4);return `${PAPER(t)}
  <div class="abs disp" style="left:60px;top:200px;font-size:170px;color:${I};${pop(t,L[4])}">People ${BOX('split',I,'#fff')}</div>
  <div class=abs style="left:60px;right:60px;top:520px;background:#fff;border:6px solid ${I};border-radius:30px;box-shadow:12px 12px 0 ${I};padding:40px;${pop(t,W('some',4)-.1)}">
   <div class=mono style="font-size:32px;font-weight:700;color:#666;letter-spacing:2px">SIDE A SAYS</div>
   <div class=disp style="font-size:96px;color:${I};margin-top:10px">He clicked Allow Always. ${t>h-.3?BOX("That's on him",I,'#fff'):''}</div></div>`};
-S[5]=(t)=>{const m=W('meta.',5);return `${FLAT(G)}${DOTS(I,.10)}
+S[5]=(t)=>{const m=W('meta.',5);return `${PAPER(t)}
  <div class="abs chip" style="left:60px;top:200px;background:${I};color:#fff;${pop(t,L[5])}">MY TAKE</div>
  <div class="abs disp" style="left:60px;right:60px;top:320px;font-size:128px;color:${I};${rise(t,W('allow',5)-.1)}">"Allow Always" should never mean</div>
- <div class="abs disp" style="left:60px;right:60px;top:740px;font-size:120px;${pop(t,W('share',5)-.1)}">${BOX('"share my home address"','#fff',I)}</div>
+ <div class="abs disp" style="left:60px;right:60px;top:740px;font-size:120px;${pop(t,W('share',5)-.1)}">${BOX('"share my home address"',I,'#fff')}</div>
  <div class=abs style="left:70px;top:1080px;transform:rotate(-6deg);${pop(t,m-.4)}"><div class=disp style="font-size:140px;color:#fff;border:12px solid ${R};background:${R};padding:0 30px;box-shadow:14px 14px 0 ${I}">THAT'S ON META</div></div>`};
-S[6]=(t)=>`${FLAT(I)}
- <div class="abs chip" style="left:60px;top:220px;background:${G};color:${I};${pop(t,L[6])}">SCREENSHOT THIS · RULE ONE</div>
- <div class="abs disp" style="left:60px;right:60px;top:360px;font-size:170px;color:#fff;${rise(t,W('never',6)-.1)}">Never click ${BOX('Allow Always',G,I)} on an AI agent</div>`;
-S[7]=(t)=>{const y=W('yes?',7);return `${FLAT(G)}${DOTS(I,.10)}
+S[6]=(t)=>`${INK(t)}
+ <div class="abs chip" style="left:60px;top:220px;background:${G};color:#fff;${pop(t,L[6])}">SCREENSHOT THIS · RULE ONE</div>
+ <div class="abs disp" style="left:60px;right:60px;top:360px;font-size:170px;color:#fff;${rise(t,W('never',6)-.1)}">Never click ${BOX('Allow Always',G,'#fff')} on an AI agent</div>`;
+S[7]=(t)=>{const y=W('yes?',7);return `${PAPER(t)}
  <div class="abs disp" style="left:60px;right:60px;top:200px;text-align:center;font-size:150px;color:${I};${pop(t,L[7])}">Who's wrong?</div>
  <div class=abs style="left:60px;right:60px;top:480px;display:flex;gap:36px">
   <div style="flex:1;height:360px;background:#fff;border:6px solid ${I};border-radius:30px;box-shadow:12px 12px 0 ${I};display:flex;align-items:center;justify-content:center;text-align:center;${pop(t,W('meta',7)-.15)}"><div class=disp style="font-size:130px;color:${I}">META</div></div>
   <div style="flex:1;height:360px;background:${I};border:6px solid ${I};border-radius:30px;box-shadow:12px 12px 0 #fff;display:flex;align-items:center;justify-content:center;text-align:center;${pop(t,y-.5)}"><div class=disp style="font-size:76px;color:#fff;line-height:1">THE GUY WHO CLICKED YES</div></div></div>
- <div class="abs disp" style="left:60px;right:60px;top:950px;text-align:center;font-size:96px;color:${I};${pop(t,W('below.',7)-.4)}">Comment ${BOX('A or B','#fff',I)}</div>
+ <div class="abs disp" style="left:60px;right:60px;top:950px;text-align:center;font-size:96px;color:${I};${pop(t,W('below.',7)-.4)}">Comment ${BOX('A or B',G,'#fff')}</div>
  <div class="abs chip" style="left:60px;top:1150px;background:${I};color:#fff;opacity:${P(t,W('below.',7)-.2)}">FOLLOW @THEAIKHABARI</div>
  <div class="abs mono" style="left:60px;right:60px;top:1800px;font-size:19px;color:${I}">Sources: Yahoo Tech, BetaNews (Oct 19), AP. Opinion = ours. Voice: ElevenLabs.</div>`};
 const LIGHT=new Set([0,1,2,4,5,7]);
@@ -116,8 +118,8 @@ function setT(t){
  document.getElementById('tb').setAttribute('seed',Math.floor(t*24)%97+1);
  document.getElementById('grain').style.transform=`translate(${(t*137)%40-20}px,${(t*91)%40-20}px)`;
  document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
- const light=LIGHT.has(i),br=document.getElementById('brand');br.innerHTML=`<span style="color:${light?'#06210F':'#11C25A'}">&#9679;</span> THE AI KHABARI`;br.style.color=light?'#07080C':'#fff';
- document.getElementById('prog').style.background=light?'#06210F':'#fff';
+ const light=LIGHT.has(i),br=document.getElementById('brand');br.innerHTML=`<span style="color:${light?'#2F6BFF':'#2F6BFF'}">&#9679;</span> THE AI KHABARI`;br.style.color=light?'#07080C':'#fff';
+ document.getElementById('prog').style.background=light?'#111216':'#fff';
  const cur=WD.findIndex(w=>t>=w.s&&t<w.e+.05);const cap=document.getElementById('cap');
  if(cur<0){cap.innerHTML='';return}
  const g=Math.floor(cur/3)*3,grp=WD.slice(g,g+3).filter(w=>w.line===WD[cur].line);
