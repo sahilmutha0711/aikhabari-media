@@ -122,6 +122,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 10-19 (eve 2): HOOK ATTITUDE (owner) — every Reel (E, C or G) opens with an ADAMANT, confident hook; a bit of arrogance is fine ("You're using ChatGPT wrong, and I'll prove it.", "Nvidia fans won't like this.", "This is the dumbest $1B deal of the year. Stay till the end."). State it like a fact-level conviction, then open a loop that only closes at the end so people watch through and argue in the comments. Arrogant toward ideas/companies/the viewer's habits, never insulting people or groups; claims still true, opinions still labelled ("my take") somewhere in the Reel.
 - 10-19 (eve): ECG FRAMEWORK + 3-DAY CONTROVERSY TEST (owner). Every piece is tagged E, C or G in covers.md:
   E = EVERGREEN: true yesterday, today and next year (how-tos, prompts, frameworks, career/dev skills, 'how X really works'). Saves.
   C = CONTROVERSIAL: open with a debate, or a NEW point of view on an existing story/case ('everyone's cheering X, here's why it's bad', 'unpopular opinion', 'who's actually wrong here?'). Comments + shares.
