@@ -26,3 +26,7 @@ Line 10-18: first save came from the niche, expert-grade developer carousel → 
 | 10-19 | Junior-dev data carousel (mint) | 100 views, reach 33, 0 saves, 6 likes (most likes on any post) | |
 | 10-19 update | SWE MAANG carousel | 114 views, reach 34, 1 save | Modal Reel 131 views, avg 3.2 s, skip 72.2% |
 Line 10-19: Harry voice + a real face early brought hold back to ~6 s (vs 3 s with the robotic voice), but skip is still ~70% and shares are still 0. Today: open with the one-time "What's up, mother lovers!" greeting test straight into a sharper hook, keep it ≤ 45 s with a reveal by ~3 s; carousel = niche, useful, saveable (developer/job-seeker angle wins likes and saves).
+| 10-20 | Tenstorrent Reel (Harry, 43 s, GREETING TEST, Keller face) | 236 views/22h, reach 209, 4 SHARES (record), 1 save, 4 likes, avg watch 6.0 s, skip 74.4% | most reach + shares ever |
+| 10-20 | Google code-review prompt carousel (orange) | 116 views, reach 48 (best carousel reach), 0 saves, 3 likes | |
+| 10-20 update | Humanoid Reel 161 views, avg 6.2 s, skip 70.3% · Junior carousel 118 views, 6 likes · SWE carousel 1 save |
+Line 10-20: the greeting Reel got our first real shares (4) and the most reach, but its skip rate was a bit worse (74% vs 70%) — the "send to the friend who says Nvidia has no competition" + a debate-y topic (Nvidia rival) drove sends. Today starts the 3-day CONTROVERSIAL test: adamant hook in the first 2 s, clear side, split-the-room question. Greeting not used (owner: one-time test) — report result to owner.
