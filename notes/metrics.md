@@ -30,3 +30,7 @@ Line 10-19: Harry voice + a real face early brought hold back to ~6 s (vs 3 s wi
 | 10-20 | Google code-review prompt carousel (orange) | 116 views, reach 48 (best carousel reach), 0 saves, 3 likes | |
 | 10-20 update | Humanoid Reel 161 views, avg 6.2 s, skip 70.3% · Junior carousel 118 views, 6 likes · SWE carousel 1 save |
 Line 10-20: the greeting Reel got our first real shares (4) and the most reach, but its skip rate was a bit worse (74% vs 70%) — the "send to the friend who says Nvidia has no competition" + a debate-y topic (Nvidia rival) drove sends. Today starts the 3-day CONTROVERSIAL test: adamant hook in the first 2 s, clear side, split-the-room question. Greeting not used (owner: one-time test) — report result to owner.
+| 10-21 | [C] Meta Muse Reel (cream/blue, text-wall hook, no face until 4 s) | 84 views/22h, reach 57, 0 shares, 3 likes, avg watch 3.5 s, SKIP 93% (worst ever) | |
+| 10-21 | [G] Paul Graham carousel (charcoal/gold) | 126 views, reach 35, 1 save, 7 likes (most likes ever) | |
+| 10-21 update | Tenstorrent Reel 263 views, 4 shares, 2 saves, skip 73.8% · Google code-review carousel 136 views |
+Line 10-21: the controversial Reel flopped in the first 3 s: frame 1 was a 10-word text wall on a pale background with no face/visual until ~4 s, and "I'll say it" is a slow opener. The Tenstorrent Reel (face + 3 brand words in frame 1) holds best. Today (C day 2): FACE or striking visual in frame 1, ≤ 6-word hook in giant type, the controversial claim spoken in the first 2 s, strong saturated scene first (not pale paper).
