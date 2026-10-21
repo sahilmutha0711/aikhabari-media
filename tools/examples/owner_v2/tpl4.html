@@ -1,0 +1,157 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BigShoulders-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Gloock-Regular.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:#fff;position:relative}
+.abs{position:absolute}
+.disp{font-family:Disp;line-height:.98;text-transform:uppercase}
+.ser{font-family:Ser;line-height:1.05}
+.mono{font-family:Mono}
+.chip{display:inline-block;padding:10px 24px;border-radius:60px;font-family:Mono;font-weight:700;font-size:28px;letter-spacing:2px}
+#cap{position:absolute;left:40px;right:40px;text-align:center;font-family:Sans;font-weight:700;font-size:70px;line-height:1.1;letter-spacing:-.5px}
+#cap span{display:inline-block;padding:0 12px;border-radius:14px;margin:0 1px;-webkit-text-stroke:2.5px #000;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.5)}
+</style></head><body>
+<div style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:.01"><img src="__DIR__/demis_cut.png"></div>
+<svg id="bgsvg" class="abs" width="1080" height="1920" style="left:0;top:0"><defs><pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.2" fill="rgba(255,255,255,.08)"/></pattern></defs><g id="bgg"></g></svg>
+<div id="deco"></div><div id="vis"></div><div id="frames"></div><div id="hdr"></div><div id="cap"></div><div id="prog" class="abs" style="left:0;top:0;height:7px;background:#FF6B4A"></div>
+<script>
+const WD=__WORDS__,TOTAL=__TOTAL__,D='__DIR__',MODE='__MODE__';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const nm=s=>s.toLowerCase().replace(/[^a-z0-9$'-]/g,'');
+function W(word,seg,k=0){const c=WD.filter(w=>w.seg===seg&&nm(w.w)===nm(word));return c.length?c[Math.min(k,c.length-1)].s:999}
+const P=(t,t0,d=.35)=>eo((t-t0)/d),B=(t,t0,d=.45)=>eb((t-t0)/d);
+const rise=(t,t0,dy=50)=>{const p=P(t,t0,.4);return `opacity:${p};transform:translateY(${(1-p)*dy}px)`};
+const pop=(t,t0)=>{const p=B(t,t0,.45);return `opacity:${cl((t-t0)/.12)};transform:scale(${.6+.4*p})`};
+const BOX=(s,bg,fg)=>`<span style="background:${bg};color:${fg};padding:0 14px">${s}</span>`;
+const TEAL='#00525C',DEEP='#002E34',CORAL='#FF6B4A',CREAM='#F4EFE6',GOLD='#FFC93C';
+// layout
+const BOXR=MODE==='split'?{x:50,y:180,w:980,h:760}:{x:50,y:300,w:980,h:760};
+const VID=MODE==='split'?{x:50,y:1120,w:980,h:730}:null;
+const CAPY=MODE==='split'?960:1210;
+// scenes [start,key,type]
+const SC=[[0,'hook','A'],[6.6,'demis','B'],[12.5,'wsj','B'],[16.9,'tool','A'],[24.0,'coworker','A'],[31.8,'timeline','B'],[47.8,'debate','A'],[54.4,'science','B'],[63.7,'foryou','A'],[65.4,'dev','B'],[71.4,'researcher','A'],[79.2,'shot','A'],[84.5,'comment','A']];
+const CLIPS=[[9.8,12.45,'AlphaFold, the AI behind his 2024 Nobel Prize in Chemistry','Video: Jumper et al., Nature 2021 / CC BY 4.0'],[54.4,58.6,'An AlphaFold protein prediction','Video: EMBL-EBI AlphaFold / CC BY 4.0'],[58.6,63.75,'Medicine research','Video: yourgenome / CC BY 3.0'],[65.4,71.35,'AI agents doing the hands-on work','Video: Szymanski et al. / CC BY 4.0']];
+const clipAt=t=>CLIPS.find(c=>t>=c[0]&&t<c[1]);
+const rr=(x,y,w,h,r)=>`M${x+r},${y}h${w-2*r}a${r},${r} 0 0 1 ${r},${r}v${h-2*r}a${r},${r} 0 0 1 -${r},${r}h-${w-2*r}a${r},${r} 0 0 1 -${r},-${r}v-${h-2*r}a${r},${r} 0 0 1 ${r},-${r}z`;
+// visual content inside the box (local coords w x h)
+function VIS(key,t){const w=BOXR.w,h=BOXR.h;
+ const card=(inner,bg=CREAM)=>`<div class=abs style="inset:0;background:${bg};border-radius:34px;overflow:hidden">${inner}</div>`;
+ switch(key){
+ case 'hook':{const s2=W("i'm",'A2');return card(`<div class=abs style="inset:0;background:${DEEP}"></div><div class=abs style="right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:${TEAL}"></div>
+  <div class="abs mono" style="left:50px;top:60px;font-size:30px;letter-spacing:4px;color:${GOLD}">GOOGLE'S AI BOSS SAYS</div>
+  <div class="abs disp" style="left:50px;right:40px;top:120px;font-size:190px;color:${CREAM}">AGI in <span style="color:${GOLD}">2&ndash;3 years</span></div>
+  ${t>s2-.1?`<div class=abs style="left:50px;top:520px;${pop(t,s2-.1)}"><span class=disp style="display:inline-block;rotate:-4deg;font-size:120px;background:${CORAL};color:#fff;padding:4px 26px;border:6px solid #000;box-shadow:10px 10px 0 #000">I'm not buying it</span></div>`:''}`,DEEP)}
+ case 'demis':{if(clipAt(t))return '';return card(`<div class=abs style="inset:0;background:${TEAL}"></div><div class=abs style="right:-100px;top:200px;width:620px;height:620px;border-radius:50%;background:${CREAM}"></div>
+  <div class=abs style="right:-40px;bottom:0;width:620px;height:720px;background:url(${D}/demis_cut.png) center bottom/contain no-repeat;${rise(t,6.8,60)}"></div>
+  <div class="abs chip" style="left:44px;top:50px;background:${CREAM};color:${TEAL};${pop(t,7.0)}">GOOGLE DEEPMIND CEO</div>
+  <div class="abs disp" style="left:44px;top:130px;font-size:150px;color:${CREAM};text-shadow:8px 8px 0 ${DEEP};${rise(t,7.06)}">Demis<br>Hassabis</div>
+  <div class="abs mono" style="left:44px;bottom:24px;font-size:18px;color:${CREAM}">Photo: Arthur Petron / CC BY-SA 4.0</div>`)}
+ case 'wsj':{const n=W('2','C');return card(`<div class="abs ser" style="left:50px;right:50px;top:60px;font-size:50px;color:#111;border-bottom:3px solid #111;padding-bottom:16px">Wall Street Journal interview</div>
+  <div class="abs mono" style="left:50px;top:170px;font-size:26px;color:#555">OCT 2026 &middot; DEMIS HASSABIS, GOOGLE DEEPMIND</div>
+  <div class="abs disp" style="left:50px;right:40px;top:250px;font-size:180px;color:#111">AGI in</div>
+  <div class="abs disp" style="left:50px;top:440px;font-size:200px;${t>n-.15?pop(t,n-.15):'opacity:0'}">${BOX('2&ndash;3 years',CORAL,'#fff')}</div>`,'#fff')}
+ case 'tool':{const g=W('chatgpt,','D'),p=W('performs','D');return card(`<div class="abs mono" style="left:50px;top:50px;font-size:30px;letter-spacing:4px;color:${CORAL}">SO WHAT IS AGI?</div>
+  <div class="abs mono" style="left:50px;top:120px;font-size:30px;color:${DEEP}">TODAY'S AI, LIKE CHATGPT</div>
+  <div class="abs disp" style="left:50px;top:170px;font-size:170px;color:${DEEP};${pop(t,g-.1)}">= a tool</div>
+  <div class=abs style="left:50px;right:50px;top:420px;display:flex;flex-direction:column;gap:22px">
+   <div style="align-self:flex-end;background:${TEAL};color:#fff;border-radius:30px 30px 6px 30px;padding:20px 30px;font-size:44px;${rise(t,W('instructions','D')-.2)}">You give it instructions</div>
+   <div style="align-self:flex-start;background:#fff;color:${DEEP};border:3px solid ${DEEP};border-radius:30px 30px 30px 6px;padding:20px 30px;font-size:44px;${rise(t,p-.15)}">&hellip;and it does the task</div></div>`)}
+ case 'coworker':{if(clipAt(t))return '';return ''}
+ case 'timeline':{const rows=[['2025','5&ndash;10 years',10,W('2025,','G')],['EARLY 2026','3&ndash;5 years',5,W('2026,','H')],['NOW','2&ndash;3 years',3,W('2','I2')]];let r='';
+  rows.forEach((x,i)=>{const p=P(t,x[3]-.15,.5);r+=`<div class=abs style="left:50px;right:40px;top:${170+i*190}px;opacity:${cl((t-x[3]+.2)/.15)}"><div class=mono style="font-size:28px;color:${i==2?CORAL:TEAL}">${x[0]}</div>
+   <div style="display:flex;align-items:center;gap:22px;margin-top:8px"><div style="height:96px;width:${p*x[2]*52}px;background:${i==2?CORAL:TEAL};border-radius:14px"></div><div class=disp style="font-size:${i==2?110:90}px;color:${i==2?CORAL:DEEP};white-space:nowrap">${x[1]}</div></div></div>`});
+  const same=t>W('end','I1')-.3&&t<W('says','I2');
+  return card(`<div class="abs disp" style="left:50px;top:50px;font-size:100px;color:${DEEP}">Watch it move</div>${r}
+   ${same?`<div class=abs style="right:40px;top:60px;${pop(t,W('end','I1')-.3)}"><span class=disp style="display:inline-block;rotate:5deg;font-size:76px;background:${GOLD};color:${DEEP};padding:4px 18px;border:5px solid ${DEEP}">Same year!</span></div>`:''}`)}
+ case 'debate':{const j2=W('or','J2');return card(`<div class=abs style="inset:0;background:${DEEP}"></div>
+  <div class="abs mono" style="left:50px;top:60px;font-size:30px;letter-spacing:4px;color:${GOLD}">SO EITHER...</div>
+  <div class=abs style="left:50px;right:50px;top:140px;background:${CREAM};color:${TEAL};border-radius:26px;padding:34px 36px;${pop(t,W('either','J'))}"><div class=disp style="font-size:96px">Google sees something we can't</div></div>
+  <div class="abs disp" style="left:0;right:0;top:450px;text-align:center;font-size:70px;color:${CREAM};opacity:${P(t,j2-.2)}">or</div>
+  <div class=abs style="left:50px;right:50px;top:530px;background:${CORAL};color:#fff;border-radius:26px;padding:34px 36px;${t>j2-.1?pop(t,j2-.1):'opacity:0'}"><div class=disp style="font-size:96px">Everyone's just impatient</div></div>`,DEEP)}
+ case 'science':return '';
+ case 'foryou':return card(`<div class=abs style="inset:0;background:${GOLD}"></div><div class="abs disp" style="left:50px;right:50px;top:150px;font-size:170px;color:${DEEP};${pop(t,W("what's",'L'))}">What's in it for you?</div>`,GOLD);
+ case 'dev':return '';
+ case 'researcher':{const n2=W('learn','N2');return card(`<div class="abs mono" style="left:50px;top:50px;font-size:30px;letter-spacing:4px;color:${CORAL}">IF YOU'RE AN</div>
+  <div class="abs disp" style="left:50px;top:100px;font-size:150px;color:${DEEP};${pop(t,W('ai','N'))}">AI researcher</div>
+  <div class=abs style="left:50px;right:50px;top:300px;background:${TEAL};color:#fff;border-radius:26px;padding:30px 36px;${rise(t,W('safety','N')-.1)}"><div class=disp style="font-size:84px">Safety + testing = the big need</div></div>
+  <div class=abs style="left:50px;right:50px;top:530px;background:${CORAL};color:#fff;border-radius:26px;padding:26px 36px;${t>n2-.1?rise(t,n2-.1):'opacity:0'}"><div class=mono style="font-size:24px">LEARN</div><div style="font-size:46px;margin-top:6px">How to measure what models can really do</div></div>`)}
+ case 'shot':{const y=W('2028,','O');return card(`<div class=abs style="inset:0;background:${DEEP}"></div>
+  <div class=abs style="left:0;right:0;top:80px;text-align:center;${pop(t,W('screenshot','O'))}"><span class=chip style="background:${CREAM};color:${TEAL};font-size:34px">SCREENSHOT THIS</span></div>
+  <div class="abs disp" style="left:0;right:0;top:170px;text-align:center;font-size:330px;color:${GOLD};${t>y-.2?pop(t,y-.2):'opacity:0'}">2028</div>
+  <div class="abs disp" style="left:0;right:0;top:540px;text-align:center;font-size:84px;color:${CREAM};opacity:${P(t,W('look','O')-.2)}">One of us will look very stupid</div>`,DEEP)}
+ case 'comment':{const s=W('comment','P');const ys=['2027','2028','2030','2035','NEVER'];return card(`<div class="abs disp" style="left:50px;right:50px;top:70px;font-size:120px;color:${DEEP}">When does AGI show up?</div>
+  <div class=abs style="left:50px;right:50px;top:360px;display:flex;gap:16px;flex-wrap:wrap">${ys.map((y,i)=>`<span class=disp style="font-size:96px;background:${i==1?CORAL:'#fff'};color:${i==1?'#fff':TEAL};border:4px solid ${TEAL};padding:4px 22px;border-radius:18px;opacity:${P(t,s+.15*i)}">${y}</span>`).join('')}</div>
+  <div class=abs style="left:50px;top:640px;opacity:${P(t,s+1)}"><span class=chip style="background:${TEAL};color:#fff">COMMENT YOUR YEAR &middot; FOLLOW @THEAIKHABARI</span></div>`)}
+ }return ''}
+// labels drawn over clips
+function CLIPLABEL(t){const c=clipAt(t);if(!c)return '';const k=CLIPS.indexOf(c);let top='';
+ if(k===1){const tx=W('taxes,','E'),sc=W('science','E');top=`<div class=abs style="left:30px;top:30px;right:30px"><span class=disp style="font-size:80px;background:${CORAL};color:#fff;padding:2px 18px">AGI = a coworker who learns any job</span></div>
+  <div class=abs style="left:30px;bottom:90px;display:flex;gap:14px"><span class=chip style="background:#fff;color:${DEEP};font-size:34px;opacity:${P(t,tx-.1)}">your taxes</span><span class=chip style="background:#fff;color:${DEEP};font-size:34px;opacity:${P(t,sc-.1)}">&rarr; science experiments</span></div>`}
+ if(k===0)top=`<div class=abs style="left:30px;top:30px"><span class=disp style="font-size:84px;background:${GOLD};color:${DEEP};padding:2px 18px">Nobel Prize 2024 &middot; Chemistry</span></div>`;
+ if(k===2)top=`<div class=abs style="left:30px;top:30px"><span class=disp style="font-size:84px;background:${CORAL};color:#fff;padding:2px 18px">First big wins: science</span></div>`;
+ if(k===3){const m=W('months,','K2');top=`<div class=abs style="left:30px;top:30px;right:30px"><span class=disp style="font-size:76px;background:${CREAM};color:${DEEP};padding:2px 18px">New medicines: <s style="text-decoration-color:${CORAL};text-decoration-thickness:8px">~10 years</s> ${t>m-.1?BOX('months',CORAL,'#fff'):''}</span></div>`}
+ if(k===4)top=`<div class=abs style="left:30px;top:30px;right:30px"><span class=mono style="font-size:28px;background:${DEEP};color:${GOLD};padding:6px 14px">IF YOU'RE A DEVELOPER</span><br><span class=disp style="display:inline-block;margin-top:12px;font-size:76px;background:${CORAL};color:#fff;padding:2px 18px">Directing AI agents &gt; typing code</span></div>`;
+ return `${top}<div class=abs style="left:30px;bottom:24px;font-family:Mono;font-size:20px;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px">${c[2]} &middot; ${c[3]}</div>`}
+function setT(t){
+ let cur=SC[0];for(const s of SC) if(t>=s[0]) cur=s;
+ const key=cur[1],typ=cur[2],clip=clipAt(t);
+ const aFull=MODE==='full'&&typ==='A';
+ // background with holes
+ let holes='';
+ if(MODE==='split'){holes+=rr(VID.x,VID.y,VID.w,VID.h,36); if(clip) holes+=rr(BOXR.x,BOXR.y,BOXR.w,BOXR.h,34);}
+ else { if(aFull) holes+='M0,0h1080v1920h-1080z'; else if(clip) holes+=rr(BOXR.x,BOXR.y,BOXR.w,BOXR.h,34);}
+ const full='M0,0H1080V1920H0Z';
+ document.getElementById('bgg').innerHTML=aFull?'':`<path d="${full} ${holes}" fill="${TEAL}" fill-rule="evenodd"/><path d="${full} ${holes}" fill="url(#dots)" fill-rule="evenodd"/>`;
+ // deco shapes (behind boxes, outside holes)
+ let deco='';
+ if(!aFull){deco=MODE==='split'?`<div class=abs style="left:-120px;top:1858px;width:1400px;height:200px;background:${CORAL};transform:rotate(-2deg)"></div><div class=abs style="right:-150px;top:-150px;width:300px;height:300px;border-radius:50%;border:26px solid ${GOLD};opacity:.9"></div>`:`<div class=abs style="left:-140px;top:1110px;width:300px;height:300px;border-radius:50%;background:${CORAL};opacity:.95"></div><div class=abs style="right:-110px;top:120px;width:260px;height:260px;border-radius:50%;border:26px solid ${GOLD};opacity:.9"></div>`;
+  if(MODE==='full') deco+=`<div class=abs style="left:-200px;top:1700px;width:1500px;height:400px;background:${CORAL};transform:rotate(-4deg)"></div>`;}
+ document.getElementById('deco').innerHTML=deco;
+ // visual box
+ let v='';
+ if(MODE==='split'||!aFull){
+   const inner=clip?CLIPLABEL(t):VIS(key,t);
+   const lt=t-cur[0];const ent=MODE==='full'?`transform:translateY(${(1-eo(lt/.25))*80}px);opacity:${cl(lt/.12)}`:'';
+   v=`<div class=abs style="left:${BOXR.x}px;top:${BOXR.y}px;width:${BOXR.w}px;height:${BOXR.h}px;border-radius:34px;${ent}">${inner}</div>`;
+ } else {
+   // A-roll full screen: top title chip
+   const titles={hook:'',debate:'',foryou:"WHAT'S IN IT FOR YOU?",shot:'SCREENSHOT THIS',comment:'COMMENT YOUR YEAR 👇'};
+   let tt='';
+   if(key==='hook'){const s2=W("i'm",'A2');tt=`<div class=abs style="left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(0,30,34,.85),transparent)"></div><div class="abs disp" style="left:0;right:0;top:170px;text-align:center;font-size:124px;text-shadow:0 8px 30px rgba(0,0,0,.6)">AGI in <span style="color:${GOLD}">2&ndash;3 years?</span></div>${t>s2-.1?`<div class=abs style="left:0;right:0;top:330px;text-align:center;${pop(t,s2-.1)}"><span class=disp style="display:inline-block;rotate:-4deg;font-size:110px;background:${CORAL};color:#fff;padding:4px 26px;border:6px solid ${DEEP};box-shadow:10px 10px 0 ${DEEP}">I'm not buying it</span></div>`:''}`}
+   else if(key==='debate'){const j2=W('or','J2');tt=`<div class=abs style="left:0;right:0;top:0;height:600px;background:linear-gradient(180deg,rgba(0,30,34,.85),transparent)"></div><div class=abs style="left:0;right:0;top:180px;text-align:center;${pop(t,W('either','J'))}"><span class=disp style="display:inline-block;font-size:88px;background:${CREAM};color:${TEAL};padding:6px 22px;rotate:-2deg">Google sees something?</span></div>${t>j2-.1?`<div class=abs style="left:0;right:0;top:320px;text-align:center;${pop(t,j2-.1)}"><span class=disp style="display:inline-block;font-size:88px;background:${CORAL};color:#fff;padding:6px 22px;rotate:2deg">or just impatient?</span></div>`:''}`}
+   else if(key==='shot'){const y=W('2028,','O');tt=`<div class=abs style="left:0;right:0;top:0;height:640px;background:linear-gradient(180deg,rgba(0,30,34,.85),transparent)"></div><div class=abs style="left:0;right:0;top:180px;text-align:center"><span class=chip style="background:${CREAM};color:${TEAL};font-size:34px">SCREENSHOT THIS</span></div>${t>y-.2?`<div class="abs disp" style="left:0;right:0;top:250px;text-align:center;font-size:250px;color:${GOLD};text-shadow:10px 10px 0 ${DEEP};${pop(t,y-.2)}">2028</div>`:''}`}
+   else if(key==='comment'){const s=W('comment','P');const ys=['2027','2028','2030','2035','NEVER'];tt=`<div class=abs style="left:0;right:0;top:0;height:640px;background:linear-gradient(180deg,rgba(0,30,34,.85),transparent)"></div><div class=abs style="left:40px;right:40px;top:170px;background:#fff;color:#111;border-radius:26px;padding:22px 28px;box-shadow:0 20px 50px rgba(0,0,0,.35)"><div class=mono style="font-size:24px;color:#666">COMMENT THE YEAR AGI SHOWS UP</div><div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap">${ys.map((y,i)=>`<span class=disp style="font-size:60px;background:${i==1?CORAL:CREAM};color:${i==1?'#fff':TEAL};padding:4px 16px;border-radius:12px;opacity:${P(t,s+.15*i)}">${y}</span>`).join('')}</div></div><div class=abs style="left:0;right:0;top:460px;text-align:center;opacity:${P(t,s+1)}"><span class=chip style="background:${TEAL};color:#fff">FOLLOW @THEAIKHABARI</span></div>`}
+   else if(key==='tool'||key==='coworker'){const e=W('but','E');const g=W('chatgpt,','D');
+     const L=`<div style="flex:1;background:${CREAM};color:${DEEP};border-radius:24px;padding:18px 22px;box-shadow:8px 8px 0 ${DEEP};${pop(t,Math.max(16.9,g-.2))}"><div class=mono style="font-size:22px">TODAY'S AI &middot; CHATGPT</div><div class=disp style="font-size:76px;margin-top:4px">= A tool</div><div style="font-size:28px;margin-top:6px">you instruct, it does a task</div></div>`;
+     const R2=t>e-.1?`<div style="flex:1;background:${CORAL};color:#fff;border-radius:24px;padding:18px 22px;box-shadow:8px 8px 0 ${DEEP};${pop(t,e-.1)}"><div class=mono style="font-size:22px">AGI</div><div class=disp style="font-size:76px;margin-top:4px">= A coworker</div><div style="font-size:28px;margin-top:6px">learns any job: ${t>W('taxes,','E')-.1?'taxes':''}${t>W('science','E')-.1?' &rarr; science':''}</div></div>`:`<div style="flex:1"></div>`;
+     tt=`<div class=abs style="left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(0,30,34,.9),transparent)"></div><div class="abs mono" style="left:40px;top:150px;font-size:28px;letter-spacing:4px;color:${GOLD}">SO WHAT IS AGI?</div><div class=abs style="left:40px;right:40px;top:200px;display:flex;gap:22px">${L}${R2}</div>`}
+   else if(key==='researcher'){const n2=W('learn','N2');
+     tt=`<div class=abs style="left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(0,30,34,.9),transparent)"></div><div class=abs style="left:40px;right:40px;top:150px;${pop(t,W('ai','N'))}"><span class=mono style="font-size:26px;letter-spacing:4px;color:${GOLD}">IF YOU'RE AN AI RESEARCHER</span><div style="margin-top:12px;background:${CREAM};color:${DEEP};border-radius:24px;padding:16px 24px;box-shadow:8px 8px 0 ${DEEP}"><div class=disp style="font-size:78px">Safety + testing = the big need</div></div>${t>n2-.1?`<div style="margin-top:16px;display:inline-block;background:${CORAL};color:#fff;border-radius:20px;padding:10px 22px;font-size:36px;${pop(t,n2-.1)}"><b>Learn:</b> measure what models can really do</div>`:''}</div>`}
+   else tt=`<div class=abs style="left:0;right:0;top:0;height:520px;background:linear-gradient(180deg,rgba(0,30,34,.85),transparent)"></div><div class=abs style="left:0;right:0;top:190px;text-align:center;${pop(t,cur[0]+.15)}"><span class=disp style="display:inline-block;font-size:110px;background:${GOLD};color:${DEEP};padding:6px 26px">${titles[key]}</span></div>`;
+   v=tt;
+ }
+ document.getElementById('vis').innerHTML=v;
+ // frames (borders)
+ let fr='';
+ if(MODE==='split'){fr+=`<div class=abs style="left:${VID.x-8}px;top:${VID.y-8}px;width:${VID.w+16}px;height:${VID.h+16}px;border-radius:44px;border:8px solid ${CORAL};box-shadow:0 18px 40px rgba(0,0,0,.35)"></div>
+  <div class=abs style="left:${VID.x+24}px;top:${VID.y+22}px"><span class=chip style="background:${CORAL};color:#fff;font-size:22px;padding:6px 16px">&#9679; LIVE TAKE</span></div>`;
+  fr+=`<div class=abs style="left:${BOXR.x-8}px;top:${BOXR.y-8}px;width:${BOXR.w+16}px;height:${BOXR.h+16}px;border-radius:42px;border:8px solid ${CREAM};box-shadow:0 18px 40px rgba(0,0,0,.3)"></div>`;}
+ else if(!aFull){fr+=`<div class=abs style="left:${BOXR.x-8}px;top:${BOXR.y-8}px;width:${BOXR.w+16}px;height:${BOXR.h+16}px;border-radius:42px;border:8px solid ${CREAM};box-shadow:12px 12px 0 ${DEEP}"></div>`;}
+ document.getElementById('frames').innerHTML=fr;
+ // header
+ document.getElementById('hdr').innerHTML=`<div class=abs style="left:56px;top:${MODE==='split'?96:100}px;font-family:Mono;font-size:24px;letter-spacing:4px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)"><span style="color:${CORAL}">&#9679;</span> THE AI KHABARI</div>`;
+ document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
+ // captions
+ const cap=document.getElementById('cap');cap.style.top=(aFull?1250:CAPY)+'px';
+ const i=WD.findIndex(w=>t>=w.s-.02&&t<w.e+.12);
+ if(i<0){cap.innerHTML='';return}
+ const G=window.__G||(window.__G=(()=>{const gs=[];let c=[];WD.forEach((w,k)=>{if(c.length&&(c.length>=3||/[.,?!]$/.test(WD[k-1].w)||w.s-WD[k-1].e>0.45)){gs.push(c);c=[]}c.push(k)});if(c.length)gs.push(c);return gs})());
+ const grp=G.find(g=>g.includes(i));
+ const hot=w=>/^(agi|2|3|5|10|2025|2026|2028|nobel|google|deepmind|chatgpt|tool|co-worker|months|developer|researcher|safety|stupid|screenshot|comment|demis|hassabis)/i.test(nm(w));
+ cap.innerHTML=grp.map(k=>{const w=WD[k],on=k===i;return `<span style="${on?'background:'+CORAL+';color:#fff;transform:scale(1.08)':(hot(w.w)?'color:'+GOLD:'color:#fff')}">${w.w.replace(/,$/,'')}</span>`}).join(' ');
+}
+setT(0);
+</script></body></html>
