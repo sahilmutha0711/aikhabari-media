@@ -27,3 +27,4 @@
 | 2026-10-19 | Google code-review prompt carousel (5 slides) https://www.instagram.com/p/DernQe-lDBd/ | no photo; dark code windows | — (palette: flat tangerine #FF8A00 + ink #1C0B00) |
 | 2026-10-20 | [C] Meta Muse agent shared seller's address Reel (Harry, 41 s, controversial test day 1) https://www.instagram.com/reel/DeuQZ_Kje8f/ | cover: Mark Zuckerberg 2019 (cropped).jpg photo card + "Meta's AI gave out a seller's address" + WHO'S WRONG? stamp | Mark Zuckerberg (palette: cream paper #F3EEE4 + electric blue #2F6BFF circle + ink #111216 band; red #FF4D4D stamps) |
 | 2026-10-20 | [G] Paul Graham startup-idea rules carousel (5 slides) https://www.instagram.com/p/DeuQcm3Gzg6/ | no photo | — (palette: charcoal #16171B + cream cards + gold #E9B949) |
+| 2026-10-21 | [G] Raise-negotiation prompt carousel (4 slides, brief caption) https://www.instagram.com/p/Dew10BSlN7_/ | no photo | — (palette: black #111 + sunflower #FFC93C + cream #F7F3EA last slide) |
