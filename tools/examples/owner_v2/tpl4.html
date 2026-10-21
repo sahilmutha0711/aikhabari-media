@@ -33,8 +33,8 @@ const VID=MODE==='split'?{x:50,y:1120,w:980,h:730}:null;
 const CAPY=MODE==='split'?960:1210;
 // scenes [start,key,type]
 const SC=[[0,'hook','A'],[6.6,'demis','B'],[12.5,'wsj','B'],[16.9,'tool','A'],[24.0,'coworker','A'],[31.8,'timeline','B'],[47.8,'debate','A'],[54.4,'science','B'],[63.7,'foryou','A'],[65.4,'dev','B'],[71.4,'researcher','A'],[79.2,'shot','A'],[84.5,'comment','A']];
-const CLIPS=[[9.8,12.45,'AlphaFold, the AI behind his 2024 Nobel Prize in Chemistry','Video: Jumper et al., Nature 2021 / CC BY 4.0'],[54.4,58.6,'An AlphaFold protein prediction','Video: EMBL-EBI AlphaFold / CC BY 4.0'],[58.6,63.75,'Medicine research','Video: yourgenome / CC BY 3.0'],[65.4,71.35,'AI agents doing the hands-on work','Video: Szymanski et al. / CC BY 4.0']];
-const clipAt=t=>CLIPS.find(c=>t>=c[0]&&t<c[1]);
+const CLIPS=[[9.8,12.45,'AlphaFold, the AI behind his 2024 Nobel Prize in Chemistry','Video: Jumper et al., Nature 2021 / CC BY 4.0'],[24.0,31.75,'A self-driving lab: robots running science experiments','Video: Szymanski et al. / CC BY 4.0'],[54.4,58.6,'An AlphaFold protein prediction','Video: EMBL-EBI AlphaFold / CC BY 4.0'],[58.6,63.75,'Medicine research','Video: yourgenome / CC BY 3.0'],[65.4,71.35,'AI agents doing the hands-on work','Video: Szymanski et al. / CC BY 4.0']];
+const clipAt=t=>CLIPS.find(c=>t>=c[0]&&t<c[1]&&c[0]!==24.0);
 const rr=(x,y,w,h,r)=>`M${x+r},${y}h${w-2*r}a${r},${r} 0 0 1 ${r},${r}v${h-2*r}a${r},${r} 0 0 1 -${r},${r}h-${w-2*r}a${r},${r} 0 0 1 -${r},-${r}v-${h-2*r}a${r},${r} 0 0 1 ${r},-${r}z`;
 // visual content inside the box (local coords w x h)
 function VIS(key,t){const w=BOXR.w,h=BOXR.h;
