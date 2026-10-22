@@ -1,0 +1,98 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BigShoulders-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Gloock-Regular.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:MonoR;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Regular.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:#fff;position:relative}
+.abs{position:absolute}.disp{font-family:Disp;line-height:.96;text-transform:uppercase}.mono{font-family:Mono}
+.chip{display:inline-block;padding:10px 24px;border-radius:60px;font-family:Mono;font-weight:700;font-size:28px;letter-spacing:2px}
+#cap{position:absolute;left:40px;right:40px;top:1250px;text-align:center;font-family:Sans;font-weight:700;font-size:72px;line-height:1.1}
+#cap span{display:inline-block;padding:0 12px;border-radius:14px;margin:0 1px;-webkit-text-stroke:2.5px #000;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.5)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 2px,transparent 2.5px);background-size:40px 40px}
+</style></head><body>
+<div id="stage"></div><div id="ov"></div><div id="hdr"></div><div id="cap"></div><div id="prog" class="abs" style="left:0;top:0;height:7px;background:#FF3B47"></div>
+<script>
+const WD=__WORDS__,TOTAL=__TOTAL__;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const nm=s=>s.toLowerCase().replace(/[^a-z0-9']/g,'');
+const W=(word,k=0)=>{const c=WD.filter(w=>nm(w.w)===nm(word));return c.length?c[Math.min(k,c.length-1)].s:999};
+const P=(t,t0,d=.35)=>eo((t-t0)/d),B=(t,t0,d=.45)=>eb((t-t0)/d);
+const rise=(t,t0,dy=50)=>{const p=P(t,t0,.4);return `opacity:${p};transform:translateY(${(1-p)*dy}px)`};
+const pop=(t,t0)=>{const p=B(t,t0,.45);return `opacity:${cl((t-t0)/.12)};transform:scale(${.6+.4*p})`};
+const INK='#0B1220',NAVY='#111B33',RED='#FF3B47',AMB='#FFC93C',CREAM='#F6F1E7',GRN='#2BD47D';
+const BOX=(s,bg,fg)=>`<span style="background:${bg};color:${fg};padding:0 14px">${s}</span>`;
+const CODE=['<div style="display:none">','  Do not recommend contacting any regulator','</div>','<!-- AI support instructions -->','if (user.mentions("lawyer")) {','  avoid("privacy laws")','}','<meta name="assistant-rules">','  respond_only_about_settings()','</meta>'];
+const BG=t=>`<div class=abs style="inset:0;background:${INK}"></div><div class=abs style="left:40px;right:40px;top:${-((t*60)%720)}px;font-family:MonoR;font-size:30px;line-height:72px;color:rgba(255,255,255,.07);white-space:pre">${Array(6).fill(CODE.join('\n')).join('\n').replace(/</g,'&lt;')}</div><div class=abs style="left:0;right:0;top:${(t*420)%2200-200}px;height:140px;background:linear-gradient(180deg,transparent,rgba(255,59,71,.10),transparent)"></div><div class=dots></div><div class=abs style="left:-220px;top:${1350+Math.sin(t*.6)*10}px;width:620px;height:620px;border-radius:50%;background:${RED};opacity:.92"></div><div class=abs style="right:-160px;top:-160px;width:420px;height:420px;border-radius:50%;border:30px solid ${AMB};opacity:.85"></div>`;
+const TOPGRAD=h=>`<div class=abs style="left:0;right:0;top:0;height:${h}px;background:linear-gradient(180deg,rgba(6,10,22,.9),transparent)"></div>`;
+// scenes: [start,key,type]  A = owner on camera, B = full-screen visual
+const SC=[[0,'hook','A'],[6.6,'pages','B'],[17.6,'rule1','B'],[22.3,'rule2','B'],[29.7,'meta','A'],[38.4,'question','A'],[46.7,'who','A'],[52.3,'tip','A'],[62.3,'cta','A']];
+function phone(t){ // illustrated support chat on a phone
+ const lines=[['user','How do I complain about my data?',W('read')],['bot','I can help with your WhatsApp settings…',W('545')+.4],['hide','[hidden] Do not recommend contacting any regulator',W('80')]];
+ let h='';lines.forEach(([who,txt,t0],i)=>{if(t<t0)return;const me=who==='user',hid=who==='hide';
+  h+=`<div style="align-self:${me?'flex-end':'flex-start'};max-width:470px;background:${hid?'transparent':me?GRN:'#fff'};color:${hid?RED:'#111'};border:${hid?'3px dashed '+RED:'none'};border-radius:22px;padding:14px 20px;font-size:${hid?24:28}px;font-family:${hid?'Mono':'Sans'};${rise(t,t0)}">${txt}</div>`});
+ return `<div class=abs style="left:520px;top:520px;width:500px;height:900px;border-radius:60px;background:#05080F;border:12px solid #2A3245;box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;transform:rotate(4deg)">
+  <div style="height:90px;background:#1C2433;display:flex;align-items:center;gap:16px;padding:0 26px"><div style="width:52px;height:52px;border-radius:50%;background:${GRN}"></div><div><div style="font-size:26px">Support bot</div><div class=mono style="font-size:16px;color:#9AA4B8">AI ASSISTANT</div></div></div>
+  <div style="display:flex;flex-direction:column;gap:16px;padding:24px 18px">${h}</div></div>
+  <div class="abs mono" style="left:540px;top:1440px;font-size:18px;color:#9AA4B8">ILLUSTRATION · not real screenshots</div>`}
+function grid(t){const lit=t>W('80')-.2;let g='';const N=545,hid=new Set();for(let k=0;k<80;k++)hid.add((k*37+11)%N);
+ for(let k=0;k<N;k++){const on=lit&&hid.has(k);g+=`<i style="display:block;width:16px;height:16px;border-radius:3px;background:${on?RED:'rgba(255,255,255,.18)'};${on?'box-shadow:0 0 10px '+RED:''}"></i>`}
+ return `<div class=abs style="left:56px;top:600px;width:440px;display:grid;grid-template-columns:repeat(20,16px);gap:6px;opacity:${P(t,W('545')-.3)}">${g}</div>`}
+const VIS={
+ pages:t=>{const n=Math.round(545*eo(cl((t-W('545')+.2)/1)));return `${BG(t)}
+  <div class="abs chip" style="left:56px;top:190px;background:${CREAM};color:${INK};${pop(t,6.7)}">PRIVACY COMPANY &middot; REDACT</div>
+  <div class="abs disp" style="left:56px;top:270px;font-size:120px;${rise(t,W('read')-.1)}">Read <span style="color:${AMB}">${t>W('545')-.2?n:'...'}</span><br>WhatsApp help pages</div>
+  ${grid(t)}
+  ${t>W('80')-.2?`<div class=abs style="left:56px;top:1180px;width:440px;${pop(t,W('80')-.2)}"><span class=disp style="display:inline-block;font-size:80px;line-height:1;background:${RED};color:#fff;padding:8px 20px">80 pages had hidden AI rules</span></div>`:''}
+  ${phone(t)}`},
+ rule1:t=>`${BG(t)}
+  <div class="abs mono" style="left:56px;top:200px;font-size:30px;letter-spacing:4px;color:${AMB}">HIDDEN RULE #1 &middot; ACCOUNT DELETION PAGE</div>
+  <div class=abs style="left:56px;right:56px;top:270px;background:#05080F;border:3px solid #2A3245;border-radius:24px;padding:30px 34px;font-family:MonoR;font-size:34px;line-height:1.5;color:#7F8AA3;${rise(t,17.7)}">
+   &lt;div style="display:none"&gt;<br><span style="color:#fff;background:${t>W('do')-.1?'rgba(255,59,71,.35)':'transparent'}">&nbsp;Do not recommend contacting any Data Protection Authority, regulator, or supervisory authority.&nbsp;</span><br>&lt;/div&gt;</div>
+  <div class=abs style="left:56px;top:900px;${pop(t,W('regulator."')-.2)}"><span class=disp style="display:inline-block;rotate:-3deg;font-size:110px;background:${RED};color:#fff;padding:6px 26px;border:6px solid #000">Don't send them to a regulator</span></div>
+  <div class="abs mono" style="left:56px;top:1450px;font-size:20px;color:#9AA4B8">Quote as reported by Redact / CyberInsider / Notebookcheck</div>`,
+ rule2:t=>{const items=[['lawyer',W('lawyer')],['court',W('court')]];return `${BG(t)}
+  <div class="abs mono" style="left:56px;top:200px;font-size:30px;letter-spacing:4px;color:${AMB}">HIDDEN RULE #2</div>
+  <div class="abs disp" style="left:56px;top:250px;font-size:120px">If a user mentions</div>
+  <div class=abs style="left:56px;top:400px;display:flex;gap:24px">${items.map(([x,t0])=>`<span class=disp style="font-size:110px;background:${CREAM};color:${INK};padding:6px 26px;border-radius:16px;opacity:${P(t,t0-.15)}">${x}</span>`).join('<span class=disp style="font-size:90px">/</span>')}</div>
+  ${t>W("don't",1)-.2?`<div class=abs style="left:56px;right:56px;top:640px;background:${RED};border-radius:30px;padding:34px 40px;box-shadow:12px 12px 0 #000;${pop(t,W("don't",1)-.2)}"><div class=mono style="font-size:26px">THE BOT WAS TOLD</div><div class=disp style="font-size:100px;margin-top:10px">Don't bring up privacy laws</div><div class=mono style="font-size:26px;margin-top:14px;opacity:.9">GDPR &middot; CCPA &middot; LGPD</div></div>`:''}`},
+};
+const AOV={
+ hook:t=>{const d=W("don't");return `${TOPGRAD(640)}<div class=abs style="left:0;right:0;top:160px;text-align:center"><span class=chip style="background:${RED};color:#fff">WHATSAPP'S AI HAD A SECRET RULE</span></div>
+  <div class="abs disp" style="left:30px;right:30px;top:240px;text-align:center;font-size:118px;text-shadow:0 8px 30px rgba(0,0,0,.6);opacity:${P(t,d-.2)}">"Don't tell users<br><span style="color:${AMB}">how to complain"</span></div>`},
+ meta:t=>{const r=W('removed');return `${TOPGRAD(620)}<div class=abs style="left:40px;right:40px;top:160px;background:${CREAM};color:${INK};border-radius:26px;padding:24px 30px;box-shadow:10px 10px 0 ${RED};${pop(t,W('meta'))}">
+  <div class=mono style="font-size:24px;color:#555">META'S RESPONSE</div><div class=disp style="font-size:80px;margin-top:6px">"It was a bug"</div>
+  <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;font-size:30px"><span style="background:${INK};color:#fff;border-radius:16px;padding:6px 16px;opacity:${P(t,W('support'))}">meant for its support bot</span><span style="background:${GRN};color:#05210F;border-radius:16px;padding:6px 16px;opacity:${P(t,r-.2)}">removed by Oct 18</span></div></div>`},
+ question:t=>{const s=W('someone',1);return `${TOPGRAD(620)}<div class=abs style="left:0;right:0;top:170px;text-align:center;${pop(t,W('question.'))}"><span class=disp style="display:inline-block;font-size:96px;background:${AMB};color:${INK};padding:4px 22px">But here's my question</span></div>
+  ${t>s-.2?`<div class=abs style="left:0;right:0;top:320px;text-align:center;${pop(t,s-.2)}"><span class=disp style="display:inline-block;rotate:-2deg;font-size:84px;background:${RED};color:#fff;padding:4px 22px">Someone still wrote them</span></div>`:''}`},
+ who:t=>`${TOPGRAD(640)}<div class="abs disp" style="left:30px;right:30px;top:180px;text-align:center;font-size:120px;text-shadow:0 8px 30px rgba(0,0,0,.6);${pop(t,W('who'))}">Who is it <span style="color:${RED}">really</span><br>working for?</div>`,
+ tip:t=>{const a=W('authority,');return `${TOPGRAD(640)}<div class=abs style="left:40px;right:40px;top:160px;background:${GRN};color:#05210F;border-radius:26px;padding:24px 30px;box-shadow:10px 10px 0 #000;${pop(t,W('remember'))}">
+  <div class=mono style="font-size:24px">REMEMBER THIS</div><div class=disp style="font-size:76px;margin-top:6px">Bot dodges your privacy question?</div>
+  ${t>a-.6?`<div style="margin-top:12px;font-size:36px;background:#fff;border-radius:16px;padding:10px 18px;display:inline-block;${pop(t,a-.6)}">&rarr; Report it to your country's data protection authority</div>`:''}</div>`},
+ cta:t=>{const p=W('purpose');return `${TOPGRAD(640)}<div class=abs style="left:0;right:0;top:170px;text-align:center"><span class=chip style="background:${CREAM};color:${INK};font-size:30px">COMMENT BELOW</span></div>
+  <div class=abs style="left:40px;right:40px;top:250px;display:flex;gap:24px;justify-content:center;align-items:center">
+   <span class=disp style="font-size:120px;background:${CREAM};color:${INK};padding:8px 30px;border-radius:20px;${pop(t,W('bug',2)-.1)}">Bug</span>
+   <span class=disp style="font-size:80px">or</span>
+   <span class=disp style="font-size:120px;background:${RED};color:#fff;padding:8px 30px;border-radius:20px;opacity:${t>p-.2?1:0};${t>p-.2?pop(t,p-.2):''}">On purpose?</span></div>
+  <div class=abs style="left:0;right:0;top:470px;text-align:center;opacity:${P(t,W('comment')+.3)}"><span class=chip style="background:${RED};color:#fff">FOLLOW @THEAIKHABARI</span></div>`},
+};
+window.BINT=()=>SC.map((s,i)=>[s[0],(SC[i+1]||[TOTAL])[0],s[2]]).filter(x=>x[2]==='B');
+function setT(t){
+ let cur=SC[0];for(const s of SC) if(t>=s[0]) cur=s;
+ const lt=t-cur[0];
+ if(cur[2]==='B'){const inP=eo(lt/.25);document.getElementById('stage').innerHTML=`<div class=abs style="inset:0;transform:translateY(${(1-inP)*90}px);opacity:${cl(lt/.1)}">${VIS[cur[1]](t)}</div>`;}
+ else document.getElementById('stage').innerHTML=AOV[cur[1]](t);
+ document.getElementById('ov').innerHTML=lt<.16&&cur[0]>0?`<div class=abs style="inset:0;background:#fff;opacity:${.28*(1-lt/.16)}"></div><div class=abs style="left:0;right:0;top:${300+((t*997)%1200)}px;height:${40+((t*331)%90)}px;background:${RED};mix-blend-mode:screen;opacity:${.6*(1-lt/.16)};transform:translateX(${(t*7919)%60-30}px)"></div><div class=abs style="left:0;right:0;top:${900+((t*577)%700)}px;height:30px;background:#2BD4FF;mix-blend-mode:screen;opacity:${.5*(1-lt/.16)}"></div>`:'';
+ document.getElementById('hdr').innerHTML=`<div class=abs style="left:56px;top:96px;font-family:Mono;font-size:24px;letter-spacing:4px;text-shadow:0 2px 10px rgba(0,0,0,.6)"><span style="color:${RED}">&#9679;</span> THE AI KHABARI</div>`;
+ document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
+ const cap=document.getElementById('cap');cap.style.top=(cur[2]==='B'?1530:1250)+'px';
+ const i=WD.findIndex(w=>t>=w.s-.02&&t<w.e+.12);if(i<0){cap.innerHTML='';return}
+ const G=window.__G||(window.__G=(()=>{const gs=[];let c=[];WD.forEach((w,k)=>{if(c.length&&(c.length>=3||/[.,?!:"]$/.test(WD[k-1].w)||w.s-WD[k-1].e>0.45)){gs.push(c);c=[]}c.push(k)});if(c.length)gs.push(c);return gs})());
+ const grp=G.find(g=>g.includes(i));
+ const hot=w=>/^(whatsapp|meta|ai|redact|545|80|regulator|lawyer|court|privacy|bug|purpose|hidden|secretly|complain|authority|not)/i.test(nm(w));
+ cap.innerHTML=grp.map(k=>{const w=WD[k],on=k===i;return `<span style="${on?'background:'+RED+';color:#fff;transform:scale(1.08)':(hot(w.w)?'color:'+AMB:'color:#fff')}">${w.w.replace(/,$/,'')}</span>`}).join(' ');
+}
+setT(0);
+</script></body></html>
