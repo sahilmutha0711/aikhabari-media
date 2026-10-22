@@ -34,3 +34,7 @@ Line 10-20: the greeting Reel got our first real shares (4) and the most reach, 
 | 10-21 | [G] Paul Graham carousel (charcoal/gold) | 126 views, reach 35, 1 save, 7 likes (most likes ever) | |
 | 10-21 update | Tenstorrent Reel 263 views, 4 shares, 2 saves, skip 73.8% · Google code-review carousel 136 views |
 Line 10-21: the controversial Reel flopped in the first 3 s: frame 1 was a 10-word text wall on a pale background with no face/visual until ~4 s, and "I'll say it" is a slow opener. The Tenstorrent Reel (face + 3 brand words in frame 1) holds best. Today (C day 2): FACE or striking visual in frame 1, ≤ 6-word hook in giant type, the controversial claim spoken in the first 2 s, strong saturated scene first (not pale paper).
+| 10-22 | [C] AGI owner-recorded Reel (full-screen v2, 1:28, owner on camera, real B-roll clips) | 1,188 views/16h, reach 887 (4x our best), 39 LIKES, 2 real comments (years!), 1 share, 1 save, avg watch 11.0 s (best ever), skip 66.6% (best ever) | BREAKOUT |
+| 10-22 | [G] Raise carousel (black/yellow, brief caption) | 169 views, reach 44, 0 likes | |
+| 10-22 update | Muse Reel 106 views, skip 88% · PG carousel 141 views, 7 likes, 1 save |
+Line 10-22: the owner's own face + voice + a debate hook + "comment your year" CTA beat every AI-voiced Reel by ~4x reach, ~2x watch time and got real comments. Owner-recorded Reels are the growth engine — today: send the owner tomorrow's script first thing; keep ElevenLabs out (blocked anyway).
