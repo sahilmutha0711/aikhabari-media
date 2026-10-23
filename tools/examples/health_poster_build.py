@@ -25,7 +25,7 @@ body=f"""<div class=grid></div>
 <div class="a m" style="left:56px;top:46px;font-size:20px;letter-spacing:3px">&#9679; THE AI KHABARI</div>
 <div class="a m" style="left:56px;top:96px;font-size:19px;letter-spacing:2px;color:#8A5A00">DOCTORS &middot; MEDICAL CODERS &middot; BILLING &middot; PHARMA</div>
 <div class="a d" style="left:56px;right:330px;top:138px;font-size:72px">Work in healthcare? Claude has a <span class=hl>medical toolkit</span> now.</div>
-<div class="a" style="left:56px;right:330px;top:375px;font-family:Ser;font-size:40px;line-height:1.1">Real medical databases, plugged straight into the chat.</div>
+<div class="a" style="left:56px;right:40px;top:378px;font-family:Ser;font-size:42px;line-height:1.1">Real medical databases, plugged straight into the chat.</div>
 <div class="a" style="left:56px;top:470px"><span class=lab>CONNECTORS &middot; LIVE MEDICAL DATA</span></div>
 <div class=a style="left:56px;right:56px;top:520px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
 {C('ICD-10','Diagnosis + procedure codes, from CMS and CDC data')}
