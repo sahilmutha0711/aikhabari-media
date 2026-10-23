@@ -1,0 +1,131 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Gloock-Regular.ttf')}
+@font-face{font-family:Ital;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:#fff;position:relative}
+.abs{position:absolute}
+.stk{display:inline-block;background:#FFF8EC;color:#1A1033;border-radius:24px;padding:12px 28px;font-family:Disp;box-shadow:0 16px 44px rgba(20,8,50,.35);line-height:1.12}
+.chip{display:inline-block;font-family:Mono;font-weight:700;letter-spacing:2px;border-radius:40px;padding:10px 22px;font-size:26px}
+.card{border-radius:40px;overflow:hidden;box-shadow:0 30px 80px rgba(10,4,30,.45);border:3px solid rgba(255,214,120,.75)}
+#cap{position:absolute;left:36px;right:36px;text-align:center;font-family:Sans;font-weight:700;line-height:1.12}
+#cap span{display:inline-block;padding:2px 14px;border-radius:16px;margin:0 2px;-webkit-text-stroke:3px #120830;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.45)}
+</style></head><body>
+<div id="stage"></div><div id="hdr"></div><div id="cap"></div>
+<div id="prog" class="abs" style="left:0;top:0;height:8px;background:linear-gradient(90deg,#FFB020,#FF6A1A)"></div>
+<script>
+const WD=__WORDS__,TOTAL=__TOTAL__,MODE='__MODE__',A='file:///home/claude/reels/hanuman/a/';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(t,t0)=>{const p=eb((t-t0)/.5);return `opacity:${cl((t-t0)/.1)};transform:scale(${.7+.3*p}) rotate(${(1-p)*-3}deg)`};
+const slide=(t,t0)=>{const p=eo((t-t0)/.45);return `opacity:${cl((t-t0)/.15)};transform:translateY(${(1-p)*90}px)`};
+const fade=(t,t0,d=.5)=>cl((t-t0)/d);
+const SAF='#FFB020',ORA='#FF6A1A',INK='#1A1033',IVO='#FFF8EC';
+const HL=(s,c=SAF,f=INK)=>`<span style="background:${c};color:${f};padding:0 12px;border-radius:12px">${s}</span>`;
+const SC=[[0,'hook','A'],[9.1,'army','B'],[13.3,'ocean','B'],[18.0,'cant','B'],[21.0,'quiet','A'],[24.5,'doubt','B'],[29.5,'jamb','B'],[36.7,'strength','B'],[40.8,'jai','A'],[44.9,'leap','B'],[47.7,'office','A'],[49.4,'dev','B'],[58.8,'designer','B'],[66.3,'talent','A'],[72.0,'skill','A'],[77.3,'cta','A']];
+const segStart=t=>{let c=SC[0];for(const s of SC) if(t>=s[0]) c=s;return c};
+// painting in a rect: blurred cover behind + contain in front, slow ken burns
+const PAINT=(img,t,t0,o={})=>{const k=1+(o.z||.07)*cl((t-t0)/6),px=(o.pan||0)*cl((t-t0)/6);const pos=o.pos||'50% 50%';const filt=o.gray?`filter:grayscale(${o.gray}) brightness(.92)`:(o.glow?`filter:saturate(1.15) brightness(${1+.08*Math.sin(t*3)})`:'');
+ return `<div class=abs style="inset:0;background:url('${A}${img}') center/cover;filter:blur(36px) brightness(.55) saturate(1.2);transform:scale(1.2)"></div>
+ <div class=abs style="inset:0;background:url('${A}${img}') ${pos}/${o.cover?'cover':'contain'} no-repeat;transform:scale(${k}) translateX(${px}px);${filt}"></div>`};
+const CREDIT=s=>`<div class=abs style="right:18px;bottom:14px;font-family:Mono;font-weight:700;font-size:17px;color:rgba(255,255,255,.8);text-shadow:0 1px 4px #000">${s}</div>`;
+const RVV='Painting: Raja Ravi Varma (public domain)';
+// ---- panel content (inside the visual rect) per scene ----
+const PANEL={
+ hook:t=>PAINT('bhakta.jpg',t,0,{z:.1})+CREDIT('Ravi Varma Press (public domain)'),
+ army:t=>(t<12.0?PAINT('ramapanchayan.jpg',t,9.1):`<div class=abs style="inset:0;opacity:${fade(t,12.0,.4)}">${PAINT('sita.jpg',t,12.0,{cover:true})}</div>`)+CREDIT(t<12?RVV:'Painting: unknown artist (public domain)'),
+ ocean:t=>CREDIT('Video: Mostafameraji (CC0)'),
+ cant:t=>PAINT('allies.jpg',t,18.0)+CREDIT('Company School painting (public domain)'),
+ quiet:t=>PAINT('hanuman_hill.jpg',t,21.0,{gray:.85})+CREDIT(RVV),
+ doubt:t=>PAINT('hanuman_hill.jpg',t,21.0,{gray:.85,z:.12})+CREDIT(RVV),
+ jamb:t=>PAINT('jambavan_meet.jpg',t,29.5,{z:.12,cover:true,pos:'72% 60%'})+CREDIT('Pahari painting, 1700s (public domain)'),
+ strength:t=>PAINT('hanuman_mountain.jpg',t,36.7,{glow:1,z:.1})+CREDIT('Ravi Varma Press (public domain)'),
+ jai:t=>PAINT('hanuman_mountain.jpg',t,40.8,{glow:1,z:.06,cover:true,pos:'50% 30%'})+CREDIT('Ravi Varma Press (public domain)'),
+ leap:t=>PAINT('leap.jpg',t,44.9,{cover:true,z:.12,pan:-30})+CREDIT('Pahari painting (public domain)'),
+ office:t=>OFFICE(t,47.7,0),
+ dev:t=>OFFICE(t,49.4,1),
+ designer:t=>DESIGN(t),
+ talent:t=>PAINT('bhakta.jpg',t,66.3,{z:.08})+CREDIT('Ravi Varma Press (public domain)'),
+ skill:t=>PAINT('jambavan_meet.jpg',t,72.0,{cover:true,pos:'72% 60%',z:.08})+CREDIT('Pahari painting, 1700s (public domain)'),
+ cta:t=>PAINT('hanuman_mountain.jpg',t,77.3,{glow:1,cover:true,pos:'50% 30%'})+CREDIT('Ravi Varma Press (public domain)'),
+};
+const TILE=(name,col,me,t)=>`<div style="background:${me?'#2A1D5C':'#24263A'};border-radius:20px;position:relative;display:flex;align-items:center;justify-content:center;${me?'outline:4px solid '+SAF:''}"><div style="width:96px;height:96px;border-radius:50%;background:${col};display:flex;align-items:center;justify-content:center;font-family:Disp;font-size:40px;color:#fff">${name[0]}</div><div style="position:absolute;left:12px;bottom:10px;font-size:20px;color:#ddd;font-family:Sans">${name}${me?' 🔇':''}</div></div>`;
+function OFFICE(t,t0,stage){
+ const board=t>55.3;
+ let h=`<div class=abs style="inset:0;background:linear-gradient(160deg,#1B1438,#2B1E5C)"></div><div class=abs style="left:24px;top:20px" ><span class=chip style="background:rgba(255,255,255,.12);color:#fff;font-size:20px">ILLUSTRATION</span></div>`;
+ if(!board){
+  h+=`<div class=abs style="left:30px;right:30px;top:80px;bottom:30px;display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:14px;${slide(t,t0)}">${TILE('Priya','#E0457B',0)}${TILE('Alex','#3B82F6',0)}${TILE('Sam','#10B981',0)}${TILE('Dev (you)','#FF6A1A',1)}${TILE('Mira','#8B5CF6',0)}${TILE('Jon','#F59E0B',0)}</div>`;
+  if(stage&&t>53.2) h+=`<div class=abs style="left:60px;right:60px;top:${MODE==='split'?250:300}px;text-align:center;${pop(t,53.2)}"><span class=stk style="font-size:${MODE==='split'?54:62}px">💭 "I'm not that good enough…"</span></div>`;
+ } else {
+  const tasks=['Fix the login bug','Ship v2 release','Review 14 pull requests','Unblock the API team','Write the launch doc'];
+  h+=`<div class=abs style="left:34px;right:34px;top:84px;${slide(t,55.3)}"><div style="font-family:Disp;font-size:40px;color:#fff;margin-bottom:14px">Project board</div>${tasks.map((x,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;background:#fff;color:${INK};border-radius:18px;padding:${MODE==='split'?'12px':'16px'} 22px;margin-bottom:12px;font-size:${MODE==='split'?30:34}px;opacity:${fade(t,55.5+i*.35,.3)}"><span>✅ ${x}</span><span style="background:${ORA};color:#fff;border-radius:30px;padding:4px 16px;font-size:24px">Dev</span></div>`).join('')}</div>`;
+ }
+ return h}
+function DESIGN(t){
+ const flip=t>62.9;
+ let h=`<div class=abs style="inset:0;background:linear-gradient(160deg,#1B1438,#3A1F4F)"></div><div class=abs style="left:24px;top:20px"><span class=chip style="background:rgba(255,255,255,.12);color:#fff;font-size:20px">ILLUSTRATION</span></div>
+ <div class=abs style="left:60px;right:60px;top:90px;bottom:60px;background:#F4F1EA;border-radius:26px;${slide(t,58.8)}">
+  <div style="position:absolute;left:40px;top:40px;width:46%;height:44%;border-radius:22px;background:linear-gradient(135deg,#FF6A1A,#E0457B)"></div>
+  <div style="position:absolute;right:40px;top:40px;width:38%;height:20%;border-radius:18px;background:#1A1033"></div>
+  <div style="position:absolute;right:40px;top:28%;width:38%;height:16%;border-radius:18px;background:#FFB020"></div>
+  <div style="position:absolute;left:40px;right:40px;bottom:40px;height:22%;border-radius:18px;background:#E6E0F5"></div>
+  ${flip?`<div style="position:absolute;inset:0;border-radius:26px;box-shadow:inset 0 0 ${60+30*Math.sin(t*4)}px rgba(255,176,32,.9)"></div>`:''}</div>`;
+ if(t>61.1&&!flip) h+=`<div class=abs style="left:60px;right:60px;top:${MODE==='split'?280:330}px;text-align:center;${pop(t,61.1)}"><span class=stk style="font-size:60px">😟 "AI will replace me"</span></div>`;
+ if(flip) h+=`<div class=abs style="left:60px;right:60px;top:${MODE==='split'?250:300}px;text-align:center;${pop(t,62.9)}"><span class=stk style="font-size:60px;background:${SAF}">⚡ AI = a new power</span></div>`+(t>64.2?`<div class=abs style="left:60px;right:60px;top:${MODE==='split'?370:430}px;text-align:center;${pop(t,64.2)}"><span class=stk style="font-size:46px">waiting to be used</span></div>`:'');
+ return h}
+// ---- text blocks under the card (FULL B scenes) / overlays inside panel (SPLIT) ----
+const TXT={
+ hook:t=>[`<span class=stk style="font-size:52px">The greatest hero of the Ramayana 🙏</span>`,t>2.7?`<span class=stk style="font-size:64px;background:${SAF}">forgot how strong he was</span>`:'',t>5.3?`<span class=stk style="font-size:46px;background:${INK};color:#fff">…and in this AI world, so have we 🤖</span>`:''],
+ army:t=>[`<span class=chip style="background:${SAF};color:${INK}">${t<12?'LORD RAM &middot; MATA SITA':'SEARCHING FOR MATA SITA'}</span>`],
+ ocean:t=>[`<span class=chip style="background:${IVO};color:${INK}">🌊 THE EDGE OF THE OCEAN</span>`,t>16.3?`<span class=stk style="font-size:58px;background:${SAF}">Lanka was on the other side →</span>`:''],
+ cant:t=>[t>19.8?`<span class=stk style="font-size:56px">"I can't make that jump."</span>`:`<span class=chip style="background:${IVO};color:${INK}">ONE BY ONE, THE WARRIORS…</span>`],
+ quiet:t=>[`<span class=stk style="font-size:58px">And Lord Hanuman? 🤍</span>`,t>22.7?`<span class=stk style="font-size:52px;background:${INK};color:#fff">He sat quietly.</span>`:''],
+ doubt:t=>[`<span class=chip style="background:${IVO};color:${INK}">THE ONE WHO COULD CROSS THE OCEAN…</span>`,t>26.5?`<span class=stk style="font-size:56px;background:${INK};color:#fff">…didn't believe he could.</span>`:''],
+ jamb:t=>[`<span class=chip style="background:${SAF};color:${INK}">JAMBAVAN JI &middot; THE WISE ELDER</span>`,t>34.1?`<span class=stk style="font-family:Ser;font-size:54px;white-space:normal;max-width:900px">"Hanuman, you have forgotten ${HL('who you are')}."</span>`:''],
+ strength:t=>[`<span class=chip style="background:${IVO};color:${INK}">HE REMINDED LORD HANUMAN OF</span>`,t>38.8?`<span class=stk style="font-size:58px;background:${SAF}">the strength he was born with 🔥</span>`:''],
+ jai:t=>[`<span class=stk style="font-size:52px">Lord Hanuman stood up</span>`,t>43.7?`<span class=stk style="font-family:Ser;font-size:96px;background:linear-gradient(90deg,${SAF},${ORA});color:#fff;-webkit-text-stroke:0">Jai Shri Ram 🚩</span>`:''],
+ leap:t=>[`<span class=stk style="font-size:56px;background:${SAF}">He leaped across the ocean 🌊</span>`],
+ office:t=>[`<span class=stk style="font-size:58px">Now look around your office 👀</span>`],
+ dev:t=>[`<span class=chip style="background:${IVO};color:${INK}">THE QUIET DEVELOPER</span>`,t>56.9?`<span class=stk style="font-size:50px;background:${SAF}">…holding the whole project together</span>`:''],
+ designer:t=>[`<span class=chip style="background:${IVO};color:${INK}">THE WORRIED DESIGNER</span>`],
+ talent:t=>[`<span class=stk style="font-size:56px">Not short of talent ✋</span>`,t>69.3?`<span class=stk style="font-size:56px;background:${SAF}">We just forgot our real strength 💪</span>`:''],
+ skill:t=>[`<span class=stk style="font-size:50px">You don't need a skill upgrade</span>`,t>75.4?`<span class=stk style="font-size:62px;background:${SAF}">You need a Jambavan 🤝</span>`:''],
+ cta:t=>[`<span class=stk style="font-size:46px;white-space:normal;max-width:940px">📩 Send this to the person who reminds you who you are</span>`,t>81.5?`<span class=stk style="font-family:Ser;font-size:66px;background:${SAF}">You're stronger than you think 🙏</span>`:''],
+};
+const TXT0={hook:0,army:9.1,ocean:13.3,cant:18,quiet:21,doubt:24.5,jamb:29.5,strength:36.7,jai:40.8,leap:44.9,office:47.7,dev:49.4,designer:58.8,talent:66.3,skill:72,cta:77.3};
+const SUBT={hook:[0,2.7,5.3],quiet:[21,22.7],ocean:[13.3,16.3],doubt:[24.5,26.5],jamb:[29.5,34.1],strength:[36.7,38.8],jai:[40.8,43.7],dev:[49.4,56.9],talent:[66.3,69.3],skill:[72,75.4],cta:[77.3,81.5],cant:[18],army:[9.1],leap:[44.9],office:[47.7],designer:[58.8]};
+function texts(key,t){const arr=TXT[key](t),st=SUBT[key];return arr.map((h,i)=>h?`<div style="margin-top:14px;${pop(t,st[i]??TXT0[key])}">${h}</div>`:'').join('')}
+// rects
+const R_FULL={x:60,y:270,w:960,h:1000},R_SPLIT={x:50,y:150,w:980,h:760},R_OWN={x:50,y:1010,w:980,h:870};
+window.RECTS={full:R_FULL,split:R_SPLIT,own:R_OWN};
+window.BINT=()=>SC.map((s,i)=>[s[0],(SC[i+1]||[TOTAL])[0],s[2],s[1]]);
+function setT(t){
+ const cur=segStart(t),key=cur[1],typ=cur[2];let h='';
+ if(MODE==='full'){
+  if(typ==='B'){
+   const R=R_FULL,hole=key==='ocean';
+   h+=`<div class="abs card" style="left:${R.x}px;top:${R.y}px;width:${R.w}px;height:${R.h}px;${hole?'background:transparent;box-shadow:none':''};${slide(t,cur[0])}">${PANEL[key](t)}</div>`;
+   h+=`<div class=abs style="left:50px;right:50px;top:${R.y+R.h+20}px;text-align:center">${texts(key,t)}</div>`;
+  } else {
+   h+=`<div class=abs style="left:40px;right:40px;top:150px;text-align:center">${texts(key,t)}</div>`;
+  }
+ } else {
+  const R=R_SPLIT,hole=key==='ocean';
+  h+=`<div class="abs card" style="left:${R.x}px;top:${R.y}px;width:${R.w}px;height:${R.h}px;${hole?'background:transparent;box-shadow:none':''}"><div class=abs style="inset:0;${fade(t,cur[0],.35)<1?`opacity:${fade(t,cur[0],.35)}`:''}">${PANEL[key](t)}</div>
+   <div class=abs style="left:20px;right:20px;bottom:${typ==='B'||key==='hook'?40:40}px;text-align:center;transform:scale(.86);transform-origin:50% 100%">${texts(key,t)}</div></div>`;
+  const O=R_OWN;h+=`<div class=abs style="left:${O.x-3}px;top:${O.y-3}px;width:${O.w+6}px;height:${O.h+6}px;border-radius:43px;border:3px solid rgba(255,214,120,.75);box-shadow:0 30px 80px rgba(10,4,30,.45)"></div>`;
+ }
+ document.getElementById('stage').innerHTML=h;
+ document.getElementById('hdr').innerHTML=`<div class=abs style="left:56px;top:${MODE==='split'?60:90}px;font-family:Mono;font-size:24px;letter-spacing:4px;text-shadow:0 2px 10px rgba(0,0,0,.6)">● THE AI KHABARI</div>`;
+ document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
+ const cap=document.getElementById('cap');
+ if(MODE==='split'){cap.style.top='924px';cap.style.fontSize='54px'} else {cap.style.top=(typ==="B"?1640:1470)+'px';cap.style.fontSize='70px'}
+ const i=WD.findIndex(w=>t>=w.s-.02&&t<w.e+.15);if(i<0){cap.innerHTML='';return}
+ const G=window.__G||(window.__G=(()=>{const gs=[];let c=[];WD.forEach((w,k)=>{if(c.length&&(c.length>=3||/[.,?!:"]$/.test(WD[k-1].w)||w.s-WD[k-1].e>0.45)){gs.push(c);c=[]}c.push(k)});if(c.length)gs.push(c);return gs})());
+ const grp=G.find(g=>g.includes(i));
+ cap.innerHTML=grp.map(k=>{const w=WD[k],on=k===i;return `<span style="${on?'background:'+SAF+';color:'+INK+';-webkit-text-stroke:0;transform:scale(1.08) rotate(-2deg)':'color:#fff'}">${w.w.replace(/,$/,'')}</span>`}).join(' ');
+}
+setT(0);
+</script></body></html>
