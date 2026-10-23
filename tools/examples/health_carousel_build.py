@@ -54,13 +54,13 @@ S.append(f"""<div class=a style="left:64px;top:130px"><span class=chip>CONNECTOR
 <div class=a style="left:64px;right:64px;top:430px;display:flex;flex-direction:column;gap:40px">
 {tool('#','#6B3DF0','ICD-10','Look up diagnosis and procedure codes, from CMS and CDC data.','"Which ICD-10 code fits type 2 diabetes with kidney disease?"')}
 {tool('&#10003;','#FF7A59','CMS Coverage','What Medicare covers: local and national coverage rules for prior auth and appeals.','"What does Medicare require to cover a knee MRI?"')}
-</div><div class="a s" style="left:64px;right:64px;top:1130px;font-size:46px;line-height:1.1">Fewer denied claims start with the right code.</div>""")
+</div><div class="a s" style="left:64px;right:64px;top:1185px;font-size:46px;line-height:1.1">Fewer denied claims start with the right code.</div>""")
 S.append(f"""<div class=a style="left:64px;top:130px"><span class=chip>CONNECTORS &middot; 2 / 2</span></div>
 <div class="a d" style="left:64px;right:64px;top:200px;font-size:84px">Providers and research, verified</div>
 <div class=a style="left:64px;right:64px;top:430px;display:flex;flex-direction:column;gap:40px">
 {tool('ID','#1C1530','NPI Registry','Verify any US provider for credentialing, directories and claims.','"Check the NPI and specialty for Dr. [name], [city]"')}
 {tool('&#9783;','#E0A100','PubMed','Search 35M+ biomedical papers and get answers with citations.','"Latest trials on GLP-1 drugs and sleep apnea, with links"')}
-</div><div class="a s" style="left:64px;right:64px;top:1130px;font-size:46px;line-height:1.1">Every answer with a source you can check.</div>""")
+</div><div class="a s" style="left:64px;right:64px;top:1185px;font-size:46px;line-height:1.1">Every answer with a source you can check.</div>""")
 S.append(f"""<div class=a style="left:64px;top:130px"><span class=chip>AGENT SKILLS &middot; READY-MADE WORKFLOWS</span></div>
 <div class="a d" style="left:64px;right:64px;top:200px;font-size:84px">Hours of paperwork, as one skill</div>
 <div class=a style="left:64px;right:64px;top:430px;display:flex;flex-direction:column;gap:40px">
