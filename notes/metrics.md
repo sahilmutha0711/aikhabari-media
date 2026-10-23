@@ -38,3 +38,6 @@ Line 10-21: the controversial Reel flopped in the first 3 s: frame 1 was a 10-wo
 | 10-22 | [G] Raise carousel (black/yellow, brief caption) | 169 views, reach 44, 0 likes | |
 | 10-22 update | Muse Reel 106 views, skip 88% · PG carousel 141 views, 7 likes, 1 save |
 Line 10-22: the owner's own face + voice + a debate hook + "comment your year" CTA beat every AI-voiced Reel by ~4x reach, ~2x watch time and got real comments. Owner-recorded Reels are the growth engine — today: send the owner tomorrow's script first thing; keep ElevenLabs out (blocked anyway).
+| 10-23 | [C] WhatsApp owner Reel (mesh, 1:08) | 433 views/17h, reach 263, 31 likes, 3 comments, 2 saves, 0 shares, avg watch 15.1 s (BEST EVER), SKIP 54.2% (BEST EVER) | |
+| 10-23 update | AGI owner Reel 1,408 views, reach 1,051, 9 SHARES (record), 41 likes, 5 comments, skip 66.8% · Raise carousel 202 views, reach 53, 0 likes/saves | |
+Line 10-23 (C-test verdict, 3 days): controversy works only with the owner's face. Muse (AI voice, text hook) 93% skip; AGI (owner) 1.4k views + 9 shares; WhatsApp (owner) best-ever hold (54% skip, 15 s avg). Keep C hooks + owner on camera; carousels are stuck at ~50 reach, so lean on Reels and keep carousels to 1/day or fewer.
