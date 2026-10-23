@@ -77,9 +77,12 @@ S.append(f"""<div class=a style="left:64px;top:130px"><span class=chip>SWITCH IT
 <div class="a glass" style="left:64px;right:64px;top:210px;padding:36px 40px;font-size:38px;line-height:1.6">
 <b>1.</b> claude.ai &rarr; Settings &rarr; <b>Connectors</b><br><b>2.</b> Add ICD-10, CMS Coverage, NPI, PubMed<br><b>3.</b> Ask in plain English</div>
 <div class="a t" style="left:64px;right:64px;top:600px;font-size:28px">Pro, Max, Team, Enterprise. Patient data only in a HIPAA-ready (Enterprise) setup.</div>
-<div class="a d" style="left:64px;right:64px;top:740px;font-size:84px">Send this to the <span class=hl>doctor</span> in your family.</div>
-<div class="a" style="left:64px;top:1000px"><span class=d style="font-size:50px;background:#fff;padding:10px 24px;border-radius:18px;letter-spacing:-1px">Save + follow @theaikhabari</span></div>
-<div class="a m" style="left:64px;right:64px;top:1150px;font-size:17px;line-height:1.5;color:#5B536E">Source: Anthropic, "Advancing Claude in healthcare and the life sciences" (Jan 2026); Help Net Security. Example questions are ours. Not medical advice. Not sponsored.</div>""")
+<div class="a d" style="left:64px;right:64px;top:700px;font-size:72px">Know someone in <span class=hl>healthcare</span>? Send this to them.</div>
+<div class="a glass" style="left:64px;right:64px;top:900px;padding:26px 34px">
+ <div class="s" style="font-size:42px;line-height:1.1">In healthcare yourself?</div>
+ <div style="font-family:Disp;font-size:44px;letter-spacing:-1px;margin-top:10px"><span style="background:#1C1530;color:#fff;padding:2px 14px;border-radius:12px">Save this</span> + follow <span style="color:#6B3DF0">@theaikhabari</span></div>
+ <div class=t style="font-size:28px;margin-top:8px">New AI tools for your field, every week.</div></div>
+<div class="a m" style="left:64px;right:64px;top:1180px;font-size:17px;line-height:1.5;color:#5B536E">Source: Anthropic, "Advancing Claude in healthcare and the life sciences" (Jan 2026); Help Net Security. Example questions are ours. Not medical advice. Not sponsored.</div>""")
 N=len(S)
 with sync_playwright() as p:
     b=p.chromium.launch(args=['--allow-file-access-from-files'])
