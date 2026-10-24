@@ -41,3 +41,7 @@ Line 10-22: the owner's own face + voice + a debate hook + "comment your year" C
 | 10-23 | [C] WhatsApp owner Reel (mesh, 1:08) | 433 views/17h, reach 263, 31 likes, 3 comments, 2 saves, 0 shares, avg watch 15.1 s (BEST EVER), SKIP 54.2% (BEST EVER) | |
 | 10-23 update | AGI owner Reel 1,408 views, reach 1,051, 9 SHARES (record), 41 likes, 5 comments, skip 66.8% · Raise carousel 202 views, reach 53, 0 likes/saves | |
 Line 10-23 (C-test verdict, 3 days): controversy works only with the owner's face. Muse (AI voice, text hook) 93% skip; AGI (owner) 1.4k views + 9 shares; WhatsApp (owner) best-ever hold (54% skip, 15 s avg). Keep C hooks + owner on camera; carousels are stuck at ~50 reach, so lean on Reels and keep carousels to 1/day or fewer.
+| 10-24 | [E/G] Hanuman × AI owner Reel (1:24) | 926 views/18h, reach 716, 9 SHARES, 39 likes, 7 comments, avg watch 10.2 s, skip 61.4% | 2nd-best reach ever, ties share record |
+| 10-24 | [E] Healthcare toolkit carousel (mesh) | 175 views, reach 46, 3 likes, 0 saves/shares | carousels still ~50 reach |
+| 10-24 update | WhatsApp Reel 521 views, skip 51.5%, 15.7 s avg · AGI Reel 1,441 views, 10 shares | |
+Line 10-24: the mythology × tech owner Reel matched the AGI Reel's shares (9) on day 1 and drew warm comments ("music on point") — story + owner face works as well as controversy. Carousels stay at ~50 reach no matter the design: keep 1 photo post/day (owner rule) but put the effort into owner Reels.
