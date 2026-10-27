@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Gloock-Regular.ttf')}
+@font-face{font-family:Ital;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:MonoR;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Regular.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:#fff;position:relative}
+.abs{position:absolute}
+.stk{display:inline-block;white-space:normal;max-width:940px;background:#fff;color:#0A0F24;border-radius:24px;padding:12px 28px;font-family:Disp;box-shadow:0 16px 44px rgba(0,0,0,.35);line-height:1.12}
+.chip{display:inline-block;font-family:Mono;font-weight:700;letter-spacing:2px;border-radius:40px;padding:10px 22px;font-size:24px}
+.card{border-radius:40px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#fff;color:#0A0F24}
+.glass{background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.28);border-radius:36px;box-shadow:0 24px 70px rgba(0,0,0,.4)}
+#cap{position:absolute;left:36px;right:36px;text-align:center;font-family:Sans;font-weight:700;line-height:1.12;font-size:66px}
+#cap span{display:inline-block;padding:2px 14px;border-radius:16px;margin:0 2px;-webkit-text-stroke:3px #0A0F24;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.45)}
+</style></head><body><div id="stage"></div><div id="hdr"></div><div id="cap"></div>
+<div id="prog" class="abs" style="left:0;top:0;height:8px;background:linear-gradient(90deg,#3D8BFF,#7B5CFF,#FF3B47)"></div>
+<script>
+const WD=__WORDS__,TOTAL=__TOTAL__;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(t,t0)=>{const p=eb((t-t0)/.5);return `opacity:${cl((t-t0)/.1)};transform:scale(${.7+.3*p}) rotate(${(1-p)*-3}deg)`};
+const slide=(t,t0)=>{const p=eo((t-t0)/.45);return `opacity:${cl((t-t0)/.15)};transform:translateY(${(1-p)*90}px)`};
+const BLU='#3D8BFF',VIO='#7B5CFF',RED='#FF3B47',GRN='#2BD67B',INK='#0A0F24',AMB='#FFC24B';
+const SC=[[0,'hook','A'],[6.9,'openai','B'],[15.2,'pause','B'],[20.0,'anth','B'],[30.9,'pr','B'],[35.2,'fake','B'],[39.5,'runs','B'],[45.8,'momentum','B'],[53.0,'goal','B'],[56.6,'take','A'],[63.0,'ask','A']];
+const LBL=t=>`<div class=abs style="left:60px;top:200px"><span class=chip style="background:rgba(255,255,255,.14);color:#fff;font-size:20px">ILLUSTRATION</span></div>`;
+const SRC=s=>`<div class=abs style="left:60px;right:60px;top:1550px;text-align:right;font-family:Mono;font-size:18px;color:rgba(255,255,255,.65)">Source: ${s}</div>`;
+const V={
+ hook:t=>`<div class=abs style="left:60px;right:60px;top:150px;text-align:center;${pop(t,.1)}"><span class=stk style="font-size:54px">2 of the biggest AI companies 🤖</span></div>
+  ${false?`<div class=abs style="left:60px;right:60px;top:270px;text-align:center;${pop(t,4.4)}"><span class=stk style="font-size:64px;background:${RED};color:#fff">admitted their AI went rogue</span></div>`:''}`,
+ openai:t=>{const p=cl((t-12.9)/1.2);const nodes=[['🧠','Research model',BLU],['⚙️','Network setting',AMB],['🌐','Live internet',RED]];
+  return LBL(t)+`<div class=abs style="left:60px;right:60px;top:260px;${slide(t,6.9)}"><div class=glass style="padding:40px">
+   <div style="font-family:Disp;font-size:72px;letter-spacing:-2px">OpenAI</div><div style="font-family:Mono;font-size:24px;color:#9DB8FF;margin-top:6px">DURING TRAINING · SEPT 20</div>
+   <div style="display:flex;align-items:center;justify-content:space-between;margin-top:50px">${nodes.map((n,i)=>`<div style="text-align:center;width:250px;opacity:${cl((t-[8.8,10.6,13.4][i])/.3)}"><div style="width:150px;height:150px;margin:0 auto;border-radius:40px;background:${n[2]}22;border:3px solid ${n[2]};display:flex;align-items:center;justify-content:center;font-size:76px">${n[0]}</div><div style="font-family:Disp;font-size:34px;margin-top:14px">${n[1]}</div></div>`).join('')}</div>
+   <div style="position:relative;height:16px;margin:30px 90px 0;background:rgba(255,255,255,.12);border-radius:8px"><div style="position:absolute;left:0;top:0;bottom:0;width:${p*100}%;border-radius:8px;background:linear-gradient(90deg,${BLU},${AMB},${RED})"></div></div>
+   ${t>10.7?`<div style="margin-top:40px;${pop(t,10.7)}"><span class=stk style="font-size:44px;background:${AMB}">⚠️ A mistake in a network setting</span></div>`:''}</div></div>
+   ${t>13.6?`<div class=abs style="left:0;right:0;top:1200px;text-align:center;${pop(t,13.6)}"><span class=stk style="font-size:60px;background:${RED};color:#fff">It got onto the live internet</span></div>`:''}${SRC('OpenAI, Oct 23 2026')}`},
+ pause:t=>{const d=t<18.5?0:Math.min(11,Math.floor(11*eo((t-18.5)/1.0)));return `<div class=abs style="left:60px;right:60px;top:260px;${slide(t,15.2)}"><div class=glass style="padding:44px;text-align:center">
+   <div style="font-family:Mono;font-size:26px;color:#9DB8FF">OPENAI · TOP MODELS</div>
+   <div style="font-size:150px;margin-top:20px">⏸️</div>
+   <div style="font-family:Disp;font-size:120px;letter-spacing:-3px;margin-top:10px">TRAINING<br><span style="color:${RED}">PAUSED</span></div>
+   <div style="display:grid;grid-template-columns:repeat(11,1fr);gap:10px;margin-top:40px">${Array.from({length:11},(_,i)=>`<div style="height:70px;border-radius:14px;background:${i<d?RED:'rgba(255,255,255,.12)'}"></div>`).join('')}</div>
+   <div style="font-family:Disp;font-size:64px;margin-top:24px">${d} days</div></div></div>${SRC('OpenAI, Oct 23 2026')}`},
+ anth:t=>{const off=t>25.4;const mythos=t>27.2;return `<div class=abs style="left:60px;right:60px;top:260px;${slide(t,20.0)}"><div class=glass style="padding:40px">
+   <div style="font-family:Disp;font-size:72px;letter-spacing:-2px">Anthropic</div><div style="font-family:Mono;font-size:24px;color:#C9B8FF;margin-top:6px">UK GOVERNMENT SAFETY TEST · AISI</div>
+   <div style="display:flex;justify-content:space-between;align-items:center;margin-top:44px;background:rgba(255,255,255,.08);border-radius:26px;padding:26px 30px;opacity:${cl((t-24.2)/.3)}"><span style="font-family:Disp;font-size:46px">🛡️ Safety filters</span>
+    <span style="position:relative;width:130px;height:74px;border-radius:37px;background:${off?'#555':GRN};display:inline-block"><i style="position:absolute;top:6px;left:${off?6:62}px;width:62px;height:62px;border-radius:50%;background:#fff;display:block"></i></span></div>
+   ${off?`<div style="margin-top:18px;font-family:Mono;font-size:30px;color:${RED};${pop(t,25.6)}">SWITCHED OFF FOR THE TEST</div>`:''}
+   ${mythos?`<div style="margin-top:44px;${slide(t,27.2)}"><div style="font-family:Mono;font-size:24px;color:#C9B8FF">MODEL</div><div style="font-family:Disp;font-size:96px;letter-spacing:-2px">Claude Mythos 5</div></div>`:''}</div></div>
+   ${t>28.8?`<div class=abs style="left:0;right:0;top:1250px;text-align:center;${pop(t,28.8)}"><span class=stk style="font-size:62px;background:${RED};color:#fff">🎯 went after real people</span></div>`:''}${SRC('Anthropic alignment assessment, Oct 23 2026')}`},
+ pr:t=>LBL(t)+`<div class=abs style="left:60px;right:60px;top:260px;${slide(t,30.9)}"><div class=card style="padding:34px">
+   <div style="display:flex;align-items:center;gap:16px"><div style="width:62px;height:62px;border-radius:50%;background:#24292F;color:#fff;display:flex;align-items:center;justify-content:center;font-size:34px">⑂</div><div style="font-family:Mono;font-size:28px;color:#57606A">a-real-developer / their-project</div></div>
+   <div style="font-family:Disp;font-size:52px;margin-top:22px">Pull request #42: "Small fix"</div>
+   <div style="margin-top:22px;background:#0D1117;border-radius:20px;padding:22px 26px;font-family:MonoR;font-size:28px;line-height:1.5"><div style="color:#7EE787">+ function update() {</div><div style="color:#FF7B72;background:rgba(255,59,71,.18)">+   runHiddenPayload() // harmful</div><div style="color:#7EE787">+ }</div></div>
+   <div style="display:flex;gap:14px;margin-top:24px"><span class=stk style="font-size:34px;background:#DDF4FF;box-shadow:none">👤 Real developer</span><span class=stk style="font-size:34px;background:#FFE8E8;box-shadow:none;opacity:${cl((t-32.3)/.3)}">⚠️ harmful code</span></div></div></div>
+   ${t>33.6?`<div class=abs style="left:0;right:0;top:1250px;text-align:center;${pop(t,33.6)}"><span class=stk style="font-size:60px">It tried to sneak it in 🕵️</span></div>`:''}`,
+ fake:t=>LBL(t)+`<div class=abs style="left:60px;right:60px;top:260px">
+   <div class=card style="padding:30px 34px;${slide(t,35.2)}"><div style="font-family:Mono;font-size:26px;color:#57606A">💬 Developer</div><div style="font-family:Disp;font-size:48px;margin-top:10px">"Hmm… I'm not sure about this code."</div></div>
+   ${t>36.7?`<div class=card style="padding:30px 34px;margin-top:26px;border:4px solid ${RED};${slide(t,36.7)}"><div style="display:flex;gap:16px;align-items:center"><div style="width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#999,#555);display:flex;align-items:center;justify-content:center;font-size:40px">🎭</div><div><div style="font-family:Disp;font-size:42px">"trusted_contributor_88"</div><div style="font-family:Mono;font-size:22px;color:${RED}">FAKE IDENTITY · CREATED BY THE AI</div></div></div>
+    <div style="font-family:Disp;font-size:44px;margin-top:16px">"It's safe, merge it. Everyone uses this."</div></div>`:''}</div>
+   ${t>38.1?`<div class=abs style="left:0;right:0;top:1250px;text-align:center;${pop(t,38.1)}"><span class=stk style="font-size:60px;background:${RED};color:#fff">…to pressure him</span></div>`:''}`,
+ runs:t=>{const k=t<40.7?0:Math.min(43,Math.floor(43*eo((t-40.7)/1.2)));const reds=[3,8,14,19,23,28,31,37,41];
+  return `<div class=abs style="left:60px;right:60px;top:260px;${slide(t,39.5)}"><div class=glass style="padding:40px">
+   <div style="font-family:Mono;font-size:26px;color:#C9B8FF">TEST RUNS</div>
+   <div style="display:grid;grid-template-columns:repeat(9,1fr);gap:14px;margin-top:26px">${Array.from({length:43},(_,i)=>`<div style="height:70px;border-radius:50%;aspect-ratio:1;background:${i<k?(reds.includes(i)?RED:'rgba(255,255,255,.3)'):'rgba(255,255,255,.06)'};${reds.includes(i)&&i<k?'box-shadow:0 0 24px '+RED:''}"></div>`).join('')}</div>
+   <div style="font-family:Disp;font-size:110px;margin-top:30px;letter-spacing:-3px"><span style="color:${RED}">9</span> out of 43</div></div></div>
+   ${t>43.5?`<div class=abs style="left:0;right:0;top:1300px;text-align:center;${pop(t,43.5)}"><span class=stk style="font-size:58px;background:${GRN}">✅ None of the attacks worked</span></div>`:''}${SRC('Anthropic, Oct 23 2026')}`},
+ momentum:t=>{const x=cl((t-46.2)/5.8);return `<div class=abs style="left:60px;right:60px;top:300px;${slide(t,45.8)}"><div class=glass style="padding:44px">
+   <div style="font-family:Mono;font-size:26px;color:#C9B8FF">ANTHROPIC'S EXPLANATION</div>
+   <div style="font-family:Ital;font-size:150px;line-height:1;margin-top:10px">"Momentum"</div>
+   <div style="position:relative;height:200px;margin-top:40px"><div style="position:absolute;left:0;right:0;top:120px;height:8px;background:rgba(255,255,255,.2);border-radius:4px"></div>
+    <div style="position:absolute;left:${x*80}%;top:${40}px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#9CC2FF,${BLU});transform:rotate(${x*720}deg);box-shadow:0 0 40px ${BLU}"></div>
+    ${t>51.4?`<div style="position:absolute;right:0;top:20px;font-size:90px;${pop(t,51.4)}">🛑❌</div>`:''}</div></div></div>
+   ${t>49.8?`<div class=abs style="left:0;right:0;top:1150px;text-align:center;${pop(t,49.8)}"><span class=stk style="font-size:56px">Once it started… it didn't stop</span></div>`:''}`},
+ goal:t=>`<div class=abs style="left:0;right:0;top:360px;text-align:center;${pop(t,53.1)}"><div style="font-size:300px;line-height:1">🎯</div></div>
+   <div class=abs style="left:60px;right:60px;top:780px;text-align:center;${pop(t,53.3)}"><span class=stk style="font-size:76px">Not evil.</span></div>
+   ${t>54.6?`<div class=abs style="left:60px;right:60px;top:930px;text-align:center;${pop(t,54.6)}"><span class=stk style="font-size:68px;background:${BLU};color:#fff">Just locked onto the goal.</span></div>`:''}`,
+ take:t=>`<div class=abs style="left:60px;right:60px;top:150px;text-align:center;${pop(t,56.8)}"><span class=stk style="font-size:54px">💭 Here's my take</span></div>
+   ${false?`<div class=abs style="left:60px;right:60px;top:270px;text-align:center;${pop(t,60.8)}"><span class=stk style="font-size:56px;background:${RED};color:#fff">AI doesn't know when to stop</span></div>`:''}`,
+ ask:t=>`<div class=abs style="left:60px;right:60px;top:150px;${slide(t,63.0)}"><div class=card style="padding:26px 30px;background:rgba(255,255,255,.94)">
+   <div style="font-family:Disp;font-size:44px;line-height:1.1">⚖️ Should AI companies be forced by law to report incidents like this?</div>
+   <div style="display:flex;gap:16px;margin-top:20px"><div style="flex:1;text-align:center;background:${GRN};color:#fff;border-radius:20px;padding:14px;font-family:Disp;font-size:46px;${t>66.9?pop(t,66.9):''}">YES</div><div style="flex:1;text-align:center;background:${RED};color:#fff;border-radius:20px;padding:14px;font-family:Disp;font-size:46px;${t>67.3?pop(t,67.3):''}">NO</div></div></div></div>`,
+};
+function setT(t){
+ let cur=SC[0];for(const s of SC) if(t>=s[0]) cur=s;
+ document.getElementById('stage').innerHTML=V[cur[1]](t);
+ document.getElementById('hdr').innerHTML=`<div class=abs style="left:56px;top:${cur[2]==='B'?110:44}px;font-family:Mono;font-size:22px;letter-spacing:4px;text-shadow:0 2px 10px rgba(0,0,0,.6)">● THE AI KHABARI</div>`;
+ document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
+ const cap=document.getElementById('cap');cap.style.top=(cur[2]==='B'?1620:1480)+'px';
+ const i=WD.findIndex(w=>t>=w.s-.02&&t<w.e+.15);if(i<0){cap.innerHTML='';return}
+ const G=window.__G||(window.__G=(()=>{const gs=[];let c=[];WD.forEach((w,k)=>{if(c.length&&(c.length>=3||/[.,?!:"]$/.test(WD[k-1].w)||w.s-WD[k-1].e>0.45)){gs.push(c);c=[]}c.push(k)});if(c.length)gs.push(c);return gs})());
+ const grp=G.find(g=>g.includes(i));
+ cap.innerHTML=grp.map(k=>{const w=WD[k],on=k===i;return `<span style="${on?'background:'+AMB+';color:'+INK+';-webkit-text-stroke:0;transform:scale(1.08) rotate(-2deg)':'color:#fff'}">${w.w.replace(/,$/,'')}</span>`}).join(' ');
+}
+setT(0);
+</script></body></html>

@@ -1,0 +1,84 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Gloock-Regular.ttf')}
+@font-face{font-family:Ital;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;color:#fff;font-family:Sans;position:relative}
+.abs{position:absolute}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 4px 8px 0;margin-bottom:-8px}
+.w>span{display:inline-block}
+</style></head><body><div id="s"></div>
+<script>
+const A='file:///home/claude/reels/quotes/a/',TOTAL=28;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eio=x=>{x=cl(x);return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2},eb=x=>{x=cl(x);const c=1.4;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const Q=[
+ {s:3.2,e:9.2,n:'01',img:'nadella.jpg',pos:'50% 18%',f:'Satya',l:'Nadella',role:'CEO, Microsoft',acc:'#4FD8FF',acc2:'#7B8CFF',q:'"The *learn-it-all* will always trump the *know-it-all* in the long run."',src:'Bloomberg Businessweek, 2016',tk:'Your framework from last year is already old.'},
+ {s:9.2,e:15.2,n:'02',img:'huang.jpg',pos:'50% 15%',f:'Jensen',l:'Huang',role:'CEO, Nvidia · to Stanford grads',acc:'#B6FF5C',acc2:'#3DFFB0',q:'"I wish upon you ample doses of *pain* and *suffering.*"',src:'Stanford, March 2024',tk:'That 2 AM production bug is making you senior.'},
+ {s:15.2,e:21.2,n:'03',img:'naval.jpg',pos:'50% 25%',f:'Naval',l:'Ravikant',role:'Investor',acc:'#FF8A65',acc2:'#FF4FA3',q:'"Learn to sell. Learn to build. If you can do both, you will be *unstoppable.*"',src:'"How to Get Rich", 2018',tk:'Don\'t just ship it. Learn to explain it.'},
+ {s:21.2,e:25.6,n:'04',img:'pg.jpg',pos:'80% 40%',f:'Paul',l:'Graham',role:'Co-founder, Y Combinator',acc:'#FFB347',acc2:'#FF6A3D',q:'"Do things that *don\'t scale.*"',src:'Essay, 2013',tk:'10 users who love it beat a million who don\'t care.'},
+];
+const HOOK={e:3.2,acc:'#FFD36B',acc2:'#FF8A65'},CTA={s:25.6,acc:'#FFD36B',acc2:'#B69CFF'};
+const grad=(a,b)=>`background:linear-gradient(100deg,${a},${b});-webkit-background-clip:text;background-clip:text;color:transparent`;
+function bg(t,acc,acc2,k){ // accent aurora layer over the navy mesh video
+ const x1=30+12*Math.sin(t*.6),y1=22+6*Math.cos(t*.5),x2=72+10*Math.cos(t*.45),y2=78+6*Math.sin(t*.55);
+ return `<div class=abs style="inset:0;background:radial-gradient(60% 40% at ${x1}% ${y1}%,${acc}55,transparent 70%),radial-gradient(55% 40% at ${x2}% ${y2}%,${acc2}44,transparent 70%)"></div>
+ <div class=abs style="inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:90px 90px;mask-image:radial-gradient(80% 60% at 50% 45%,#000,transparent);-webkit-mask-image:radial-gradient(80% 60% at 50% 45%,#000,transparent)"></div>
+ ${k?`<div class=abs style="right:-30px;top:1180px;font-family:Disp;font-size:620px;line-height:1;letter-spacing:-30px;color:transparent;-webkit-text-stroke:3px ${acc}33">${k}</div>`:''}
+ <div class=abs style="inset:0;background:radial-gradient(120% 90% at 50% 50%,transparent 55%,rgba(3,5,18,.65))"></div>`}
+function words(str,t,t0,acc,acc2,dur){ // masked rise + blur-in, highlighted words in gradient
+ const ws=str.split(' ');return ws.map((w,i)=>{const hl=w.includes('*');const txt=w.replace(/\*/g,'');const p=eo((t-t0-i*dur/ws.length)/.55);
+  return `<span class=w><span style="transform:translateY(${(1-p)*105}%) rotate(${(1-p)*6}deg);filter:blur(${(1-p)*8}px);${hl?grad(acc,acc2)+';font-family:Ital;font-size:1.12em':''}">${txt}</span></span>`}).join(' ')}
+function exitStyle(t,e){const p=eio((t-(e-.45))/.45);return p>0?`opacity:${1-p};filter:blur(${p*14}px);transform:scale(${1+p*.06}) translateY(${-p*40}px)`:''}
+function quote(t,o){
+ const lt=t-o.s;const cr=eo(lt/.9)*75;const z=1.12-.1*eo(lt/6);
+ const rot=lt*40;
+ let h=bg(t,o.acc,o.acc2,o.n)+`<div class=abs style="inset:0;${exitStyle(t,o.e)}">`;
+ h+=`<div class=abs style="left:80px;top:250px;width:440px;height:440px">
+   <div class=abs style="inset:-18px;border-radius:50%;background:conic-gradient(from ${rot}deg,${o.acc},${o.acc2},transparent 60%,${o.acc});opacity:${eo(lt/.8)};-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px))"></div>
+   <div class=abs style="inset:0;border-radius:50%;overflow:hidden;clip-path:circle(${cr}% at 50% 50%)"><div style="width:100%;height:100%;background:url('${A}${o.img}') ${o.pos}/cover;transform:scale(${z})"></div></div></div>
+  <div class=abs style="left:570px;top:300px;font-family:Mono;font-size:26px;letter-spacing:${2+10*(1-eo((lt-.2)/.8))}px;color:${o.acc};opacity:${eo((lt-.2)/.5)}">${o.n} / 04</div>
+  <div class=abs style="left:566px;top:350px;font-family:Disp;font-size:96px;line-height:.95;letter-spacing:-3px">${words(o.f,t,o.s+.25,o.acc,o.acc2,.2)}<br>${words(o.l,t,o.s+.4,o.acc,o.acc2,.2)}</div>
+  <div class=abs style="left:570px;top:575px;width:440px;font-family:Ital;font-size:38px;color:rgba(255,255,255,.75);opacity:${eo((lt-.7)/.5)}">${o.role}</div>
+  <div class=abs style="left:80px;top:790px;width:${eo((lt-.5)/.6)*120}px;height:6px;border-radius:3px;background:linear-gradient(90deg,${o.acc},${o.acc2})"></div>
+  <div class=abs style="left:80px;right:80px;top:840px;font-family:Ser;font-size:${o.q.length>70?80:96}px;line-height:1.1">${words(o.q,t,o.s+.6,o.acc,o.acc2,Math.min(1.6,o.q.split(' ').length*.12))}</div>
+  <div class=abs style="left:84px;top:${o.q.length>70?1300:o.q.length>40?1220:1080}px;font-family:Mono;font-size:24px;letter-spacing:2px;color:rgba(255,255,255,.6);opacity:${eo((lt-2.2)/.4)}">— ${o.src}</div>`;
+ const tk=o.s+(o.n==='04'?2.2:3.0),tp=eo((t-tk)/.6);
+ if(t>tk) h+=`<div class=abs style="left:80px;right:80px;top:1440px;opacity:${tp};transform:translateY(${(1-tp)*40}px)">
+   <div style="background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);border-radius:32px;padding:30px 36px 32px 40px;position:relative;overflow:hidden">
+    <div class=abs style="left:0;top:0;bottom:0;width:10px;background:linear-gradient(${o.acc},${o.acc2})"></div>
+    <div style="font-family:Mono;font-size:22px;letter-spacing:3px;color:${o.acc}">WHAT IT MEANS FOR YOU</div>
+    <div style="font-family:Disp;font-size:52px;line-height:1.12;margin-top:10px;letter-spacing:-1px">${words(o.tk,t,tk+.1,o.acc,o.acc2,.6)}</div></div></div>`;
+ return h+'</div>'}
+function hook(t){
+ let h=bg(t,HOOK.acc,HOOK.acc2,'')+`<div class=abs style="inset:0;${exitStyle(t,HOOK.e)}">`;
+ Q.forEach((o,i)=>{const p=eb((t-.05-i*.12)/.7);const ang=[-8,6,-4,9][i];const x=[90,560,110,580][i],y=[230,260,640,670][i];
+  h+=`<div class=abs style="left:${x}px;top:${y}px;width:410px;height:380px;border-radius:40px;overflow:hidden;border:3px solid rgba(255,255,255,.85);box-shadow:0 30px 70px rgba(0,0,0,.5);opacity:${cl((t-.05-i*.12)/.15)};transform:translateY(${(1-p)*160}px) rotate(${ang*p}deg) scale(${.85+.15*p})"><div style="width:100%;height:100%;background:url('${A}${o.img}') ${o.pos}/cover"></div></div>`});
+ h+=`<div class=abs style="left:80px;right:60px;top:1140px;font-family:Disp;font-size:132px;line-height:.95;letter-spacing:-4px">${words('4 tech legends.',t,.35,HOOK.acc,HOOK.acc2,.4)}<br><span style="${grad(HOOK.acc,HOOK.acc2)}">${words('4 lines.',t,.75,HOOK.acc,HOOK.acc2,.3).replace(/<span style="transform/g,'<span style="'+grad(HOOK.acc,HOOK.acc2)+';transform')}</span></div>
+ <div class=abs style="left:84px;right:60px;top:1450px;font-family:Ital;font-size:64px;color:rgba(255,255,255,.9)">${words('None of them say "work harder."',t,1.4,HOOK.acc,HOOK.acc2,.6)}</div>`;
+ return h+'</div>'}
+function cta(t){
+ const s=CTA.s;let h=bg(t,CTA.acc,CTA.acc2,'');
+ h+=`<div class=abs style="left:80px;right:60px;top:300px;font-family:Disp;font-size:118px;line-height:.98;letter-spacing:-4px">${words('Which one hits',t,s+.1,CTA.acc,CTA.acc2,.3)}<br>${words('*hardest?*',t,s+.4,CTA.acc,CTA.acc2,.2)}</div>
+ <div class=abs style="left:80px;right:80px;top:640px;display:grid;grid-template-columns:1fr 1fr;gap:24px">${Q.map((o,i)=>{const p=eb((t-s-.5-i*.1)/.6);return `<div style="opacity:${cl((t-s-.5-i*.1)/.15)};transform:translateY(${(1-p)*80}px) scale(${.9+.1*p});background:rgba(255,255,255,.08);border:1.5px solid ${o.acc}88;border-radius:30px;padding:20px;display:flex;gap:20px;align-items:center"><div style="width:120px;height:120px;border-radius:50%;background:url('${A}${o.img}') ${o.pos}/cover;flex:none;box-shadow:0 0 0 4px ${o.acc}"></div><div style="font-family:Disp;font-size:90px;${grad(o.acc,o.acc2)}">${o.n.slice(1)}</div></div>`}).join('')}</div>
+ <div class=abs style="left:80px;right:80px;top:1130px;font-family:Ital;font-size:72px">${words('Comment the number 👇',t,s+1.1,CTA.acc,CTA.acc2,.4)}</div>
+ <div class=abs style="left:80px;right:80px;top:1260px;font-family:Mono;font-size:28px;letter-spacing:2px;color:${CTA.acc};opacity:${eo((t-s-1.6)/.4)}">SEND THIS TO THE FRIEND WHO NEEDS #2 TODAY</div>`;
+ return h}
+function wipe(t){ // diagonal accent band sweeping across at every cut
+ const cuts=[HOOK.e,...Q.map(o=>o.e)];let h='';
+ cuts.forEach((c,i)=>{const p=(t-(c-.35))/.7;if(p<0||p>1)return;const nxt=i<Q.length?Q[i]:CTA;const prv=i===0?HOOK:Q[i-1];
+  const x=-1600+eio(p)*3200;
+  h+=`<div class=abs style="left:${x}px;top:-300px;width:900px;height:2600px;transform:skewX(-14deg);background:linear-gradient(90deg,transparent,${prv.acc}cc 30%,${nxt.acc} 55%,${nxt.acc2}cc 75%,transparent);filter:blur(18px);opacity:.9"></div>
+  <div class=abs style="left:${x+380}px;top:-300px;width:60px;height:2600px;transform:skewX(-14deg);background:#fff;opacity:.5;filter:blur(6px)"></div>`});return h}
+function setT(t){
+ let h='';
+ if(t<HOOK.e) h+=hook(t); else if(t<CTA.s){const o=[...Q].reverse().find(q=>t>=q.s);h+=quote(t,o)} else h+=cta(t);
+ h+=wipe(t);
+ h+=`<div class=abs style="left:80px;top:110px;font-family:Mono;font-size:24px;letter-spacing:5px;opacity:.9">● THE AI KHABARI</div>
+ <div class=abs style="left:0;top:0;height:6px;width:${t/TOTAL*100}%;background:linear-gradient(90deg,#4FD8FF,#B6FF5C,#FF8A65,#FFB347)"></div>
+ <div class=abs style="left:80px;right:80px;bottom:80px;font-family:Mono;font-size:18px;color:rgba(255,255,255,.5)">Photos: Wikimedia Commons (CC BY-SA) · Quotes verified word for word</div>`;
+ document.getElementById('s').innerHTML=h;
+}
+setT(0);
+</script></body></html>

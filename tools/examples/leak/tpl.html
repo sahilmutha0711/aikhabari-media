@@ -1,0 +1,103 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Gloock-Regular.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:MonoR;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Regular.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:#fff;position:relative}
+.abs{position:absolute}
+.stk{display:inline-block;white-space:nowrap;background:#fff;color:#16080C;border-radius:24px;padding:12px 28px;font-family:Disp;box-shadow:0 16px 44px rgba(0,0,0,.35);line-height:1.12}
+.chip{display:inline-block;font-family:Mono;font-weight:700;letter-spacing:2px;border-radius:40px;padding:10px 22px;font-size:26px}
+.card{border-radius:40px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#fff;color:#16080C}
+.glass{background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(16px);border-radius:32px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+#cap{position:absolute;left:36px;right:36px;text-align:center;font-family:Sans;font-weight:700;line-height:1.12;font-size:68px}
+#cap span{display:inline-block;padding:2px 14px;border-radius:16px;margin:0 2px;-webkit-text-stroke:3px #16080C;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.45)}
+</style></head><body><div id="stage"></div><div id="hdr"></div><div id="cap"></div>
+<div id="prog" class="abs" style="left:0;top:0;height:8px;background:linear-gradient(90deg,#FF3B47,#FFB020)"></div>
+<script>
+const WD=__WORDS__,TOTAL=__TOTAL__,MODE='__MODE__',A='file:///home/claude/reels/leak/a/';
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(t,t0)=>{const p=eb((t-t0)/.5);return `opacity:${cl((t-t0)/.1)};transform:scale(${.7+.3*p}) rotate(${(1-p)*-3}deg)`};
+const slide=(t,t0)=>{const p=eo((t-t0)/.45);return `opacity:${cl((t-t0)/.15)};transform:translateY(${(1-p)*90}px)`};
+const RED='#FF3B47',AMB='#FFB020',INK='#16080C',GRN='#25D366';
+const W=(word,k=0)=>{const n=s=>s.toLowerCase().replace(/[^a-z0-9.%']/g,'');const c=WD.filter(w=>n(w.w)===n(word));return c.length?c[Math.min(k,c.length-1)].s:999};
+// scenes: A = owner on camera, B = full B-roll (mesh bg). In MODE 'glass' everything is A (owner always on screen).
+const SC=MODE==='glass'?[[0,'hook','A'],[6.0,'capcomA','A'],[16.6,'sbiA','A'],[24.5,'scamA','A'],[32.3,'todo','A'],[36.0,'s1','A'],[42.2,'s2','A'],[48.5,'s3','A'],[53.6,'s4','A'],[61.2,'otp','A'],[64.9,'cta','A']]
+ :[[0,'hook','A'],[6.0,'capcom','B'],[16.6,'sbi','B'],[24.5,'scam','B'],[32.3,'todo','A'],[36.0,'s1','A'],[42.2,'s2','A'],[48.5,'s3','A'],[53.6,'s4','A'],[61.2,'otp','A'],[64.9,'cta','A']];
+const ROWS=[['Name','R•••• K••••'],['Phone','+91 98•• ••• •12'],['Email','r•••••@gmail.com'],['Address','Flat 4•, ••••• Nagar'],['DOB','1•/0•/19••'],['Loan ID','SBI-•••••-•••']];
+const STEPS=[['1','Check if you leaked','haveibeenpwned.com'],['2','No reused passwords','one leak unlocks everything'],['3','Passkeys or authenticator app','not just SMS / OTP codes'],['4','Never click "breach" messages','open the app yourself']];
+function stepCard(t,i,t0){const s=STEPS[i];return `<div class=abs style="left:60px;right:60px;top:150px;${slide(t,t0)}">
+ <div class=glass style="display:flex;gap:26px;align-items:center;padding:24px 30px;background:rgba(18,6,10,.62)">
+  <div style="width:110px;height:110px;flex:none;border-radius:30px;background:linear-gradient(135deg,${RED},${AMB});display:flex;align-items:center;justify-content:center;font-family:Disp;font-size:76px;color:#fff">${s[0]}</div>
+  <div><div style="font-family:Disp;font-size:52px;line-height:1.05">${s[1]}</div><div style="font-family:Mono;font-size:26px;color:${AMB};margin-top:8px">${s[2]}</div></div></div>
+ <div style="display:flex;gap:12px;margin-top:16px;justify-content:center">${STEPS.map((x,k)=>`<i style="display:block;width:${k===i?70:22}px;height:12px;border-radius:6px;background:${k<i?'#fff':k===i?AMB:'rgba(255,255,255,.35)'}"></i>`).join('')}</div></div>`}
+const V={
+ hook:t=>`<div class=abs style="left:0;right:0;top:160px;text-align:center;${pop(t,.1)}"><span class=stk style="font-size:58px;background:${RED};color:#fff">⚠️ Stop scrolling</span></div>
+  ${t>3.4&&MODE!=='glass'?`<div class=abs style="left:60px;right:60px;top:280px;text-align:center;${pop(t,3.4)}"><span class=stk style="font-size:56px">Millions of accounts leaked <span style="color:${RED}">this week</span></span></div>`:''}`,
+ capcom:t=>{const n=t<9.6?0:Math.min(11.7,11.7*eo((t-9.6)/1.3));return `<div class="abs card" style="left:60px;right:60px;top:220px;padding:40px;${slide(t,6.0)}">
+   <div style="display:flex;align-items:center;gap:24px"><div style="width:420px;height:78px;background:url('${A}capcom_logo.png') left/contain no-repeat"></div></div>
+   <div style="font-family:Mono;font-size:26px;margin-top:16px;color:#666">THE COMPANY BEHIND STREET FIGHTER</div>
+   <div style="margin-top:22px;height:460px;border-radius:28px;background:url('${A}capcom_hq.jpg') center 40%/cover"></div>
+   <div style="display:flex;align-items:baseline;gap:18px;margin-top:26px;opacity:${cl((t-9.5)/.3)}"><div style="font-family:Disp;font-size:150px;color:${RED};letter-spacing:-4px;line-height:.9">${n.toFixed(1)}M</div><div style="font-family:Disp;font-size:44px;line-height:1.05">account records<br>exposed</div></div>
+   ${t>13.1?`<div style="display:flex;gap:16px;margin-top:22px;${slide(t,13.1)}"><span class=stk style="font-size:38px;background:#FFE9EB;box-shadow:none">📧 Email addresses</span><span class=stk style="font-size:38px;background:#FFE9EB;box-shadow:none;opacity:${cl((t-14.2)/.3)}">🔑 Login details</span></div>`:''}</div>
+   <div class=abs style="right:70px;top:1560px;font-family:Mono;font-size:17px;color:rgba(255,255,255,.7)">Photo: Tokumeigakarinoaoshima / CC BY-SA 4.0</div>`},
+ sbi:t=>{const dw=t>20.1;let h=`<div class="abs card" style="left:60px;right:60px;top:220px;padding:40px;${slide(t,16.6)}">
+   <div style="display:flex;align-items:center;gap:22px"><div style="width:96px;height:96px;background:url('${A}sbi_icon.png') center/contain no-repeat"></div><div><div style="font-family:Disp;font-size:56px;line-height:1">State Bank of India</div><div style="font-family:Mono;font-size:24px;color:#666;margin-top:6px">CONFIRMED THE LEAK</div></div></div>
+   ${!dw?`<div style="margin-top:26px;height:620px;border-radius:28px;background:url('${A}sbi_branch.jpg') center/cover"></div>`:
+   `<div style="margin-top:26px;border-radius:28px;background:#0B0B10;color:#9CFFB0;padding:26px 30px;font-family:MonoR;font-size:30px;${slide(t,20.1)}">
+     <div style="color:${RED};font-family:Mono;font-size:24px">● DARK WEB MARKET · ILLUSTRATION</div>
+     ${ROWS.map((r,k)=>`<div style="display:flex;justify-content:space-between;border-bottom:1px solid #222;padding:14px 0;opacity:${cl((t-20.6-k*.35)/.25)}"><span style="color:#888">${r[0]}</span><span>${r[1]}</span></div>`).join('')}</div>`}</div>`;
+   if(t>21.2) h+=`<div class=abs style="left:0;right:0;top:1180px;text-align:center"><span class=stk style="font-size:46px;${pop(t,21.2)}">👤 Names</span> <span class=stk style="font-size:46px;${pop(t,21.8)}">📱 Phones</span> <span class=stk style="font-size:46px;${t>22.4?pop(t,22.4):'opacity:0'}">🏠 Addresses</span></div>`;
+   if(t>23.3) h+=`<div class=abs style="left:0;right:0;top:1300px;text-align:center;${pop(t,23.3)}"><span class=stk style="font-size:64px;background:${RED};color:#fff">EVERYTHING.</span></div>`;
+   return h+`<div class=abs style="right:70px;top:1560px;font-family:Mono;font-size:17px;color:rgba(255,255,255,.7)">${dw?'':'Photo: Ganesh Dhamodkar / CC BY 4.0'}</div>`},
+ scam:t=>`<div class=abs style="left:60px;right:60px;top:240px;${slide(t,24.5)}"><div class=card style="padding:30px 34px">
+   <div style="display:flex;align-items:center;gap:16px"><div style="width:64px;height:64px;border-radius:16px;background:#E8EAF0;display:flex;align-items:center;justify-content:center;font-size:36px">✉️</div><div><div style="font-size:30px">Security Team &lt;alerts@secure-acc0unt.co&gt;</div><div style="font-family:Mono;font-size:22px;color:#888">to you · now</div></div></div>
+   <div style="font-family:Disp;font-size:52px;margin-top:20px;line-height:1.1">⚠️ Your account was found in a data breach</div>
+   <div style="font-size:32px;color:#444;margin-top:12px">Verify now to avoid suspension.</div>
+   <div style="margin-top:22px;display:inline-block;background:#1A73E8;color:#fff;border-radius:16px;padding:14px 26px;font-size:34px">Verify account →</div></div>
+   ${t>28.6?`<div style="margin-top:30px;${slide(t,28.6)}"><div class=card style="padding:26px 34px;display:flex;align-items:center;gap:20px"><div style="width:80px;height:80px;border-radius:50%;background:${GRN};display:flex;align-items:center;justify-content:center;font-size:44px">📞</div><div><div style="font-family:Disp;font-size:46px">"Bank Support"</div><div style="font-family:Mono;font-size:24px;color:#888">Incoming call · +91 •••• ••••</div></div></div></div>`:''}</div>
+   ${t>30.6?`<div class=abs style="left:0;right:0;top:1180px;text-align:center;${pop(t,30.6)}"><span class=stk style="font-size:62px;background:${RED};color:#fff;transform:rotate(-4deg)">Looks 100% real. It's a SCAM.</span></div>`:''}
+   <div class=abs style="left:70px;top:205px"><span class=chip style="background:rgba(255,255,255,.18);color:#fff;font-size:20px">ILLUSTRATION</span></div>`,
+ todo:t=>`<div class=abs style="left:0;right:0;top:170px;text-align:center;${pop(t,32.4)}"><span class=stk style="font-size:60px">✅ Do this tonight</span></div>
+  ${t>34.3?`<div class=abs style="left:0;right:0;top:290px;text-align:center;${pop(t,34.3)}"><span class=stk style="font-size:54px;background:${AMB}">⏱️ Takes 5 minutes</span></div>`:''}`,
+ s1:t=>{let h=stepCard(t,0,36.0);if(t>37.6){h=`<div class=abs style="left:60px;right:60px;top:150px;${pop(t,37.6)}"><div class=card style="padding:20px 26px;border-radius:30px">
+   <div style="display:flex;gap:10px;align-items:center"><i style="width:16px;height:16px;border-radius:8px;background:#FF5F57;display:inline-block"></i><i style="width:16px;height:16px;border-radius:8px;background:#FEBC2E;display:inline-block"></i><i style="width:16px;height:16px;border-radius:8px;background:#28C840;display:inline-block"></i></div>
+   <div style="margin-top:14px;background:#F1F2F6;border-radius:22px;padding:18px 24px;font-family:Mono;font-size:50px;color:${INK}">🔒 haveibeenpwned.com</div>
+   <div style="display:flex;gap:14px;margin-top:16px;align-items:center"><div style="flex:1;border:3px solid #DDD;border-radius:18px;padding:14px 20px;font-size:32px;color:#999">${t>38.8?'you@gmail.com'.slice(0,Math.floor((t-38.8)*10)):'Enter your email'}</div><div style="background:${RED};color:#fff;border-radius:18px;padding:16px 24px;font-family:Disp;font-size:32px">pwned?</div></div></div>
+   <div style="text-align:center;font-size:90px;margin-top:-6px;transform:translateY(${Math.sin(t*6)*8}px)">👇</div></div>
+   <div class=abs style="left:60px;top:85px"><span class=chip style="background:${AMB};color:${INK}">STEP 1 · FREE</span></div>`}return h},
+ s2:t=>stepCard(t,1,42.2)+(MODE!=='glass'&&t>46.1?`<div class=abs style="left:0;right:0;top:1250px;text-align:center;${pop(t,46.1)}"><span class=stk style="font-size:48px;background:${RED};color:#fff">🔓 1 leak = every account</span></div>`:''),
+ s3:t=>stepCard(t,2,48.5)+(MODE!=='glass'&&t>49.3?`<div class=abs style="left:60px;right:60px;top:1250px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center"><span class=stk style="font-size:42px;${pop(t,49.3)}">🔑 Passkeys ✅</span><span class=stk style="font-size:42px;${t>50.3?pop(t,50.3):'opacity:0'}">📲 Authenticator ✅</span><span class=stk style="font-size:42px;background:#ddd;color:#777;text-decoration:line-through;${t>52.2?pop(t,52.2):'opacity:0'}">SMS only</span></div>`:''),
+ s4:t=>stepCard(t,3,53.6)+(MODE!=='glass'&&t>58.4?`<div class=abs style="left:60px;right:60px;top:1250px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center"><span class=stk style="font-size:44px;background:${RED};color:#fff;${pop(t,58.4)}">🚫 Don't click</span><span class=stk style="font-size:44px;${t>59.1?pop(t,59.1):'opacity:0'}">📱 Open the app yourself</span></div>`:''),
+ otp:t=>`<div class=abs style="left:0;right:0;top:160px;text-align:center;${pop(t,61.3)}"><span class=stk style="font-size:52px">👨‍👩‍👧 For our parents</span></div>
+  ${t>62.0?`<div class=abs style="left:60px;right:60px;top:280px;text-align:center;${pop(t,62.0)}"><span class=stk style="font-size:58px;background:${RED};color:#fff;transform:rotate(-3deg);white-space:normal;max-width:900px">No bank will EVER ask for your OTP</span></div>`:''}`,
+ cta:t=>`<div class=abs style="left:60px;right:60px;top:150px;${slide(t,65.0)}"><div class=card style="padding:24px 28px;display:flex;align-items:center;gap:22px">
+   <div style="width:96px;height:96px;border-radius:50%;background:${GRN};display:flex;align-items:center;justify-content:center;font-size:54px;flex:none">💬</div>
+   <div style="flex:1"><div style="font-family:Disp;font-size:46px">Family ❤️</div><div style="font-size:30px;color:#666">Mom, Dad, Didi, Chacha…</div></div>
+   <div style="background:${GRN};color:#fff;border-radius:40px;padding:14px 28px;font-family:Disp;font-size:38px;transform:scale(${t>66.6?1+.08*Math.sin((t-66.6)*8)*Math.exp(-(t-66.6)*2):1})">${t>66.6?'Sent ✓':'Send'}</div></div></div>
+   ${t>67.6?`<div class=abs style="left:60px;right:60px;top:380px;text-align:center;${pop(t,67.6)}"><span class=stk style="font-size:46px">So they stay aware and stay safe 🛡️</span></div>`:''}`,
+ capcomA:t=>{const n=t<9.6?0:Math.min(11.7,11.7*eo((t-9.6)/1.3));return `<div class=abs style="left:60px;right:60px;top:150px;${slide(t,6.0)}"><div class=glass style="padding:26px 30px;background:rgba(255,255,255,.88);color:${INK}">
+  <div style="display:flex;align-items:center;justify-content:space-between"><div style="width:330px;height:62px;background:url('${A}capcom_logo.png') left/contain no-repeat"></div><div style="font-family:Mono;font-size:22px;color:#777">STREET FIGHTER'S MAKER</div></div>
+  ${t>9.5?`<div style="display:flex;align-items:baseline;gap:16px;margin-top:10px"><div style="font-family:Disp;font-size:120px;color:${RED};letter-spacing:-3px;line-height:.95">${n.toFixed(1)}M</div><div style="font-family:Disp;font-size:38px">records exposed</div></div>`:''}
+  ${t>13.1?`<div style="font-size:34px;margin-top:6px">📧 Emails · 🔑 Login details</div>`:''}</div></div>`},
+ sbiA:t=>t>20.1?'':`<div class=abs style="left:60px;right:60px;top:150px;${slide(t,16.6)}"><div class=glass style="padding:26px 30px;background:rgba(255,255,255,.88);color:${INK}">
+  <div style="display:flex;align-items:center;gap:18px"><div style="width:80px;height:80px;background:url('${A}sbi_icon.png') center/contain no-repeat"></div><div style="font-family:Disp;font-size:50px">State Bank of India</div></div>
+  ${t>20.1?`<div style="margin-top:14px;background:#0B0B10;border-radius:20px;padding:16px 22px;font-family:MonoR;font-size:30px;color:#9CFFB0"><span style="color:${RED}">● DARK WEB</span> &nbsp;${t>21.2?'names':''}${t>21.8?' · phones':''}${t>22.4?' · addresses':''}${t>23.3?' · <b style="color:#fff">everything</b>':''}</div>`:''}</div></div>`,
+ scamA:t=>`<div class=abs style="left:60px;right:60px;top:150px;${slide(t,24.5)}"><div class=glass style="padding:22px 28px;background:rgba(255,255,255,.9);color:${INK}">
+   <div style="font-family:Mono;font-size:22px;color:#888">✉️ alerts@secure-acc0unt.co · now</div><div style="font-family:Disp;font-size:44px;margin-top:6px">⚠️ Your account was in a data breach</div></div>
+   ${false?`<div style="text-align:center;margin-top:18px;${pop(t,30.6)}"><span class=stk style="font-size:54px;background:${RED};color:#fff">Looks 100% real = SCAM</span></div>`:''}</div>`,
+};
+function setT(t){
+ let cur=SC[0];for(const s of SC) if(t>=s[0]) cur=s;
+ document.getElementById('stage').innerHTML=V[cur[1]](t);
+ document.getElementById('hdr').innerHTML=`<div class=abs style="left:56px;top:${cur[2]==='B'?110:44}px;font-family:Mono;font-size:22px;letter-spacing:4px;text-shadow:0 2px 10px rgba(0,0,0,.6)">● THE AI KHABARI</div>`;
+ document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
+ const cap=document.getElementById('cap');cap.style.top=(cur[2]==='B'?1620:1480)+'px';
+ const i=WD.findIndex(w=>t>=w.s-.02&&t<w.e+.15);if(i<0){cap.innerHTML='';return}
+ const G=window.__G||(window.__G=(()=>{const gs=[];let c=[];WD.forEach((w,k)=>{if(c.length&&(c.length>=3||/[.,?!:"]$/.test(WD[k-1].w)||w.s-WD[k-1].e>0.45||/^Number/.test(w.w))){gs.push(c);c=[]}c.push(k)});if(c.length)gs.push(c);return gs})());
+ const grp=G.find(g=>g.includes(i));
+ cap.innerHTML=grp.map(k=>{const w=WD[k],on=k===i;return `<span style="${on?'background:'+AMB+';color:'+INK+';-webkit-text-stroke:0;transform:scale(1.08) rotate(-2deg)':'color:#fff'}">${w.w.replace(/,$/,'')}</span>`}).join(' ');
+}
+setT(0);
+</script></body></html>
