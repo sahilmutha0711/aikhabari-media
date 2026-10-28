@@ -48,7 +48,7 @@ S.append(f"""<div class=a style="left:64px;top:130px"><span class=chip>SEND THIS
 <div class="a d" style="left:64px;right:64px;top:200px;font-size:120px">Your email has <span class=hl>probably leaked.</span></div>
 <div class="a s" style="left:64px;right:64px;top:640px;font-size:56px;line-height:1.08">Here's the 5-minute fix most people never do.</div>
 <div class="a glass" style="left:64px;right:64px;top:880px;padding:30px 36px">
- <div class=m style="font-size:20px;letter-spacing:2px;color:{A}">THIS WEEK ALONE</div>
+ <div class=m style="font-size:20px;letter-spacing:2px;color:{A}">IN THE LAST 10 DAYS</div>
  <div style="font-family:Disp;font-size:46px;line-height:1.2;margin-top:12px">Capcom: 11.7M account records exposed<br>SBI: customer records found on the dark web</div></div>""")
 S.append(f"""<div class=a style="left:64px;top:130px"><span class=chip>STEP 1 + 2</span></div>
 <div class="a d" style="left:64px;right:64px;top:200px;font-size:84px">Find out, then lock the door</div>
