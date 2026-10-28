@@ -25,9 +25,9 @@ document.getElementById('prog').style.background=P.grad;
 const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
 const pop=(t,t0)=>{const p=eb((t-t0)/.5);return `opacity:${cl((t-t0)/.12)};transform:scale(${.72+.28*p}) rotate(${(1-p)*-3}deg)`};
 const rise=(t,t0)=>{const p=eo((t-t0)/.5);return `opacity:${cl((t-t0)/.25)};transform:translateY(${(1-p)*70}px);filter:blur(${(1-p)*10}px)`};
-const AS=[[0,12.95],[53.2,59.9],[72.9,78.5]];
+const AS=[[0,10.45],[53.2,59.9],[72.9,78.5]];
 const isA=t=>AS.some(([a,b])=>t>=a&&t<b);
-const CLIPS=[[12.95,16.35],[16.35,19.4],[19.4,22.6],[22.6,24.6],[33.3,36.9],[36.9,40.6],[40.6,43.2],[43.2,46.6],[46.6,47.7],[47.7,48.9],[59.9,63.6]];
+const CLIPS=[[10.45,12.95],[12.95,16.35],[16.35,19.4],[19.4,22.6],[22.6,24.6],[33.3,36.9],[36.9,40.6],[40.6,43.2],[43.2,46.6],[46.6,47.7],[47.7,48.9],[59.9,63.6]];
 const onClip=t=>CLIPS.some(([a,b])=>t>=a&&t<b);
 const CARD='left:40px;top:520px;width:1000px;height:720px';
 function frame(t,t0){const p=eo((t-t0)/.5);return `<div class=abs style="${CARD};border-radius:48px;border:2px solid rgba(255,255,255,.35);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 30px 90px rgba(0,0,0,.6),0 0 60px ${P.glow};opacity:${p}"></div>`}
@@ -37,14 +37,20 @@ function pill(t,t0,html,top=1270){return `<div class=abs style="left:44px;right:
 const credit=t=>onClip(t)?`<div class=abs style="right:56px;top:1210px;font-family:Mono;font-size:18px;color:rgba(255,255,255,.75)">Footage: Apple</div>`:'';
 function stamp(t,t0,txt,top,rot=-6){const p=eb((t-t0)/.45);return `<div class=abs style="left:0;right:0;top:${top}px;text-align:center;opacity:${cl((t-t0)/.1)};transform:scale(${2.2-1.2*p}) rotate(${rot}deg)"><span style="display:inline-block;border:8px solid ${P.acc};color:${P.acc};border-radius:22px;padding:6px 30px;font-family:Disp;font-size:84px;background:rgba(0,0,0,.55)">${txt}</span></div>`}
 const SC=[
- [0,t=>{let h=`<div class=abs style="left:44px;right:44px;top:150px;${pop(t,.05)}"><span class=stk style="font-size:62px">Apple's <span style="background:${P.ink};color:${P.acc};padding:0 14px;border-radius:14px">FIRST</span> touchscreen Mac</span></div>`;
+ [0,t=>{const wr=(t0,html,extra='')=>{const p=eo((t-t0)/.45);return `<span style="display:inline-block;overflow:hidden;vertical-align:bottom;padding:0 4px"><span style="display:inline-block;transform:translateY(${(1-p)*110}%);filter:blur(${(1-p)*8}px);opacity:${cl((t-t0)/.2)};${extra}">${html}</span></span>`};
+   const sh=t>4.3?eo((t-4.3)/.5):0;
+   let h=`<div class=abs style="left:0;right:0;top:120px;text-align:center;transform:scale(${1-0.22*sh});transform-origin:50% 0">
+   <div style="${pop(t,.0)}"><span class=chip style="font-size:30px;padding:10px 26px">&#9679; JUST LAUNCHED</span></div>
+   <div style="display:inline-block;margin-top:14px;padding:18px 36px 22px;border-radius:40px;background:${P.dim};border:1.5px solid rgba(255,255,255,.22);backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.45);opacity:${cl((t-1.0)/.25)}"><div style="font-family:Disp;font-size:90px;line-height:1;letter-spacing:-2px;white-space:nowrap">${wr(1.1,"Apple's")}${wr(2.4,'<span class=grad>FIRST</span>')}${wr(2.7,'<span class=grad>EVER</span>')}</div>
+   <div style="margin-top:16px;${pop(t,3.0)}"><span style="display:inline-block;background:${P.acc};color:${P.ink};font-family:Disp;font-size:84px;letter-spacing:-2px;border-radius:24px;padding:4px 28px;white-space:nowrap;box-shadow:0 0 70px ${P.glow},0 18px 40px rgba(0,0,0,.45)">TOUCHSCREEN MAC</span></div></div></div>`;
+   if(t>3.0&&t<4.6){const q=cl((t-3.0)/1.4);h+=[0,.35].map(d=>{const r=cl(q-d)/(1-d);return `<div class=abs style="left:${540-40-r*120}px;top:${470-40-r*120}px;width:${80+r*240}px;height:${80+r*240}px;border-radius:50%;border:5px solid ${P.acc};opacity:${(1-r)*.9}"></div>`}).join('')}
    if(t>4.3&&t<10.45){h+=`<div class="abs glass" style="left:60px;right:60px;top:1110px;padding:26px;display:flex;gap:26px;align-items:center;background:${P.dim};${rise(t,4.3)}">
      <div style="width:170px;height:170px;flex:none;border-radius:85px;background:url('${A}jobs.jpg') 50% 30%/cover;border:4px solid ${P.acc}"></div>
      <div><div style="font-family:Mono;font-size:24px;letter-spacing:3px;color:${P.acc}">STEVE JOBS · 2010</div>
      <div style="font-family:Ser;font-size:50px;line-height:1.05;margin-top:8px">"...your arm wants to fall off."</div>
      <div style="font-family:Mono;font-size:16px;color:rgba(255,255,255,.6);margin-top:8px">Photo: Matthew Yohe, CC BY-SA 3.0</div></div></div>`}
-   if(t>10.56)h+=`<div class=abs style="left:0;right:0;top:1150px;text-align:center;${pop(t,10.6)}"><span class=chip style="font-size:40px;padding:14px 34px">OLD vs NEW &darr;</span></div>`;
    return h}],
+ [10.45,t=>head(t,10.45,'OLD vs NEW',`What's <span class=grad>new</span> vs the old MacBook Pro`,92)+frame(t,10.45)],
  [12.95,t=>head(t,12.95,'OLD MACBOOK PRO',`Could <span class=grad>never</span> be touched.`)+frame(t,12.95)+(t>15.3?stamp(t,15.3,'NO TOUCH',820):'')],
  [16.35,t=>head(t,16.35,'NEW &middot; 01 TOUCHSCREEN',`Now you can <span class=grad>touch it.</span>`,90)+frame(t,16.35)+(t>18.4?pill(t,18.4,`Many apps work with touch <span style="color:${P.acc}">from day one</span>`):'')],
  [22.6,t=>head(t,22.6,'NEW &middot; 02 DYNAMIC ISLAND',`The notch is <span class=grad>gone.</span>`)+frame(t,22.6)],
