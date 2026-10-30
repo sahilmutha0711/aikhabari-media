@@ -1,13 +1,13 @@
 import json,sys,subprocess
 from playwright.sync_api import sync_playwright
-R='/home/claude/reels/ambani/work';PAL=sys.argv[1];args=sys.argv[2:];FPS=30;TOTAL=83.6;n=int(TOTAL*FPS)
+R='/home/claude/reels/ambani/work';PAL=sys.argv[1];args=sys.argv[2:];FPS=30;TOTAL=83.6;n=int(TOTAL*FPS) if not __import__('os').environ.get('NF') else int(__import__('os').environ['NF'])
 SRC='/mnt/user-data/uploads/1793321170217489.mov'
 G=json.load(open(f'{R}/groups.json'))
 h=open(f'{R}/tpl.html').read().replace('__GROUPS__',json.dumps(G)).replace('__TOTAL__',str(TOTAL)).replace('__PAL__',PAL)
 open(f'{R}/reel_{PAL}.html','w').write(h)
 Z="zscale=tin=iec61966-2-1:pin=709:min=gbr:rin=full:t=linear:p=2020:m=gbr:npl=203,zscale=t=arib-std-b67:m=2020_ncl:r=limited:npl=203"
 with sync_playwright() as p:
-    b=p.chromium.launch(args=['--allow-file-access-from-files']);pg=b.new_page(viewport={'width':1080,'height':1920})
+    b=p.chromium.launch(args=['--allow-file-access-from-files']);pg=b.new_page(viewport={'width':1080,'height':1920},device_scale_factor=(1 if args else 2))
     errs=[];pg.on('pageerror',lambda e:errs.append(str(e)));pg.goto(f'file://{R}/reel_{PAL}.html');pg.wait_for_timeout(1500)
     if args:
         from PIL import Image,ImageDraw
@@ -19,10 +19,10 @@ with sync_playwright() as p:
         M=Image.new('RGB',(min(len(ims),8)*270,((len(ims)+7)//8)*500))
         for i,(im,t) in enumerate(zip(ims,args)):M.paste(im,((i%8)*270,(i//8)*500));ImageDraw.Draw(M).text(((i%8)*270+4,(i//8)*500+484),t,fill=(255,255,0))
         M.save(f'/tmp/claude-0/-home-claude/acedb731-8581-5c7e-8ffe-4bf86f59215c/scratchpad/amb_{PAL}.jpg');print(errs);sys.exit()
-    FC=(f"[0:v]scale=1080:1920:flags=bicubic,fps=30,format=yuv420p10le[own];[1:v]format=rgba,split[c][a];[a]alphaextract,format=gray[al];"
-        f"[c]format=gbrpf32le,{Z},format=yuv420p10le[col];[col][al]alphamerge,format=yuva420p10le[ov];[own][ov]overlay=0:0:format=yuv420p10[v]")
-    ff=subprocess.Popen(['ffmpeg','-y','-loglevel','error','-i',SRC,'-f','image2pipe','-framerate',str(FPS),'-c:v','png','-i','-','-i','../clean.wav',
-      '-filter_complex',FC,'-map','[v]','-map','2:a','-c:v','libx265','-preset','medium','-crf','20','-pix_fmt','yuv420p10le','-tag:v','hvc1',
+    FC=(f"[0:v]fps=30,format=yuv420p10le[own];[1:v]format=rgba,split[c][a];[a]alphaextract,format=gray[al];"
+        f"[c]format=rgb48le,lut3d=file=srgb2hlg.cube:interp=tetrahedral,scale=in_range=full:out_range=tv:out_color_matrix=bt2020,format=yuv420p10le[col];[col][al]alphamerge,format=yuva420p10le[ov];[own][ov]overlay=0:0:format=yuv420p10[v]")
+    ff=subprocess.Popen(['ffmpeg','-y','-loglevel','warning','-i',SRC,'-f','image2pipe','-framerate',str(FPS),'-c:v','png','-i','-','-i','../clean.wav',
+      '-filter_complex',FC,'-map','[v]','-map','2:a','-c:v','libx265','-preset','veryfast','-crf','16','-pix_fmt','yuv420p10le','-tag:v','hvc1',
       '-x265-params','log-level=error:colorprim=bt2020:transfer=arib-std-b67:colormatrix=bt2020nc:range=limited',
       '-color_primaries','bt2020','-color_trc','arib-std-b67','-colorspace','bt2020nc','-color_range','tv','-c:a','aac','-b:a','256k','-t',str(TOTAL),'-movflags','+faststart',f'/home/claude/reels/ambani/MuskAmbani_{PAL}.mp4'],stdin=subprocess.PIPE)
     for i in range(n):
