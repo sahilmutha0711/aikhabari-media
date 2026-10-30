@@ -50,6 +50,16 @@ Share trigger names the PERSON TYPE + reason ("send this to the coworker still p
 ### G. Quality gate before sending posts to the owner
 Every piece must pass: (1) hook text stops the scroll in frame 1, (2) one clear "send to ___ because ___", (3) a smart line / takeaway, (4) ≤ 40 s for Reels unless the story truly needs more, (5) facts verified with 2 sources, theories labelled. If any fails, fix it or drop the piece. Quality over quantity: 2 great posts beat 4 average ones.
 
+## 00b. INSTAGRAM SEO (owner's "Instagram SEO Keyword Strategist" framework, 10-29) — apply to EVERY caption, script and on-screen text
+- Understand the content first (exact topic, main entity, target audience, search intent, niche, subtopics). Never pick keywords by just repeating script words; pick what the audience would TYPE into Instagram Search ("If someone wanted to find this exact content, what would they type?").
+- Per post, plan 25-30 keywords: Primary (5-7, directly describe the Reel), Secondary (10-12, related topics), Long-tail / question / intent phrases (8-12, natural queries). Mix broad niche + specific topic + long-tail; include entities (people, companies, products, places).
+- Quality: relevant, specific, natural human phrasing, closely tied to the Reel. AVOID: "viral", "trending", "reels", "explore", "fyp", irrelevant high-volume terms, spam, repeats, near-duplicate variants, keyword stuffing.
+- Language: same language as the Reel/audience. If the content is Hinglish, use Hinglish search phrases; for Indian audiences use natural Indian English/Hinglish terms people actually search (don't force translations).
+- Never claim a keyword is "trending" or high-volume without real data. Relevance + search intent > chasing trends.
+- WHERE THEY GO: (1) caption line 1 = hook containing the primary keyword; (2) 1-2 natural sentences in the caption that weave in primary + long-tail phrases; (3) a short keyword line (3-6 phrases, separated by ·); (4) on-screen text and the spoken first sentence include the main entity names (Instagram reads both); (5) alt text on carousels. Hashtags stay 3-5 max and relevant (hashtags only in the caption, never in keyword lists).
+- When the owner asks for keywords: output Primary (5-7), Secondary (10-12), Long-tail (8-12), then FINAL 25-30 as one clean comma-separated list, no hashtags, no per-keyword explanations.
+- CORE PRINCIPLE: Relevance + Search Intent + Specificity > Keyword Stuffing.
+
 ## 0. NORTH STAR (owner, 10-15): make the viewer feel smarter than everyone around them
 Every Reel and post must leave the viewer holding something most people DON'T know yet, so they feel ahead and want to show it off ("wait, you didn't know this?"). Shares come from that feeling, not from asking.
 - **Insider-knowledge framing.** Position every story as early, inside information: "90% of people using ChatGPT don't know...", "Your friends will hear about this next month. You're hearing it now.", "Investors just quietly bet $X on this. Here's why." Make it true (cite the data/source on screen), never fake scarcity.
@@ -122,6 +132,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 10-29 (5) INSTAGRAM SEO FRAMEWORK (owner PDF): added as §00b; apply to every caption/script/on-screen text from now on.
 - 10-29 (4) TEMPLATE SAMPLES FIRST (owner): ALWAYS send sample sheets of every version's template (same key moments: hook, each B-roll scene, rehook, ending) BEFORE rendering final videos, so the owner can compare and choose. Render the full video only after that.
 - 10-29 (3) ONE RENDER AT A TIME (owner): never render/edit two videos in parallel (8 GB machine; parallel 4K renders crashed). Finish one, send it, then start the next.
 - 10-29 (2) HDR-PRESERVING EDIT PIPELINE (owner face must look exactly like his phone): keep his HLG footage as 10-bit (scale only, no colour conversion), convert OUR graphics (sRGB RGBA from Playwright) into HLG BT.2020 (zscale tin=iec61966-2-1 -> linear npl=203 -> bt2020 -> arib-std-b67), alphamerge, overlay format=yuv420p10, encode libx265 10-bit with HLG tags (hvc1). Verified: face-region luma identical to the original. B-roll backgrounds are drawn in the HTML (CSS mesh + grain PNG). Two palettes per owner Reel (10-29: emerald-on-black + saffron-on-black). Pipeline: tools/examples/muskambani/. Recreated X posts must be labelled 'RECREATED POST' with the outlet the words came from.
