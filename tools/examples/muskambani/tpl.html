@@ -1,0 +1,103 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/IBMPlexMono-Bold.ttf')}
+@font-face{font-family:Sans;font-weight:700;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+@font-face{font-family:SansR;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Regular.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;font-family:Sans;color:#fff;position:relative}
+.abs{position:absolute}
+.chip{display:inline-block;font-family:Mono;font-weight:700;letter-spacing:3px;border-radius:40px;padding:10px 22px;font-size:26px;background:var(--acc);color:var(--ink)}
+.chipg{display:inline-block;font-family:Mono;font-weight:700;letter-spacing:3px;border-radius:40px;padding:10px 22px;font-size:26px;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.35);color:#fff}
+.h{font-family:Disp;line-height:1.02;letter-spacing:-2px;white-space:normal}
+.glass{background:var(--dim);border:1.5px solid rgba(255,255,255,.22);backdrop-filter:blur(18px);border-radius:34px;box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.av{border-radius:50%;background-size:cover;background-position:50% 30%;flex:none}
+#cap{position:absolute;left:40px;right:40px;text-align:center;font-family:Sans;font-weight:700;line-height:1.15;font-size:64px}
+#cap span{display:inline-block;padding:2px 14px;border-radius:16px;margin:0 3px;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.55)}
+</style></head><body><div id="bg" class="abs" style="inset:0"></div><div id="stage"></div><div id="cap"></div>
+<div id="prog" class="abs" style="left:0;top:0;height:8px"></div>
+<script>
+const G=__GROUPS__,TOTAL=__TOTAL__,PAL='__PAL__',A='file:///home/claude/reels/ambani/a/';
+const P=PAL==='emerald'?{base:'#020705',b:['rgba(11,143,106,.75)','rgba(10,92,85,.8)','rgba(40,190,140,.35)'],acc:'#7DFFB8',ink:'#03140F',grad:'linear-gradient(100deg,#E9FFF3,#7DFFB8 45%,#2FD1C0)',glow:'rgba(125,255,184,.5)',dim:'rgba(2,18,14,.78)',red:'#FF6B6B'}
+ :{base:'#080503',b:['rgba(255,138,31,.6)','rgba(179,74,0,.75)','rgba(255,200,90,.3)'],acc:'#FFB547',ink:'#1A0C00',grad:'linear-gradient(100deg,#FFF3DC,#FFB547 45%,#FF7A1A)',glow:'rgba(255,170,60,.5)',dim:'rgba(20,10,3,.8)',red:'#FF5E5E'};
+const rs=document.body.style;rs.setProperty('--acc',P.acc);rs.setProperty('--ink',P.ink);rs.setProperty('--grad',P.grad);rs.setProperty('--dim',P.dim);
+document.getElementById('prog').style.background=P.grad;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),eo=x=>1-Math.pow(1-cl(x),3),eb=x=>{x=cl(x);const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(t,t0)=>{const p=eb((t-t0)/.5);return `opacity:${cl((t-t0)/.12)};transform:scale(${.72+.28*p}) rotate(${(1-p)*-3}deg)`};
+const rise=(t,t0)=>{const p=eo((t-t0)/.5);return `opacity:${cl((t-t0)/.25)};transform:translateY(${(1-p)*70}px);filter:blur(${(1-p)*10}px)`};
+const AS=[[0,8.2],[32.05,33.1],[58.1,99]];const isA=t=>AS.some(([a,b])=>t>=a&&t<b);
+function bg(t){const pos=[[15+12*Math.sin(t*.35),12+8*Math.cos(t*.3)],[85+10*Math.cos(t*.28),48+10*Math.sin(t*.33)],[25+12*Math.sin(t*.25+1),88+6*Math.cos(t*.4)]];
+ return `background:${pos.map((p,i)=>`radial-gradient(60% 40% at ${p[0]}% ${p[1]}%,${P.b[i]},transparent 70%)`).join(',')},${P.base}`}
+function stamp(t,t0,txt,top,size=84,rot=-6,col){col=col||P.acc;const p=eb((t-t0)/.45);return `<div class=abs style="left:0;right:0;top:${top}px;text-align:center;opacity:${cl((t-t0)/.1)};transform:scale(${2.2-1.2*p}) rotate(${rot}deg)"><span style="display:inline-block;max-width:960px;white-space:normal;border:8px solid ${col};color:${col};border-radius:22px;padding:6px 30px;font-family:Disp;font-size:${size}px;line-height:1.05;background:rgba(0,0,0,.6)">${txt}</span></div>`}
+function head(t,t0,chip,html,size=96,top=170){return `<div class=abs style="left:50px;right:50px;top:${top}px;${rise(t,t0)}"><span class=chip>${chip}</span></div><div class="abs h" style="left:50px;right:50px;top:${top+72}px;font-size:${size}px;${rise(t,t0+.12)}">${html}</div>`}
+const tick=`<svg width="34" height="34" viewBox="0 0 24 24" style="vertical-align:-6px"><path fill="#1D9BF0" d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91C2.63 9.33 1.75 10.57 1.75 12s.88 2.67 2.19 3.34c-.46 1.39-.2 2.9.81 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.46 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34z"/><path fill="#fff" d="M10.6 15.9l-3.5-3.5 1.4-1.4 2.1 2.1 5.4-5.4 1.4 1.4z"/></svg>`;
+function typed(t,t0,txt,cps=28){const n=Math.floor(cl((t-t0)*cps,0,txt.length));return txt.slice(0,n)+(n<txt.length&&t>=t0?'<span style="opacity:.6">|</span>':'')}
+function xpost(t,t0,date,body,top=520){return `<div class=abs style="left:50px;right:50px;top:${top}px;${rise(t,t0)}"><div style="background:#000;border:1.5px solid #2f3336;border-radius:30px;padding:34px 38px;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 60px ${P.glow}">
+ <div style="display:flex;align-items:center;gap:20px"><div class=av style="width:96px;height:96px;background-image:url('${A}musk_face.jpg')"></div>
+ <div><div style="font-family:Sans;font-size:36px;color:#e7e9ea">Elon Musk ${tick}</div><div style="font-family:SansR;font-size:28px;color:#71767b">@elonmusk &middot; ${date}</div></div>
+ <div style="margin-left:auto;font-family:Disp;font-size:56px;color:#e7e9ea">&#120143;</div></div>
+ <div style="font-family:SansR;font-size:54px;line-height:1.25;color:#e7e9ea;margin-top:26px;white-space:normal">${body}</div>
+ <div style="font-family:Mono;font-size:18px;color:#71767b;margin-top:22px;letter-spacing:1px">RECREATED POST &middot; WORDS AS REPORTED BY THE WIRE / AL JAZEERA</div></div></div>`}
+function node(x,y,label,sub,img,t,t0,big){const s=big?190:150;return `<div class=abs style="left:${x-s/2}px;top:${y-s/2}px;width:${s}px;text-align:center;${pop(t,t0)}"><div class=av style="width:${s}px;height:${s}px;${img?`background-image:url('${A}${img}')`:`background:${P.dim}`};border:5px solid ${P.acc};box-shadow:0 0 50px ${P.glow};display:flex;align-items:center;justify-content:center;font-family:Disp;font-size:${big?40:34}px">${img?'':label}</div><div style="font-family:Disp;font-size:34px;margin-top:10px;white-space:nowrap;margin-left:-60px;margin-right:-60px">${img?label:''}</div><div style="font-family:Mono;font-size:20px;color:rgba(255,255,255,.7);white-space:nowrap;margin-left:-80px;margin-right:-80px">${sub}</div></div>`}
+function edge(x1,y1,x2,y2,lab,col,t,t0,dash){const p=eo((t-t0)/.6);const xm=x1+(x2-x1)*p,ym=y1+(y2-y1)*p;return `<svg class=abs style="left:0;top:0" width="1080" height="1920"><line x1="${x1}" y1="${y1}" x2="${xm}" y2="${ym}" stroke="${col}" stroke-width="8" stroke-linecap="round" ${dash?'stroke-dasharray="18 16"':''} opacity="${cl((t-t0)/.2)}"/></svg>`+(t>t0+.4?`<div class=abs style="left:${(x1+x2)/2-130}px;top:${(y1+y2)/2-26}px;width:260px;text-align:center;${pop(t,t0+.4)}"><span style="display:inline-block;background:${col};color:#0b0b0b;font-family:Mono;font-size:22px;letter-spacing:2px;border-radius:20px;padding:6px 14px">${lab}</span></div>`:'')}
+const SC=[
+ [0,t=>{let h=`<div class="abs glass" style="left:60px;right:60px;top:120px;padding:24px 30px 28px;text-align:center;${rise(t,0)}">
+   <div style="display:flex;align-items:center;justify-content:center;gap:26px"><div class=av style="width:130px;height:130px;background-image:url('${A}musk_face.jpg');border:4px solid ${P.acc}"></div>
+   <div style="font-family:Disp;font-size:70px" class=grad>VS</div><div class=av style="width:130px;height:130px;background-image:url('${A}ambani_face.jpg');border:4px solid ${P.acc}"></div></div>
+   <div style="font-family:Disp;font-size:62px;line-height:1.05;margin-top:16px;opacity:${cl((t-0.9)/.3)}">Musk vs Ambani</div>
+   <div style="font-family:Disp;font-size:58px;line-height:1.05;margin-top:6px;${t>3.0?pop(t,3.0):'opacity:0'}">= the <span class=grad>smartest marketing</span> of the year?</div></div>`;
+   if(t>5.3)h+=`<div class=abs style="left:0;right:0;top:${t>5.3?720:720}px;text-align:center;${pop(t,5.35)}"><span class=chip style="font-size:34px;padding:12px 30px">&#9654; WATCH TILL THE END</span></div>`;return h}],
+ [8.2,t=>`<div class=abs style="left:50px;top:200px;${rise(t,8.2)}"><span class=chip style="font-size:34px">OCT 7, 2026</span></div><div class="abs h" style="left:50px;right:50px;top:270px;font-size:84px;${rise(t,8.3)}">Musk says Starlink is <span class=grad>being blocked</span> in India</div>`+
+   xpost(t,9.2,'Oct 7',`&hellip;we are being blocked by <span style="${t>13.0?`background:${P.acc};color:${P.ink};border-radius:8px;padding:0 6px`:''}">certain oligarchs</span>. You can guess who they are.`,640)],
+ [14.6,t=>`<div class=abs style="left:50px;top:200px;${rise(t,14.6)}"><span class=chip style="font-size:34px">OCT 9 &middot; 2 DAYS LATER</span></div><div class="abs h" style="left:50px;right:50px;top:270px;font-size:84px;${rise(t,14.7)}">Then he goes <span class=grad>further.</span></div>`+
+   xpost(t,15.6,'Oct 9',`<b style="font-family:Sans">${typed(t,16.5,'Dear Prime Minister Ambani,',22)}</b>${t>18.6?`<br>&hellip;not realizing that you are <span style="${t>19.7?`background:${P.acc};color:${P.ink};border-radius:8px;padding:0 6px`:''}">the real boss of India</span>&hellip;`:''}`,500)],
+ [21.0,t=>{const dots=t<22.4?[0,1,2].map(i=>`<i style="display:inline-block;width:18px;height:18px;border-radius:50%;background:#aaa;margin:0 5px;opacity:${.3+.7*Math.abs(Math.sin(t*6+i))}"></i>`).join(''):'';
+   return `<div class=abs style="left:0;right:0;top:330px;text-align:center;${pop(t,21.0)}"><div class=av style="width:420px;height:420px;margin:0 auto;background-image:url('${A}ambani_face.jpg');border:8px solid ${P.acc};box-shadow:0 0 80px ${P.glow}"></div><div style="font-family:Disp;font-size:56px;margin-top:22px">Mukesh Ambani</div></div>`+
+   `<div class=abs style="left:0;right:0;top:960px;text-align:center;${pop(t,21.3)}"><span class=glass style="display:inline-block;padding:20px 34px;font-family:SansR;font-size:40px">${dots||'Replies: <b style="font-family:Sans">0</b>'}</span></div>`+(t>22.3?stamp(t,22.3,'NO REPLY',1110,96,-6):'')}],
+ [23.2,t=>head(t,23.2,'OCT 28 &middot; LESS THAN 3 WEEKS LATER',`Jio goes <span class=grad>public</span>`,104,200)+
+   (t>27.6?`<div class=abs style="left:60px;right:60px;top:560px;${pop(t,27.7)}"><div class=glass style="padding:40px;text-align:center;border-color:${P.acc};box-shadow:0 0 70px ${P.glow}"><div style="font-family:Mono;font-size:28px;letter-spacing:4px;color:${P.acc}">JIO PLATFORMS IPO</div><div style="font-family:Disp;font-size:92px;line-height:1.02;margin-top:12px">India's <span class=grad>biggest IPO</span> ever</div><div style="font-family:Mono;font-size:24px;color:rgba(255,255,255,.7);margin-top:16px">~&#8377;30,213 CRORE RAISED &middot; LISTED OCT 28</div></div></div>`:
+   `<div class=abs style="left:60px;right:60px;top:600px;text-align:center;${rise(t,25.6)}"><div style="font-family:Disp;font-size:150px;letter-spacing:-4px" class=grad>IPO</div></div>`)],
+ [29.3,t=>{const p=eo((t-29.6)/1.4);const v=Math.round(1119+(1358-1119)*p);const pct=(21.36*p).toFixed(1);const pts=[[0,300],[120,280],[240,250],[360,200],[480,150],[600,90],[720,40],[840,10]];const n=Math.max(2,Math.ceil(p*pts.length));
+   return head(t,29.3,'LISTING DAY','Day one:',96,200)+`<div class=abs style="left:60px;right:60px;top:430px;${rise(t,29.4)}"><div class=glass style="padding:40px"><div style="font-family:Mono;font-size:26px;letter-spacing:3px;color:rgba(255,255,255,.75)">JIO PLATFORMS &middot; NSE</div>
+   <div style="display:flex;align-items:baseline;gap:24px;margin-top:10px"><div style="font-family:Disp;font-size:110px;letter-spacing:-3px">&#8377;${v.toLocaleString('en-IN')}</div><div style="font-family:Disp;font-size:64px;color:${P.acc}">+${pct}%</div></div>
+   <svg width="840" height="320" style="margin-top:16px"><polyline points="${pts.slice(0,n).map(q=>q.join(',')).join(' ')}" fill="none" stroke="${P.acc}" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/></svg>
+   <div style="font-family:Mono;font-size:22px;color:rgba(255,255,255,.65)">ISSUE &#8377;1,119 &rarr; LISTED &#8377;1,358</div></div></div>`+(t>30.2?stamp(t,30.2,'+21% ON DAY ONE',1250,90,-5):'')}],
+ [32.05,t=>`<div class=abs style="left:0;right:0;top:170px;text-align:center;${pop(t,32.1)}"><span style="display:inline-block;background:${P.acc};color:${P.ink};font-family:Disp;font-size:84px;border-radius:26px;padding:8px 36px;box-shadow:0 0 70px ${P.glow}">Now look at this</span></div>`],
+ [33.1,t=>{let h=head(t,33.1,'MARCH 2025','The deals <span class=grad>nobody remembers</span>',92,170);
+   const card=(top,t0,who,img,sub)=>`<div class=abs style="left:60px;right:60px;top:${top}px;${rise(t,t0)}"><div class=glass style="display:flex;gap:28px;align-items:center;padding:26px 30px"><div style="width:220px;height:220px;flex:none;border-radius:26px;background:url('${A}${img}') 50% 50%/cover"></div><div><div style="font-family:Disp;font-size:66px;line-height:1">${who} <span style="color:${P.acc}">&times;</span> Starlink</div><div style="font-family:SansR;font-size:34px;margin-top:12px;color:rgba(255,255,255,.85)">${sub}</div></div></div></div>`;
+   h+=card(470,33.3,'Jio','starlink_dish.jpg','Sells Starlink in Jio stores');
+   if(t>38.7)h+=card(790,38.75,'Airtel','starlink_sats.jpg','Same kind of deal');
+   if(t>39.8)h+=stamp(t,39.9,'1 DAY EARLIER',1090,80,-5);
+   return h+`<div class=abs style="left:60px;top:1420px;font-family:Mono;font-size:18px;color:rgba(255,255,255,.6)">Photos: Wikimedia Commons (CC0)</div>`}],
+ [41.4,t=>{const S=[540,620],AI=[230,1000],OW=[850,1000],J=[230,1350],SE=[850,1350];
+   let h=head(t,41.4,'WHO IS WHO','<span class=grad>Partners</span> or rivals?',92,150);
+   h+=edge(AI[0],AI[1],S[0],S[1],'SELLS IT',P.acc,t,41.7);h+=edge(AI[0],AI[1],OW[0],OW[1],'CO-OWNS',P.acc,t,42.6,true);h+=edge(OW[0],OW[1],S[0],S[1],'RIVAL',P.red,t,45.3);
+   if(t>47.1){h+=edge(J[0],J[1],S[0],S[1],'SELLS IT',P.acc,t,47.3);h+=edge(J[0],J[1],SE[0],SE[1],'BUILDS WITH',P.acc,t,49.3,true);h+=edge(SE[0],SE[1],S[0],S[1],'RIVAL',P.red,t,51.5)}
+   h+=node(S[0],S[1],'Starlink','ELON MUSK','starlink_sats.jpg',t,41.5,true);h+=node(AI[0],AI[1],'Airtel','BHARTI GROUP',null,t,41.6);h+=node(OW[0],OW[1],'OneWeb','SATELLITE RIVAL',null,t,42.8);
+   if(t>47.1){h+=node(J[0],J[1],'Jio','AMBANI',null,t,47.2);h+=node(SE[0],SE[1],'SES','SATELLITE PARTNER',null,t,50.2)}
+   if(t>52.9)h+=`<div class=abs style="left:60px;right:60px;top:1470px;text-align:center;${pop(t,53.0)}"><span class=glass style="display:inline-block;padding:16px 30px;font-family:Disp;font-size:50px;background:${P.dim}">Everyone is a <span class=grad>partner AND a rival</span></span></div>`;
+   return h}],
+ [58.1,t=>{let h=t>64.6?'':`<div class=abs style="left:0;right:0;top:150px;text-align:center;${pop(t,58.15)}"><span style="display:inline-block;background:${P.acc};color:${P.ink};font-family:Disp;font-size:84px;border-radius:26px;padding:8px 36px;box-shadow:0 0 70px ${P.glow}">Was it planned?</span></div>`;
+   if(t>60.5&&t<64.6)h+=`<div class=abs style="left:60px;right:60px;top:300px;text-align:center;${pop(t,60.5)}"><span class=glass style="display:inline-block;padding:14px 30px;font-family:Disp;font-size:54px">Probably not.${t>61.7?` <span style="font-family:SansR;font-size:38px;color:rgba(255,255,255,.85)">IPO was planned months before.</span>`:''}</span></div>`;
+   if(t>66.5&&t<76.4){const row=(t0,img,txt)=>`<div class=glass style="display:flex;align-items:center;gap:22px;padding:16px 24px;margin-top:16px;${rise(t,t0)}"><div class=av style="width:96px;height:96px;background-image:url('${A}${img}');border:3px solid ${P.acc}"></div><div style="font-family:Disp;font-size:44px;line-height:1.05">${txt}</div></div>`;
+     h+=`<div class=abs style="left:60px;right:60px;top:150px">${row(66.6,'ambani_face.jpg',`The world talked about <span class=grad>Ambani</span>`)}${t>70.8?row(70.8,'starlink_sats.jpg',`India talked about <span class=grad>Starlink</span>`):''}</div>`}
+   if(t>76.5&&t<79.9)h+=stamp(t,76.5,'BEST FREE AD CAMPAIGN OF THE YEAR',170,70,-4);
+   if(t>79.9)h+=`<div class=abs style="left:0;right:0;top:170px;display:flex;gap:30px;justify-content:center;${pop(t,79.95)}"><span style="display:inline-block;background:${P.acc};color:${P.ink};font-family:Disp;font-size:52px;border-radius:24px;padding:8px 24px">REAL FIGHT</span><span style="display:inline-block;background:#fff;color:#111;font-family:Disp;font-size:52px;border-radius:24px;padding:8px 24px">SMART BUSINESS</span></div><div class=abs style="left:0;right:0;top:300px;text-align:center;${pop(t,80.3)}"><span class=chipg style="font-size:32px;background:rgba(0,0,0,.55)">COMMENT &darr;</span></div>`;
+   return h}],
+];
+function setT(t){
+ const a=isA(t);const bgEl=document.getElementById('bg');
+ bgEl.style.cssText=a?'position:absolute;inset:0;display:none':`position:absolute;inset:0;${bg(t)}`;
+ if(!a)bgEl.innerHTML=`<div style="position:absolute;inset:-20px;background:url('${A}noise.png');opacity:.9;transform:translate(${(Math.floor(t*30)%7)*3-9}px,${(Math.floor(t*30)%5)*3-6}px)"></div>`;else bgEl.innerHTML='';
+ let i=SC.length-1;while(i>0&&t<SC[i][0])i--;
+ let h=SC[i][1](t);
+ h+=`<div class=abs style="left:50px;bottom:60px;font-family:Mono;font-size:22px;letter-spacing:4px;color:rgba(255,255,255,.8)">&#9679; THE AI KHABARI</div>`;
+ document.getElementById('stage').innerHTML=h;
+ const g=G.find(g=>t>=g[0][0]-0.05&&t<(g[g.length-1][1]+0.25))||null;const cap=document.getElementById('cap');
+ if(g){const k=g.reduce((acc,w,j)=>t>=w[0]?j:acc,-1);cap.style.top=(a?1580:1600)+'px';
+  cap.innerHTML=g.map((w,j)=>`<span style="${j===k?`background:${P.acc};color:${P.ink};-webkit-text-stroke:0`:'color:#fff'}">${w[2]}</span>`).join(' ')}else cap.innerHTML='';
+ document.getElementById('prog').style.width=(t/TOTAL*100)+'%';
+}
+setT(0);
+</script></body></html>
