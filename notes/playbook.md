@@ -132,6 +132,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 10-31 KEEP THE OWNER'S FACE CLEAR (owner): on his on-camera segments (especially the hook), NO overlay may cover his head/face/neck down to his necklace — not even glass panels (the Apple/Ambani/xAI hook panels covered his forehead). Put text/stickers ONLY above his head (very top strip) or BELOW the necklace/chest line, captions low. Measure his head/necklace position on a frame first and keep a safe box. Effects that sit BEHIND him (backdrop word behind head) are OK. Also: B-roll must be more than text in rectangular blocks — use real video clips/photos with motion, phone UI mockups, varied layouts; unique palettes (no red/blue/green/grey/saffron/purple repeats); never alter his footage (resolution, framing, brightness).
 - 10-29 (5) INSTAGRAM SEO FRAMEWORK (owner PDF): added as §00b; apply to every caption/script/on-screen text from now on.
 - 10-29 (4) TEMPLATE SAMPLES FIRST (owner): ALWAYS send sample sheets of every version's template (same key moments: hook, each B-roll scene, rehook, ending) BEFORE rendering final videos, so the owner can compare and choose. Render the full video only after that.
 - 10-29 (3) ONE RENDER AT A TIME (owner): never render/edit two videos in parallel (8 GB machine; parallel 4K renders crashed). Finish one, send it, then start the next.
