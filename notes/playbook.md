@@ -60,6 +60,15 @@ Every piece must pass: (1) hook text stops the scroll in frame 1, (2) one clear 
 - When the owner asks for keywords: output Primary (5-7), Secondary (10-12), Long-tail (8-12), then FINAL 25-30 as one clean comma-separated list, no hashtags, no per-keyword explanations.
 - CORE PRINCIPLE: Relevance + Search Intent + Specificity > Keyword Stuffing.
 
+## 00c. INSTAGRAM AGENT SKILL PACK (owner, 11-01) — vendored at tools/vendor/instagram-agent-skill (MIT, Jake Schincariol; local scripts, no network)
+Use these on every piece BEFORE sending to the owner (read the matching skills/<name>/SKILL.md first):
+- Hooks: write 3 hooks from skills/ig-reel/hooks.json (26 formulas, different formulas), score with `python3 -I skills/ig-reel/hookscore.py hooks.txt`; show the ranking. Treat <50 as "no hook yet". BUT our own metrics win over the scorer: "Okay wait, what?" openers score low on FRONTLOAD yet gave our best hold (42% skip) — keep the claim in the first sentence after it.
+- Timing: `python3 -I skills/ig-reel/beats.py script.txt --target 40` — fix hook >3 s, any beat >4 s without a visual change, no loop back to the hook.
+- Humanizer: `skills/ig-human/humanize.py` + `detect.py` on scripts and captions (strip em dashes, slop words, invisible chars; aim PASS).
+- Captions: `python3 -I skills/ig-caption/caption.py caption.txt --keywords "k1,k2"` — first 125 chars carry the hook/ask (Job A for Reels = ask + context + search terms), ONE ask, ≤5 specific hashtags, NO URLs in captions (put links in the first comment), emoji ≤4/100 chars.
+- Other skills to use when relevant: ig-carousel, ig-story (daily story sequence + stickers), ig-reply (sort comments, reply in order), ig-dm, ig-plan (weekly plan), ig-audit (post-mortem by outlier multiple + sends/reach), ig-profile (score bio /100), ig-viral (manual, human-speed research only — never scrape, never log in), ig-repurpose.
+- Safe-zone note: the pack says keep on-screen text inside y 230–1440 and clear of the right 230 px (UI overlays). Combine with the owner's face rule: on face segments put short text just below y 230 only if it stays above his hair line; otherwise put it under the necklace but above y 1440; captions ≤ y 1440 where possible.
+
 ## 0. NORTH STAR (owner, 10-15): make the viewer feel smarter than everyone around them
 Every Reel and post must leave the viewer holding something most people DON'T know yet, so they feel ahead and want to show it off ("wait, you didn't know this?"). Shares come from that feeling, not from asking.
 - **Insider-knowledge framing.** Position every story as early, inside information: "90% of people using ChatGPT don't know...", "Your friends will hear about this next month. You're hearing it now.", "Investors just quietly bet $X on this. Here's why." Make it true (cite the data/source on screen), never fake scarcity.
@@ -132,6 +141,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 11-01 SKILL PACK (owner): vendored Jakeschincariol/instagram-agent-skill → §00c; run hookscore/beats/humanize/caption lint on every piece.
 - 10-31 KEEP THE OWNER'S FACE CLEAR (owner): on his on-camera segments (especially the hook), NO overlay may cover his head/face/neck down to his necklace — not even glass panels (the Apple/Ambani/xAI hook panels covered his forehead). Put text/stickers ONLY above his head (very top strip) or BELOW the necklace/chest line, captions low. Measure his head/necklace position on a frame first and keep a safe box. Effects that sit BEHIND him (backdrop word behind head) are OK. Also: B-roll must be more than text in rectangular blocks — use real video clips/photos with motion, phone UI mockups, varied layouts; unique palettes (no red/blue/green/grey/saffron/purple repeats); never alter his footage (resolution, framing, brightness).
 - 10-29 (5) INSTAGRAM SEO FRAMEWORK (owner PDF): added as §00b; apply to every caption/script/on-screen text from now on.
 - 10-29 (4) TEMPLATE SAMPLES FIRST (owner): ALWAYS send sample sheets of every version's template (same key moments: hook, each B-roll scene, rehook, ending) BEFORE rendering final videos, so the owner can compare and choose. Render the full video only after that.
