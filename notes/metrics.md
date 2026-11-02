@@ -67,3 +67,7 @@ Line 10-31: the purple xAI Reel is our best-held Reel ever (42% skip, 22 s avg).
 | 11-01 | [G/C] NY kids-AI-law owner Reel (repost, 1:20, posted 4 PM PT 10-31) | 482 views/16h, reach 287, 1 share, 1 save, 33 likes, avg watch 11.7 s, skip 65.8% | first upload deleted by owner after ~5 min (repost may have been penalised) |
 | 11-01 update | xAI buyout 1,676 / reach 1,368 / 22.2 s / 41.9% skip · Musk vs Ambani 1,108 / 826 / 3 shares · Apple 2,018 / 1,495 |
 Line 11-01: the NY law Reel held worse (66% skip, 11.7 s) than xAI (42%, 22 s): its frame-1 is a slow whispered quote with a small notification, vs xAI's "Okay wait, what?" + bold claim. Also deleting + reposting within minutes likely cost reach. Next: open with the surprising claim spoken fast + big top-strip text; avoid delete/repost.
+| 11-02 | Tesla Halloween Cybercab (owner Reel, 11-01) | 494 views, reach 285, 1 share, 1 save, 13 likes, avg 7.4 s, skip 51.6% | low hold: short clip with no rehook |
+| 11-02 update | NY kids AI law repost | 514 views, reach 307, 1 share, 2 saves, 34 likes, 12.2 s, skip 63.3% |
+| 11-02 update | xAI buyout | 1,704 views, reach 1,392, 4 saves, 22.1 s, 41.9% (still best) · Ambani 1,118/838, 3 shares · Apple 2,036/1,512, 9 comments |
+Line 11-02 (weekly): the 3 owner-face Reels with a bold claim in sentence 1 + rehook (xAI, Apple, Ambani) did 1.1-2k views; the reposted/slow-open NY and the no-script Tesla clip did ~500. Today: one owner script with a "wait, what?" money claim in line 1, a rehook at ~40%, and the payoff last.
