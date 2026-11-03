@@ -71,3 +71,6 @@ Line 11-01: the NY law Reel held worse (66% skip, 11.7 s) than xAI (42%, 22 s): 
 | 11-02 update | NY kids AI law repost | 514 views, reach 307, 1 share, 2 saves, 34 likes, 12.2 s, skip 63.3% |
 | 11-02 update | xAI buyout | 1,704 views, reach 1,392, 4 saves, 22.1 s, 41.9% (still best) · Ambani 1,118/838, 3 shares · Apple 2,036/1,512, 9 comments |
 Line 11-02 (weekly): the 3 owner-face Reels with a bold claim in sentence 1 + rehook (xAI, Apple, Ambani) did 1.1-2k views; the reposted/slow-open NY and the no-script Tesla clip did ~500. Today: one owner script with a "wait, what?" money claim in line 1, a rehook at ~40%, and the payoff last.
+| 11-03 | Binance hack explainer (owner Reel, 89 s, split hook, 18 h) | 820 views, reach 473, 2 shares, 2 saves, 35 likes, avg 9.0 s, skip 76.1% | worst skip since 10-26 |
+| 11-03 update | Tesla 552/319, 52.1% skip · NY 535/323 · xAI 1,719/1,408 · Ambani 1,136/844 · Apple 2,056/1,528 | owner started paid promotion on Ambani + Binance 11-02 (in review) → from 11-03 treat their reach as paid+organic |
+Line 11-03: Binance opened with "Okay, this is…" and a busy split screen, then ran 89 s; 76% skipped in the first seconds. The likes were good (35), so the topic works but the first 2 s didn't. Today: the bold claim must be the first spoken word (no "Okay"), the hook frame must be one big idea, and the script should be ≤60 s.
