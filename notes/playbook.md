@@ -141,6 +141,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 11-03 (5) ELEVENLABS CREDITS: 36,372 left on 11-03 (owner). Cost ≈ 1 credit per character (40-char test line = 40 credits). Budget: 30 s script ≈ 450-500 credits, 45 s ≈ 700, 60 s ≈ 950. Count characters before generating; log credits used per Reel in covers.md.
 - 11-03 (4) OWNER VOICE CLONE (owner): ElevenLabs cloned voice "Sahil Mutha 1", voice_id zcZgniQ00rUUtakHCWtU (category cloned, en-indian, young male). Use it ONLY when the owner asks or for fallback Reels he approves; his real recordings come first. Label AI voice in captions ("Voice: AI clone"). generations_count=1, never retry. Do not test without his go-ahead.
 - 11-03 (3) ELEVENLABS PAID (owner subscribed 11-03): generation works again (Harry eleven_v4 test OK, 40 credits per 2.5 s line). Still: generations_count=1, never retry a failed generation, Harry only unless the owner says otherwise. Restricted connector = voice/speech only (TTS, voice isolator, voice changer, dubbing, SFX); no video/avatars.
 - 11-03 (2) VOICE (owner): compared an EQ "clarity" version vs his original; he chose the ORIGINAL. Default = his original audio, only loudness-matched to -14 LUFS (loudnorm, no EQ/denoise) unless he asks for cleaning.
