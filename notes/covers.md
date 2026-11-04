@@ -43,3 +43,4 @@
 | 2026-10-31 | [G/C] NY kids-AI-law owner Reel ('I love you… don't tell your parents' hook; espresso/rose-gold; NYC timelapse B-roll, phone-chat + iOS settings mockups, behind-head ILLEGAL/RED FLAG words, face kept clear) https://www.instagram.com/reel/DfLSIUJGqT0/ (reposted; first upload deleted by owner) | cover: thumb_offset 1.5 s | owner voice (cleaned, +18 dB); NYC timelapse David Schwab CC BY 3.0; kid photo Shixart1985 CC BY 2.0 | palette: espresso #140B09 + rose-gold #E8A598 + blush #FFD3C7 + butter #FFE6A8 |
 | 11-02 | Binance $6.3B hack explainer (owner Reel, split hook) | DfQQqwmjR0V | black + gold | thumb_offset 4.6 s ($6.3B + face) |
 | 11-03 | US midterms explainer (owner Reel, face hook-half + end, end card) | DfTCpRLCImf | black + lilac | thumb_offset 1.2 s, original voice |
+| 11-03 | CA/CFA/LLB GDPx (AI voice clone, no face) | (unposted) | black + copper | clone zcZgniQ00rUUtakHCWtU, 1,176 credits, atempo 1.1 |
