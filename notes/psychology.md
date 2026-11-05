@@ -40,6 +40,6 @@ Source quality: Mosseri and Instagram quotes below are as reported by Social Med
 | Tesla (11-02) | 1/285 = 0.35% | 13/285 = 4.6% | 7.4 s |
 | NY law (11-02) | 1/307 = 0.33% | 34/307 = 11.1% | 12.2 s |
 | xAI (10-31) | shares not recorded | 28/1,306 = 2.1% | 22.3 s |
-Read: our largest organic reaches (Midterms, xAI) had the lowest like rates and the strongest watch or sends, which fits the guidance, but a handful of Reels cannot prove it. Metrics gap: xAI and Apple have no share count logged, so log shares on every row.
+Read: in this table, the two largest reaches (Midterms, xAI) had the lowest like rates and the strongest sends or watch, which fits the guidance, but a handful of Reels cannot prove it. Metrics gap: xAI and Apple have no share count logged, so log shares on every row.
 
 **Test next:** for the next 5 Reels, drop "send this to..." and "comment YES" and use one who-needs-this line plus one open question. Compare sends per reach against the 0.42% median above, plus comment count, and keep watching average watch time. Exclude paid Reels. A single Reel is not a result.
