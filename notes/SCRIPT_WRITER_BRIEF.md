@@ -22,6 +22,7 @@ Also mark where the owner's face appears and where B-roll goes, with one short B
 
 ## 2b. Retention structure (updated daily)
 See the "CURRENT TOOLKIT" in notes/psychology.md (paste it here when using another chatbot). Default flow: HOOK → RE-COMMIT within 3-6 s → DELAY with open loops every 8-10 s → REHOOK → PAYOFF → END that loops back.
+Asks: build one line that names who needs this story ("If you're on OPT, this is the date that matters") and end on one open question. Avoid "comment a word", "comment YES" and share or tag demands: Instagram said it won't recommend content that explicitly asks for them to hack reach. Top signals to write for: watch time, sends, likes.
 
 ## 3. The hook, which is the most important part
 - **First spoken words = the claim.** Never warm up with "Okay, so…", "Hey guys", "Today we're talking about…" or "I'll say it." Our Binance Reel opened with "Okay, this is…" and 76% of viewers swiped away.
