@@ -89,3 +89,4 @@ Line 11-04: Midterms won because it was timely (posted on election day) + a clea
 | 10-30 xAI DfHl6juEtc8 | 1,759 | 1,440 | 0 | 4 | 31 | 21.8 s | 42.1% |
 | 10-30 Musk vs Ambani DfGtZkBiRDI | 1,165 | 873 | 3 | 3 | 36 | 15.8 s | 58.6% |
 LESSON: the niche CA/CFA Reel stalled (0 shares, 74% skip) while the US-audience Midterms Reel keeps growing (2.5k views, 10 shares). Today: lead with a hook every US tech worker recognises in the first line (the Canva layoffs severance is a "send it to your manager" story), keep visa/career stakes front and centre, and skip niche professions.
+| 11-05 | Canva layoffs Reel posted 11:00 AM PT, DfXt2vvjDSD (id 18121671787988124) | check tomorrow | first comment 18089861198300241 |

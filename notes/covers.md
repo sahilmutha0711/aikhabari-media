@@ -45,4 +45,4 @@
 | 11-03 | US midterms explainer (owner Reel, face hook-half + end, end card) | DfTCpRLCImf | black + lilac | thumb_offset 1.2 s, original voice |
 | 11-03 | CA/CFA/LLB GDPx (AI voice clone, no face) | not posted (owner chose face version) | black + copper | clone zcZgniQ00rUUtakHCWtU, 1,176 credits, atempo 1.1 |
 | 11-04 | CA/CFA/LLB GDPx (owner face version, badges hook, Bluebird music) | DfUkgx7j38D | black + copper | posted 7 PM IST, original voice |
-| 2026-11-04 | Canva layoffs | not posted yet | Cover B (logo + LAYOFFS stamp, no cutout) chosen |
+| 2026-11-05 | Canva layoffs (owner face hook+end, Mint clips credited, m3 synthwave bed) | DfXt2vvjDSD (18121671787988124) posted 11:00 PT | Cover B (logo + LAYOFFS stamp, no cutout) · palette plum-black + hot pink #FF3D8B + peach |
