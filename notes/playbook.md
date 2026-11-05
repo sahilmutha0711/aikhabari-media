@@ -69,6 +69,11 @@ Use these on every piece BEFORE sending to the owner (read the matching skills/<
 - Other skills to use when relevant: ig-carousel, ig-story (daily story sequence + stickers), ig-reply (sort comments, reply in order), ig-dm, ig-plan (weekly plan), ig-audit (post-mortem by outlier multiple + sends/reach), ig-profile (score bio /100), ig-viral (manual, human-speed research only — never scrape, never log in), ig-repurpose.
 - Safe-zone note: the pack says keep on-screen text inside y 230–1440 and clear of the right 230 px (UI overlays). Combine with the owner's face rule: on face segments put short text just below y 230 only if it stays above his hair line; otherwise put it under the necklace but above y 1440; captions ≤ y 1440 where possible.
 
+## 00d. SCROLL PSYCHOLOGY & RETENTION (owner, 11-04) — read notes/psychology.md before writing ANY script
+- Structure is no longer fixed to HOOK → DELAY → REHOOK → PAYOFF → END. Base it on: HOOK (autopilot breaker) → RE-COMMIT within 3-6 s (a second reason to stay or an engagement line, e.g. "Like this video and watch till the end", "Save this, you'll need it") → DELAY with an open loop every 8-10 s (numbered items, "that's not even the worst part") → REHOOK → PAYOFF → END that loops to the hook. Vary it: lists, countdowns, myth-vs-fact, "3 things", story with a twist.
+- Engagement lines can appear mid-video too, but max 2 per Reel and never fake. Prefer SAVE/SEND asks; use "like" asks sparingly (Instagram does not reward engagement bait).
+- notes/psychology.md is updated daily by the scheduled research task "AI Khabari scroll-psychology research"; its CURRENT TOOLKIT overrides older hook advice in this file.
+
 ## 0. NORTH STAR (owner, 10-15): make the viewer feel smarter than everyone around them
 Every Reel and post must leave the viewer holding something most people DON'T know yet, so they feel ahead and want to show it off ("wait, you didn't know this?"). Shares come from that feeling, not from asking.
 - **Insider-knowledge framing.** Position every story as early, inside information: "90% of people using ChatGPT don't know...", "Your friends will hear about this next month. You're hearing it now.", "Investors just quietly bet $X on this. Here's why." Make it true (cite the data/source on screen), never fake scarcity.
