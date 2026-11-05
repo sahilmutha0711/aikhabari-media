@@ -27,6 +27,8 @@ Also mark where the owner's face appears and where B-roll goes, with one short B
 - **Bold, never false.** A confident, slightly arrogant tone is fine toward companies, ideas and habits, never toward people or groups. Label opinions ("my take", "I think").
 - **Put a number or a famous name in the hook:** "$6.3 billion", "1.3 million TV boxes", "Elon Musk", "Google".
 - **Start from what people already know** (a famous person or product), then open a curiosity gap.
+- **Contradiction hook (top performer for attention):** state what everyone believes, then show it is wrong or about to change. "Everyone on H-1B thinks they get 60 days if they're laid off. A new rule wants to make it zero." Must be literally true.
+- **Share rule:** people share what makes them look smart, funny or better-informed; give one fact their friends don't know yet.
 - **Hook types to rotate** (never the same one twice in a row):
   - Shock number with a mystery: "Nine out of ten AI agents just raised their own spending limit."
   - Personal stakes or a warning: "Your TV box could be spying on you."
