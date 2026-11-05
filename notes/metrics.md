@@ -78,3 +78,14 @@ Line 11-03: Binance opened with "Okay, this is…" and a busy split screen, then
 | 11-04 | CA/CFA/LLB GDPx (owner face, badges, Bluebird music) 1.5 h old | 220 views, reach 145, 0 shares, 15 likes, 5.4 s avg, skip 70.9% | early; check tomorrow |
 | 11-04 update | Binance 970/556 skip 74% · NY 576/348 · xAI 1,737/1,428 · Ambani 1,151/861 (ads) · Apple 2,080/1,543 |
 Line 11-04: Midterms won because it was timely (posted on election day) + a clear "who's affected" audience (F-1/OPT/H-1B) = 10 shares. CA/CFA started slow (71% skip): niche label hook ("CA, CFA or LLB?") may filter too hard in the first second. Today: tie the story to a timely moment + name a big audience, and open with the stake, not a label list.
+
+## 2026-11-05 (7-day loop)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-04 CA/CFA face DfUkgx7j38D | 360 | 238 | 0 | 0 | 29 | 6.6 s | 74.4% |
+| 11-03 Midterms DfTCpRLCImf | 2,574 | 2,014 | 10 | 5 | 45 | 17.7 s | 59.8% |
+| 11-02 Binance DfQQqwmjR0V | 997 | 568 | 2 | 3 | 37 | 9.7 s | 73.4% |
+| 10-31 NY kids AI law DfLSIUJGqT0 | 591 | 360 | 1 | 2 | 37 | 12.1 s | 60.3% |
+| 10-30 xAI DfHl6juEtc8 | 1,759 | 1,440 | 0 | 4 | 31 | 21.8 s | 42.1% |
+| 10-30 Musk vs Ambani DfGtZkBiRDI | 1,165 | 873 | 3 | 3 | 36 | 15.8 s | 58.6% |
+LESSON: the niche CA/CFA Reel stalled (0 shares, 74% skip) while the US-audience Midterms Reel keeps growing (2.5k views, 10 shares). Today: lead with a hook every US tech worker recognises in the first line (the Canva layoffs severance is a "send it to your manager" story), keep visa/career stakes front and centre, and skip niche professions.
