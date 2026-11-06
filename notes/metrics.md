@@ -90,3 +90,15 @@ Line 11-04: Midterms won because it was timely (posted on election day) + a clea
 | 10-30 Musk vs Ambani DfGtZkBiRDI | 1,165 | 873 | 3 | 3 | 36 | 15.8 s | 58.6% |
 LESSON: the niche CA/CFA Reel stalled (0 shares, 74% skip) while the US-audience Midterms Reel keeps growing (2.5k views, 10 shares). Today: lead with a hook every US tech worker recognises in the first line (the Canva layoffs severance is a "send it to your manager" story), keep visa/career stakes front and centre, and skip niche professions.
 | 11-05 | Canva layoffs Reel posted 11:00 AM PT, DfXt2vvjDSD (id 18121671787988124) | check tomorrow | first comment 18089861198300241 |
+
+## 2026-11-06 (7-day loop)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-05 Canva layoffs DfXt2vvjDSD (day 1) | 563 | 306 | 0 | 3 | 34 | 10.2 s | 69.7% |
+| 11-04 CA/CFA face | 379 | 247 | 0 | 0 | 29 | 6.3 s | 74.7% |
+| 11-03 Midterms | 2,589 | 2,019 | 10 | 5 | 45 | 17.7 s | 59.7% |
+| 11-02 Binance | 1,008 | 575 | 2 | 3 | 38 | 9.8 s | 73.4% |
+| 10-31 NY kids law | 605 | 367 | 1 | 2 | 38 | 12.3 s | 60.6% |
+| 10-30 xAI | 1,764 | 1,442 | 0 | 4 | 31 | 21.7 s | 42.1% |
+| 10-30 Musk vs Ambani | 1,172 | 879 | 3 | 3 | 36 | 15.7 s | 58.7% |
+LESSON: Canva (79 s, story a day old when posted) got saves but 0 shares and 70% skip; long Reels (>60 s) keep losing ~70% at the start. Midterms worked because it was posted ON the day with a direct "you" stake. Today: same-day market/AI stories with a personal-money stake, script ≤45 s.
