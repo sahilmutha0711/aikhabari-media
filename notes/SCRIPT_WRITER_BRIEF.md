@@ -23,6 +23,7 @@ Also mark where the owner's face appears and where B-roll goes, with one short B
 ## 2b. Retention structure (updated daily)
 See the "CURRENT TOOLKIT" in notes/psychology.md (paste it here when using another chatbot). Default flow: HOOK → RE-COMMIT within 3-6 s → DELAY with open loops every 8-10 s → REHOOK → PAYOFF → END that loops back.
 Asks: build one line that names who needs this story ("If you're on OPT, this is the date that matters") and end on one open question. Avoid "comment a word", "comment YES" and share or tag demands: Instagram said it won't recommend content that explicitly asks for them to hack reach. Top signals to write for: watch time, sends, likes.
+Text: many people scroll with the sound off, so the frame-1 text must state the stake by itself in at most 5 words. Write B-roll card text as a key word or number only, and keep captions in 2-3-word groups.
 
 ## 3. The hook, which is the most important part
 - **First spoken words = the claim.** Never warm up with "Okay, so…", "Hey guys", "Today we're talking about…" or "I'll say it." Our Binance Reel opened with "Okay, this is…" and 76% of viewers swiped away.
@@ -42,7 +43,7 @@ Asks: build one line that names who needs this story ("If you're on OPT, this is
   - Playing dumb, or is it real?: "Is Elon trolling us, or is this real? I think…"
   - Wild or funny cold open, about 1 in 3 Reels, still factual: "Google just paid $20 million for a dead chatbot's homework."
 - **"Watch till the end" is optional.** Use it only when the hook promises a reveal at the end.
-- **On-screen hook text:** at most 7 words, and it can differ from the spoken hook. The text creates curiosity; the voice gives context.
+- **On-screen hook text:** aim for 5 words or fewer (7 at most, and then keep it on screen for at least 3 s; see psychology.md toolkit 9), and it can differ from the spoken hook. The text creates curiosity; the voice gives context.
 - Before finishing, write 3 alternative hooks and pick the strongest.
 
 ## 4. Writing rules

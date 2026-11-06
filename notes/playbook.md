@@ -8,7 +8,7 @@ Goal: reach + SHARES (DM sends) first, saves second, likes last. Instagram's ran
 
 ### A. The first 2 seconds (fixes the skip rate)
 - Frame 1 = the payoff promise as BIG on-screen text + a moving visual. No logo, no title card, no "today's AI news". The sound logo plays UNDER the hook; the whisper "Psst... the AI Khabri here" moves to AFTER the first reveal (~4-6 s), or is skipped on short Reels.
-- On-screen hook text ≤ 7 words, scroll-stopping, honest: "This AI tool is basically cheating", "Your smart TV could hide an AI", "He built Spotify's recs. Now he's worth billions", "Delete this app before Monday" (only if true). Must be literally true or clearly framed as a take.
+- On-screen hook text ≤ 5 words ideally (7 max, then hold it ≥3 s; psychology.md toolkit 9), scroll-stopping, honest: "This AI tool is basically cheating", "Your smart TV could hide an AI", "He built Spotify's recs. Now he's worth billions", "Delete this app before Monday" (only if true). Must be literally true or clearly framed as a take.
 - Spoken hook and text hook can differ; text = curiosity, voice = context.
 - Pattern interrupt every 2-3 s (cut, zoom, number pop, new box). No static frame longer than 3 s.
 
