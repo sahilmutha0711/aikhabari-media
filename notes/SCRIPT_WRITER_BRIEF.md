@@ -23,6 +23,7 @@ Also mark where the owner's face appears and where B-roll goes, with one short B
 ## 2b. Retention structure (updated daily)
 See the "CURRENT TOOLKIT" in notes/psychology.md (paste it here when using another chatbot). Default flow: HOOK → RE-COMMIT within 3-6 s → DELAY with open loops every 8-10 s → REHOOK → PAYOFF → END that loops back.
 Asks: build one line that names who needs this story ("If you're on OPT, this is the date that matters") and end on one open question. Avoid "comment a word", "comment YES" and share or tag demands: Instagram said it won't recommend content that explicitly asks for them to hack reach. Top signals to write for: watch time, sends, likes.
+Hook and loops: state the hook as a specific claim, not a question ("This H-1B rule cuts your days", not "Is your H-1B safe?"); keep the open question for the end. Make open loops about things the viewer half-knows, and use one "guess the number" beat (short 1-2 s pause, then the reveal). Close every loop.
 Text: many people scroll with the sound off, so the frame-1 text must state the stake by itself in at most 5 words. Write B-roll card text as a key word or number only, and keep captions in 2-3-word groups.
 
 ## 3. The hook, which is the most important part
