@@ -102,3 +102,7 @@ LESSON: the niche CA/CFA Reel stalled (0 shares, 74% skip) while the US-audience
 | 10-30 xAI | 1,764 | 1,442 | 0 | 4 | 31 | 21.7 s | 42.1% |
 | 10-30 Musk vs Ambani | 1,172 | 879 | 3 | 3 | 36 | 15.7 s | 58.7% |
 LESSON: Canva (79 s, story a day old when posted) got saves but 0 shares and 70% skip; long Reels (>60 s) keep losing ~70% at the start. Midterms worked because it was posted ON the day with a direct "you" stake. Today: same-day market/AI stories with a personal-money stake, script ≤45 s.
+
+## 2026-11-07
+Canva DfXt2vvjDSD day 2: 589 views, 0 shares, 3 saves, 69.3% skip, 10.3 s avg. Midterms still leads (2,608 / 10 shares). Replied to 1 comment ("Great mic").
+LESSON: no new recordings yet; the finance-trial "AI stocks whiplash" script is waiting. Weekend: keep it to one fresh, same-day script.
