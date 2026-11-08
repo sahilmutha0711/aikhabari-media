@@ -106,3 +106,7 @@ LESSON: Canva (79 s, story a day old when posted) got saves but 0 shares and 70%
 ## 2026-11-07
 Canva DfXt2vvjDSD day 2: 589 views, 0 shares, 3 saves, 69.3% skip, 10.3 s avg. Midterms still leads (2,608 / 10 shares). Replied to 1 comment ("Great mic").
 LESSON: no new recordings yet; the finance-trial "AI stocks whiplash" script is waiting. Weekend: keep it to one fresh, same-day script.
+
+## 2026-11-08
+No new posts since Canva (11-05). Canva 600 views / 0 shares / 3 saves / 69.7% skip. Midterms 2,617. No unanswered comments.
+LESSON: 3 days without a post; the AI-stocks script (finance trial) is still waiting on a recording. Offer the owner the voice-clone version so we don't lose the slot.
