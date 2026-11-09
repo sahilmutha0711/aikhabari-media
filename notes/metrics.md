@@ -110,3 +110,7 @@ LESSON: no new recordings yet; the finance-trial "AI stocks whiplash" script is 
 ## 2026-11-08
 No new posts since Canva (11-05). Canva 600 views / 0 shares / 3 saves / 69.7% skip. Midterms 2,617. No unanswered comments.
 LESSON: 3 days without a post; the AI-stocks script (finance trial) is still waiting on a recording. Offer the owner the voice-clone version so we don't lose the slot.
+
+## 2026-11-09 (Mon, weekly)
+Followers 514, 42 posts. Week posts: Binance 1,025 · Midterms 2,627 (10 shares) · CA/CFA 408 · Canva 607 (3 saves). No posts since 11-05; waiting on owner's choice (record vs voice clone) for the AI stocks Reel.
+LESSON: the only share-winner this week was same-day + "you" stake (Midterms). Posting gap 4 days.
