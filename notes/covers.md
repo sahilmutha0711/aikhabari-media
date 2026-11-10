@@ -46,3 +46,4 @@
 | 11-03 | CA/CFA/LLB GDPx (AI voice clone, no face) | not posted (owner chose face version) | black + copper | clone zcZgniQ00rUUtakHCWtU, 1,176 credits, atempo 1.1 |
 | 11-04 | CA/CFA/LLB GDPx (owner face version, badges hook, Bluebird music) | DfUkgx7j38D | black + copper | posted 7 PM IST, original voice |
 | 2026-11-05 | Canva layoffs (owner face hook+end, Mint clips credited, m3 synthwave bed) | DfXt2vvjDSD (18121671787988124) posted 11:00 PT | Cover B (logo + LAYOFFS stamp, no cutout) · palette plum-black + hot pink #FF3D8B + peach |
+| 2026-11-10 | Nvidia / Jensen Huang affair + suspected spy (owner face hook/rehook/end, Bloomberg clips credited, original audio only, no music) | DfkmvnDgQW5 (18115890512334390) posted 11:00 PT | Cover: Bloomberg dinner still, Alice red ring 'SUSPECTED SPY?', 'JENSEN'S AFFAIR', '-$190B IN A DAY' · palette black + coral #FF7A6B |
