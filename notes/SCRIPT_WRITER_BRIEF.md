@@ -27,6 +27,7 @@ Hook and loops: state the hook as a specific claim, not a question ("This H-1B r
 Text: many people scroll with the sound off, so the frame-1 text must state the stake by itself in at most 5 words. Write B-roll card text as a key word or number only, and keep captions in 2-3-word groups.
 Emotion: write the target emotion at the top (awe, justified anger, anxiety + what to do, or amusement). Never end on sadness; turn layoff or cut stories into "what to check / what to do".
 Frame 1: the owner's face plus the stake text from the very first frame (no fade-in, logo or title card). Mark one [look at number] cue: at the key number he glances or points toward it on screen.
+Identity: open with ONE big-audience word the viewer is in (H-1B, OPT, laid off) as a statement with a stake, never a "CA, CFA or LLB?" label list; "you/your" on the key fact plus one thing they can do; "someone you know" only in the send line. In boosted copy avoid "Are you [attribute]?".
 Pace and length: 25-45 s. By second 10 (about 30 words) say who it affects and what changed. Write for a natural fast pace (about 3 words/s); mark one [slow] beat with a short pause on the key number, and keep the rest brisk.
 
 ## 2c. Problem-led format: PAIN → POKE → FIX → PAYOFF → RECAP
