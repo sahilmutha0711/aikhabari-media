@@ -29,6 +29,9 @@ Emotion: write the target emotion at the top (awe, justified anger, anxiety + wh
 Frame 1: the owner's face plus the stake text from the very first frame (no fade-in, logo or title card). Mark one [look at number] cue: at the key number he glances or points toward it on screen.
 Pace and length: 25-45 s. By second 10 (about 30 words) say who it affects and what changed. Write for a natural fast pace (about 3 words/s); mark one [slow] beat with a short pause on the key number, and keep the rest brisk.
 
+## 2c. Problem-led format: PAIN → POKE → FIX → PAYOFF → RECAP
+Use for any 'what should I do' story (investing, visas, jobs, tools). 1) PAIN: a situation the viewer has already lived, in line 1. 2) POKE: 1-2 lines on why the obvious move fails. 3) FIX: up to 3 short steps. 4) PAYOFF: proof it works (a real number or case). 5) RECAP: last line returns to the line-1 pain, now solved.
+
 ## 3. The hook, which is the most important part
 - **First spoken words = the claim.** Never warm up with "Okay, so…", "Hey guys", "Today we're talking about…" or "I'll say it." Our Binance Reel opened with "Okay, this is…" and 76% of viewers swiped away.
 - **Our best-performing formula** (xAI Reel: 42% skip rate, 22 s average watch):
