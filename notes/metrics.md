@@ -118,3 +118,10 @@ LESSON: the only share-winner this week was same-day + "you" stake (Midterms). P
 ## 2026-11-10
 No new posts since 11-05 (Canva 610 views, 3 saves). Midterms 2,638. Jensen/Nvidia Reel (owner-recorded 11-10) in template stage, waiting on colour pick (coral / newsprint / soft pink).
 | 11-10 | Nvidia/Jensen Reel posted 11:00 AM PT, DfkmvnDgQW5 (id 18115890512334390) | first comment 18386757550237140 |
+
+## 2026-11-11
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-10 Nvidia/Jensen DfkmvnDgQW5 (day 1) | 1,827 | 1,476 | 6 | 2 | 61 | 20.7 s | 46.1% |
+| 11-05 Canva | 621 | 343 | 0 | 3 | 37 | 10.1 s | 69.4% |
+LESSON: Nvidia/Jensen is our best day-1 Reel yet: 46% skip (vs ~70% for Canva/CA-CFA), 20.7 s avg watch, 6 shares, 61 likes. A famous name + scandal + money stake in the first line, face only in hook/rehook/end, real news B-roll with the key person circled. Repeat: famous name in the first 3 words, a "why it matters to your money" payoff. Followers 513. Replied to 1 comment.
