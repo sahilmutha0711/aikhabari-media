@@ -126,3 +126,12 @@ No new posts since 11-05 (Canva 610 views, 3 saves). Midterms 2,638. Jensen/Nvid
 | 11-05 Canva | 621 | 343 | 0 | 3 | 37 | 10.1 s | 69.4% |
 LESSON: Nvidia/Jensen is our best day-1 Reel yet: 46% skip (vs ~70% for Canva/CA-CFA), 20.7 s avg watch, 6 shares, 61 likes. A famous name + scandal + money stake in the first line, face only in hook/rehook/end, real news B-roll with the key person circled. Repeat: famous name in the first 3 words, a "why it matters to your money" payoff. Followers 513. Replied to 1 comment.
 POSTED 11-11 10:00 PT: Anthropic IPO DfnD_5aCYqm (18211261060371493), first comment 18126815089699861. Check day-1 stats on the 11-12 run vs Nvidia.
+
+## 2026-11-12 run (followers 531, +18 since 11-11)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-11 Anthropic IPO DfnD_5aCYqm (day 1) | 2,033 | 1,569 | 21 | 8 | 60 | 20.1 s | 59.9% |
+| 11-10 Nvidia/Jensen DfkmvnDgQW5 (day 2) | 1,914 | 1,535 | 9 | 2 | 68 | 20.5 s | 45.8% |
+| 11-05 Canva | 650 | 357 | 0 | 3 | 37 | 10.3 s | 68.7% |
+| 11-04 CA/CFA/LLB | 433 | 278 | 0 | 0 | 33 | 6.2 s | 73.4% |
+LESSON: Anthropic IPO = record SHARES (21) and saves (8) in day 1: "what you need to know before you invest" + Pain/Poke/Fix/Payoff framework makes it a send-to-friend favour. Skip 60% vs Nvidia 46%: a scandal/famous-face hook holds the first 3 s better than a money explainer. Today: keep AI + money, use a famous name + stakes in the first words AND a practical "before you ___" payoff. No unanswered comments.
