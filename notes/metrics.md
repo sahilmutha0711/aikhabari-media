@@ -138,3 +138,4 @@ LESSON: Anthropic IPO = record SHARES (21) and saves (8) in day 1: "what you nee
 
 ## 2026-11-13 run
 Composio/Instagram connector failed to connect (502) — no insights pulled, comments not checked. Built Notion/Fireworks breach carousel (mint/sky/lemon mesh, ink + teal #0E7C6B + alert #FF5A4E), media/2026-11-13/notion. Nvidia resignation script still awaiting owner recording.
+11-13 metrics: Anthropic 2,215 v / 21 sh / 8 sv; Nvidia 1,939 v / 10 sh; followers 533. Carousel Dfs1nVUnUCe posted 23:43Z, comment 18123455852071508.
