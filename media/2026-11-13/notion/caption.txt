@@ -1,15 +1,9 @@
-Pasted a password or API key into Notion AI? Change it today.
+Notion AI chats exposed in the Fireworks AI hack.
 
-Hackers broke into Fireworks AI, a company Notion used to run some of its AI, and some Notion AI chat transcripts were exposed. Notion says fewer than 1% of workspaces were hit and it cut Fireworks off on Nov 3.
-
-The twist: Notion says the data was kept even though the contract promised zero data retention.
-
-Slide 4 shows how to check your workspace in 60 seconds.
+Fewer than 1% of workspaces were hit. Pasted a password or API key into Notion AI? Rotate it today. Slide 4: check yours in 60 seconds.
 
 Send this to the teammate who pastes API keys into AI chats.
 
-Would you still use AI chats for work notes after this? 👇
+Would you still trust AI chats with work notes? 👇
 
-Notion AI data breach · Fireworks AI hack · AI privacy at work
-
-#notion #cybersecurity #aitools #dataprivacy
+#notion #cybersecurity #dataprivacy #aitools
