@@ -135,3 +135,6 @@ POSTED 11-11 10:00 PT: Anthropic IPO DfnD_5aCYqm (18211261060371493), first comm
 | 11-05 Canva | 650 | 357 | 0 | 3 | 37 | 10.3 s | 68.7% |
 | 11-04 CA/CFA/LLB | 433 | 278 | 0 | 0 | 33 | 6.2 s | 73.4% |
 LESSON: Anthropic IPO = record SHARES (21) and saves (8) in day 1: "what you need to know before you invest" + Pain/Poke/Fix/Payoff framework makes it a send-to-friend favour. Skip 60% vs Nvidia 46%: a scandal/famous-face hook holds the first 3 s better than a money explainer. Today: keep AI + money, use a famous name + stakes in the first words AND a practical "before you ___" payoff. No unanswered comments.
+
+## 2026-11-13 run
+Composio/Instagram connector failed to connect (502) — no insights pulled, comments not checked. Built Notion/Fireworks breach carousel (mint/sky/lemon mesh, ink + teal #0E7C6B + alert #FF5A4E), media/2026-11-13/notion. Nvidia resignation script still awaiting owner recording.
