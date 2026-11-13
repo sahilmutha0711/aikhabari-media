@@ -29,6 +29,7 @@ Emotion: write the target emotion at the top (awe, justified anger, anxiety + wh
 Frame 1: the owner's face plus the stake text from the very first frame (no fade-in, logo or title card). Mark one [look at number] cue: at the key number he glances or points toward it on screen.
 Identity: open with ONE big-audience word the viewer is in (H-1B, OPT, laid off) as a statement with a stake, never a "CA, CFA or LLB?" label list; "you/your" on the key fact plus one thing they can do; "someone you know" only in the send line. In boosted copy avoid "Are you [attribute]?".
 Cuts: every cut must show what the voice says at that moment (mark [SHOW: ...] per line: the person, the filing, the number circled); no generic stock AI B-roll. Hold one clean ~2 s shot on the key number; add a sound cue (whoosh, music drop, short silence) at the re-commit and rehook.
+Ending: the last line is the most usable fact or the smart line, said with energy, then cut (no recap, outro card or "follow for more"). Write it so it runs straight into the first spoken line (seamless loop, same framing as frame 1). Never end a "part 1" without its payoff.
 Pace and length: 25-45 s. By second 10 (about 30 words) say who it affects and what changed. Write for a natural fast pace (about 3 words/s); mark one [slow] beat with a short pause on the key number, and keep the rest brisk.
 
 ## 2c. Problem-led format: PAIN → POKE → FIX → PAYOFF → RECAP
