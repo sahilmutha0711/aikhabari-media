@@ -1,0 +1,128 @@
+<html><head><meta charset=utf-8><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Mono;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf')}
+@font-face{font-family:Sans;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSans-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:#0B1418;font-family:Sans;color:#fff;position:relative}
+#bg{position:absolute;inset:-20%;filter:blur(90px);opacity:.75}
+.sc{position:absolute;inset:0;opacity:0}
+.c{position:absolute;left:0;right:0;text-align:center}
+.d{font-family:Disp;letter-spacing:-3px;line-height:.95}
+.pill{display:inline-block;font-family:Mono;font-size:34px;letter-spacing:3px;padding:16px 34px;border-radius:60px}
+.circ{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Disp}
+.bub{position:absolute;background:#fff;color:#0B1418;border-radius:46px;padding:22px 34px;font-size:38px;font-family:Sans}
+#cap{position:absolute;left:60px;right:60px;top:1560px;text-align:center;font-family:Disp;font-size:74px;letter-spacing:-1px;line-height:1.05;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+#cap b{color:#0B1418;background:#7EF2D6;padding:0 14px;border-radius:40px}
+#brand{position:absolute;left:60px;top:70px;font-family:Mono;font-size:28px;letter-spacing:3px;opacity:.85}
+</style></head><body>
+<div id=bg></div>
+<div id=brand>● THE AI KHABARI</div>
+<!-- S0 hook -->
+<div class=sc id=s0>
+ <div class=c style="top:300px"><span class=pill style="background:#FF4D4D">⚠ NOTION AI USERS</span></div>
+ <div class="c d" id=h1 style="top:450px;font-size:190px">CHECK<br>THIS<br><span style="color:#7EF2D6">TODAY</span></div>
+ <div class=circ id=alarm style="left:390px;top:1100px;width:300px;height:300px;background:#FF4D4D;font-size:170px;box-shadow:0 0 0 30px rgba(255,77,77,.25),0 0 0 70px rgba(255,77,77,.12)">!</div>
+</div>
+<!-- S1 chain -->
+<div class=sc id=s1>
+ <div class="c d" style="top:250px;font-size:96px">HACKERS BROKE INTO<br><span style="color:#FF4D4D">FIREWORKS AI</span></div>
+ <div class=circ id=n1 style="left:90px;top:760px;width:250px;height:250px;background:#7EF2D6;color:#0B1418;font-size:54px">YOU</div>
+ <div class=circ id=n2 style="left:415px;top:760px;width:250px;height:250px;background:#fff;color:#0B1418;font-size:50px">NOTION</div>
+ <div class=circ id=n3 style="left:740px;top:740px;width:290px;height:290px;background:#2A1416;border:12px solid #FF4D4D;font-size:42px;color:#FFB3B3">FIRE&shy;WORKS<br>AI</div>
+ <div id=ar1 style="position:absolute;left:340px;top:870px;width:75px;height:12px;background:#fff;border-radius:6px"></div>
+ <div id=ar2 style="position:absolute;left:665px;top:870px;width:75px;height:12px;background:#fff;border-radius:6px"></div>
+ <div class="c" id=n3l style="top:1100px;font-family:Ser;font-size:56px;color:#cfe">A company Notion used to run some of its AI</div>
+</div>
+<!-- S2 chats exposed -->
+<div class=sc id=s2>
+ <div class="c d" style="top:250px;font-size:110px">YOUR <span style="color:#7EF2D6">AI CHATS</span><br>GOT EXPOSED</div>
+ <div class=circ style="left:340px;top:820px;width:400px;height:400px;background:#2A1416;border:14px dashed #FF4D4D;font-size:60px;color:#FFB3B3">BREACH</div>
+ <div class=bub id=b1 style="left:80px;top:700px">"Here's our Q4 plan…"</div>
+ <div class=bub id=b2 style="left:560px;top:1260px">"API key: sk-•••"</div>
+ <div class=bub id=b3 style="left:120px;top:1300px">"Client list…"</div>
+</div>
+<!-- S3 retention -->
+<div class=sc id=s3>
+ <div class="c" style="top:260px"><span class=pill style="background:#fff;color:#0B1418">THE SCARY PART</span></div>
+ <div class="c d" style="top:420px;font-size:100px">THE CONTRACT SAID</div>
+ <div class="c" style="top:560px"><span class=pill id=zdr style="font-size:58px;background:#7EF2D6;color:#0B1418;padding:26px 50px">ZERO DATA RETENTION</span></div>
+ <div class=circ id=kept style="left:310px;top:860px;width:460px;height:460px;border:16px solid #FF4D4D;color:#FF4D4D;font-size:140px;transform:rotate(-14deg)">KEPT</div>
+ <div class="c" style="top:1380px;font-family:Ser;font-size:52px;color:#cfe">Notion says the data was still kept.</div>
+</div>
+<!-- S4 <1% -->
+<div class=sc id=s4>
+ <svg style="position:absolute;left:240px;top:380px" width=600 height=600><circle cx=300 cy=300 r=250 stroke="rgba(255,255,255,.15)" stroke-width=60 fill=none /><circle id=ring cx=300 cy=300 r=250 stroke="#FF4D4D" stroke-width=60 fill=none stroke-linecap=round stroke-dasharray="0 2000" transform="rotate(-90 300 300)"/></svg>
+ <div class="c d" style="top:570px;font-size:200px">&lt;1%</div>
+ <div class="c d" style="top:1050px;font-size:80px">OF WORKSPACES HIT</div>
+ <div class="c" style="top:1180px;font-family:Ser;font-size:56px;color:#cfe">Small %. Huge number of people.</div>
+</div>
+<!-- S5 fix -->
+<div class=sc id=s5>
+ <div class="c" style="top:220px"><span class=pill style="background:#7EF2D6;color:#0B1418">✓ THE FIX · 60 SECONDS</span></div>
+ <div id=lap style="position:absolute;left:100px;top:400px;width:880px;height:640px;background:#F4F7F6;border-radius:40px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)">
+  <div style="height:56px;background:#E2E8E6;display:flex;gap:12px;align-items:center;padding-left:26px"><i style="width:18px;height:18px;border-radius:9px;background:#FF5F57"></i><i style="width:18px;height:18px;border-radius:9px;background:#FEBC2E"></i><i style="width:18px;height:18px;border-radius:9px;background:#28C840"></i><span style="font-family:Mono;color:#555;font-size:22px;margin-left:16px">notion.so</span></div>
+  <div style="position:absolute;left:0;top:56px;bottom:0;width:300px;background:#EAEFED;padding:30px;color:#333;font-size:30px;line-height:2">🏠 Home<br>🔍 Search<br>📄 Docs<br><span id=qm style="display:inline-block;width:60px;height:60px;border-radius:30px;background:#0B1418;color:#fff;text-align:center;line-height:60px;font-family:Disp">?</span></div>
+  <div id=menu style="position:absolute;left:200px;top:330px;background:#fff;border-radius:30px;box-shadow:0 10px 40px rgba(0,0,0,.25);padding:20px 26px;color:#333;font-size:30px;line-height:1.9">Help &amp; docs<br><span id=sir style="background:#FF4D4D;color:#fff;padding:6px 18px;border-radius:30px">Security incident review</span><br>Send feedback</div>
+ </div>
+ <div class="c d" style="top:1120px;font-size:76px">SIDEBAR → ? →<br><span style="color:#7EF2D6">SECURITY INCIDENT REVIEW</span></div>
+</div>
+<!-- S6 key -->
+<div class=sc id=s6>
+ <div class="c d" style="top:260px;font-size:96px">PASTED A PASSWORD<br>OR <span style="color:#7EF2D6">API KEY?</span></div>
+ <div class=circ id=key style="left:340px;top:680px;width:400px;height:400px;background:#FFD84D;font-size:220px">🔑</div>
+ <div class="c" style="top:1180px"><span class=pill id=chg style="background:#FF4D4D;font-size:64px;padding:26px 54px">CHANGE IT TODAY</span></div>
+</div>
+<!-- S7 secret chain -->
+<div class=sc id=s7>
+ <div class="c d" style="top:250px;font-size:92px">LIKE TELLING A <span style="color:#7EF2D6">SECRET</span><br>TO A FRIEND…</div>
+ <div class=circ id=p1 style="left:90px;top:760px;width:220px;height:220px;background:#7EF2D6;font-size:120px">🤫</div>
+ <div class=circ id=p2 style="left:430px;top:760px;width:220px;height:220px;background:#fff;font-size:120px">🙂</div>
+ <div class=circ id=p3 style="left:770px;top:760px;width:220px;height:220px;background:#FFD84D;font-size:120px">😏</div>
+ <div class=bub id=w1 style="left:200px;top:640px;font-size:30px;padding:14px 24px">psst…</div>
+ <div class=bub id=w2 style="left:540px;top:640px;font-size:30px;padding:14px 24px">psst…</div>
+ <div class="c" id=s7l style="top:1080px;font-family:Ser;font-size:60px;color:#cfe">…who tells their friend.</div>
+</div>
+<!-- S8 smart line -->
+<div class=sc id=s8>
+ <div class="c" style="top:300px"><span class=pill style="background:#7EF2D6;color:#0B1418">SMART LINE</span></div>
+ <div class="c d" style="top:470px;font-size:120px">ZERO DATA<br>RETENTION IS A<br><span style="background:#7EF2D6;color:#0B1418;padding:0 30px;border-radius:80px">PROMISE</span></div>
+ <div class="c d" id=ng style="top:1010px;font-size:110px;color:#FF4D4D">NOT A GUARANTEE</div>
+</div>
+<!-- S9 CTA -->
+<div class=sc id=s9>
+ <div class="c d" style="top:260px;font-size:96px">WOULD YOU STILL PUT<br><span style="color:#7EF2D6">WORK SECRETS</span><br>IN AI CHATS?</div>
+ <div class="c" style="top:760px"><span class=pill style="background:#fff;color:#0B1418;font-size:40px">💬 TELL ME BELOW</span></div>
+ <div class="c" style="top:900px;font-family:Ser;font-size:54px;color:#cfe">Send this to the teammate<br>who pastes API keys into AI.</div>
+ <div class="c" style="top:1130px"><span class=pill style="background:#FF4D4D;font-size:40px">FOLLOW @THEAIKHABARI</span></div>
+</div>
+<div id=cap></div>
+<script>
+const W=__WORDS__,SC=__SCENES__,TOTAL=__TOTAL__;
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),E=x=>1-Math.pow(1-cl(x),3),pop=x=>{x=cl(x);return x<1?1+Math.sin(x*Math.PI)*.18*(1-x)+ (x*1.0-1)*0:1};
+const $=id=>document.getElementById(id);
+const BGS=[['#0E7C6B','#1B3B6F','#FF4D4D'],['#1B3B6F','#0E7C6B','#3A1F5C'],['#3A1F5C','#FF4D4D','#0E7C6B']];
+const CH=[],CE={};{let st=0,c=0;for(let i=0;i<W.length;i++){CH[i]=st;c++;if(c==3||/[.,?!]$/.test(W[i].w)){CE[st]=i+1;st=i+1;c=0}}CE[st]=W.length}
+function setT(t){
+ let cur=0;for(let i=0;i<SC.length;i++)if(t>=SC[i])cur=i;
+ const lt=t-SC[cur];
+ for(let i=0;i<10;i++){const s=$('s'+i);if(i===cur){s.style.opacity=cl(lt/0.18);s.style.transform=`scale(${1.06-0.06*E(lt/0.35)})`}else s.style.opacity=0}
+ const g=BGS[cur%3],ph=t*0.5;
+ $('bg').style.background=`radial-gradient(circle at ${30+15*Math.sin(ph)}% ${20+10*Math.cos(ph)}%,${g[0]} 0,transparent 45%),radial-gradient(circle at ${75+10*Math.cos(ph*.8)}% ${70+12*Math.sin(ph*.7)}%,${g[1]} 0,transparent 45%),radial-gradient(circle at 50% 100%,${g[2]} 0,transparent 40%)`;
+ // per-scene motion
+ if(cur==0){$('alarm').style.transform=`scale(${1+0.08*Math.sin(t*12)})`;$('h1').style.transform=`scale(${0.85+0.15*E(lt/0.4)})`}
+ if(cur==1){['n1','ar1','n2','ar2','n3','n3l'].forEach((id,k)=>{const x=E((lt-k*0.25)/0.35);$(id).style.opacity=x;$(id).style.transform=`translateY(${(1-x)*60}px)`});$('n3').style.transform+=` rotate(${lt>1.3?Math.sin(t*30)*4*cl((2-lt)):0}deg)`}
+ if(cur==2){[['b1',-1],['b2',1],['b3',-1]].forEach(([id,d],k)=>{const x=E((lt-0.2-k*0.3)/0.6);$(id).style.opacity=x;$(id).style.transform=`translate(${d*(1-x)*200}px,${(1-x)*120}px) rotate(${d*4*Math.sin(t*2+k)}deg)`})}
+ if(cur==3){const x=E((lt-3.0)/0.3);$('kept').style.opacity=x;$('kept').style.transform=`rotate(-14deg) scale(${2.2-1.2*x})`;$('zdr').style.textDecoration=lt>3.0?'line-through':'none'}
+ if(cur==4){$('ring').setAttribute('stroke-dasharray',`${15.7*E(lt/0.8)} 2000`)}
+ if(cur==5){const x=E((lt-5.8)/0.3);$('menu').style.opacity=x;$('sir').style.transform=`scale(${1+0.06*Math.sin(t*8)*x})`;$('qm').style.boxShadow=lt>3.8&&lt<6.2?'0 0 0 12px rgba(255,77,77,.6)':'none'}
+ if(cur==6){$('key').style.transform=`rotate(${lt*120}deg)`;const x=E((lt-4.3)/0.3);$('chg').style.opacity=x;$('chg').style.display='inline-block';$('chg').style.transform=`scale(${1.4-0.4*x})`}
+ if(cur==7){['p1','w1','p2','w2','p3','s7l'].forEach((id,k)=>{const x=E((lt-k*0.5)/0.3);$(id).style.opacity=x;$(id).style.transform=`translateY(${(1-x)*50}px)`})}
+ if(cur==8){const x=E((lt-2.2)/0.3);$('ng').style.opacity=x;$('ng').style.transform=`scale(${1.5-0.5*x})`}
+ // captions
+ let wi=-1;for(let i=0;i<W.length;i++)if(t>=W[i].s)wi=i;
+ if(wi<0||t>W[W.length-1].e+0.3){$('cap').innerHTML='';return}
+ const st=CH[wi];$('cap').innerHTML=W.slice(st,CE[st]).map((w,k)=>st+k===wi?`<b>${w.w}</b>`:w.w).join(' ');
+}
+setT(0);
+</script></body></html>
