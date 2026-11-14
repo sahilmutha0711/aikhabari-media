@@ -1,0 +1,6 @@
+racks_blue: BalticServers data center.jpg — BalticServers.com — CC BY-SA 3.0
+aisle: Virginia Tech - data center.jpg — Christopher Bowns — CC BY-SA 2.0
+lock_circuit: Internet Security Padlock for VPN & Online Privacy.jpg — mikemacmarketing — CC BY 2.0
+padlock_open: Padlock unlocked (4141457002).jpg — Lee Haywood from Wollaton, Nottingham, England — CC BY-SA 2.0
+cables: Server Rack with Spaghetti-Like Mass of Network Cables.jpg — Kim Scarborough from Chicago, IL — CC BY-SA 2.0
+notion_logo: File:Notion-logo.svg — Public domain
