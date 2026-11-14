@@ -1,0 +1,150 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Mono;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf')}
+:root{--a:#A78BFA;--b:#22D3EE;--bg:#0D0726;--card:#1C1240;--alarm:#FF4D8D}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden;font-family:Disp;color:#fff}
+#wrap{position:absolute;inset:0;clip-path:inset(0 0 2px 0)}
+.sc{position:absolute;inset:0;opacity:0}
+.tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,7,38,.82) 0%,rgba(13,7,38,.35) 32%,rgba(13,7,38,.35) 62%,rgba(13,7,38,.9) 100%)}
+.uv{position:absolute;inset:0;background:radial-gradient(circle at 20% 20%,rgba(167,139,250,.35) 0,transparent 45%),radial-gradient(circle at 85% 80%,rgba(34,211,238,.25) 0,transparent 45%)}
+.solid{position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,#A78BFA55 0,transparent 45%),radial-gradient(circle at 85% 80%,#22D3EE44 0,transparent 45%),#0D0726}
+.grid{position:absolute;inset:-90px;background-image:linear-gradient(#A78BFA22 2px,transparent 2px),linear-gradient(90deg,#A78BFA22 2px,transparent 2px);background-size:90px 90px}
+.c{position:absolute;left:0;right:0;text-align:center}
+.H{font-family:Disp;text-transform:uppercase;letter-spacing:-2px;line-height:.95;text-shadow:0 6px 28px rgba(0,0,0,.7)}
+.pill{display:inline-block;font-family:Mono;font-size:30px;letter-spacing:5px;padding:14px 30px;border-radius:60px;text-transform:uppercase}
+.hl{background:var(--a);color:var(--bg);padding:0 20px;border-radius:70px;display:inline-block;text-shadow:none}
+.cy{color:var(--b)}
+.circ{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Disp}
+.cred{position:absolute;right:36px;top:1478px;font-family:Mono;font-size:17px;color:rgba(255,255,255,.6)}
+#cap{position:absolute;left:50px;right:50px;top:1560px;text-align:center;font-family:Disp;font-size:70px;line-height:1.05;text-transform:uppercase;-webkit-text-stroke:3px #000;paint-order:stroke fill}
+#cap b{background:var(--a);color:var(--bg);padding:0 14px;border-radius:40px;-webkit-text-stroke:0}
+.card{position:absolute;border-radius:56px;background:linear-gradient(150deg,#2A1B5E,#140C33);border:3px solid #A78BFA88;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.digit{font-family:Mono;font-size:54px;letter-spacing:6px}
+.row{display:flex;gap:16px;font-family:Mono;font-size:30px;padding:14px 22px;border-bottom:2px solid #A78BFA33}
+.check{display:inline-flex;align-items:center;gap:22px;font-size:56px;padding:20px 40px;border-radius:70px;background:rgba(28,18,64,.92);border:3px solid #22D3EE}
+</style></head><body><div id=wrap>
+<!-- F1 hook (face) -->
+<div class=sc id=f1>
+ <div class=c style="top:120px"><span class=pill id=f1p style="background:var(--b);color:var(--bg)">BLACK FRIDAY · NOV 27</span></div>
+ <div class="c H" id=f1h style="top:208px;font-size:74px">CHATGPT CAN NOW<br><span class=hl>HOLD YOUR WALLET</span></div>
+</div>
+<!-- S1 picture this -->
+<div class=sc id=s1><div class=tint></div><div class=uv></div>
+ <div class=c style="top:250px"><span class=pill style="background:var(--a);color:var(--bg)">PICTURE THIS</span></div>
+ <div class="c H" style="top:340px;font-size:84px">IT'S <span class=cy>BLACK FRIDAY</span></div>
+ <div class=card id=deal style="left:140px;top:560px;width:800px;height:520px">
+  <div id=hp style="position:absolute;left:60px;top:60px;font-size:210px">🎧</div>
+  <div class=circ id=off style="right:56px;top:56px;width:250px;height:250px;background:var(--b);color:var(--bg);font-size:86px">−60%</div>
+  <div style="position:absolute;left:60px;bottom:60px;font-family:Mono;font-size:34px;color:#E9E3FF">shop-deals-<span id=q>???</span>.store</div></div>
+ <div class=c id=never style="top:1140px"><span class=pill style="background:var(--alarm);color:#fff;font-size:34px">⚠ A STORE YOU'VE NEVER HEARD OF</span></div>
+ <div class=cred id=cr1>VIDEO: TV BRASILGOV · CC BY 3.0</div>
+</div>
+<!-- S2 timer + typing -->
+<div class=sc id=s2><div class=tint></div><div class=uv></div>
+ <svg id=tsvg style="position:absolute;left:350px;top:270px" width=380 height=380><circle cx=190 cy=190 r=150 fill="rgba(13,7,38,.75)" stroke="#ffffff22" stroke-width=30 /><circle id=tring cx=190 cy=190 r=150 stroke="#22D3EE" stroke-width=30 fill=none stroke-linecap=round stroke-dasharray="942 942" transform="rotate(-90 190 190)"/><text id=tnum x=190 y=215 text-anchor=middle font-family=Disp font-size=96 fill="#fff">4:00</text></svg>
+ <div class=card id=cc style="left:120px;top:720px;width:840px;height:520px">
+  <div style="position:absolute;left:60px;top:56px;width:120px;height:90px;border-radius:18px;background:linear-gradient(135deg,#FFD98A,#C9A24A)"></div>
+  <div class=digit id=num style="position:absolute;left:60px;top:220px">•••• •••• •••• ••••</div>
+  <div style="position:absolute;left:60px;bottom:60px;display:flex;gap:60px;font-family:Mono;font-size:40px"><span>EXP <span id=exp>••/••</span></span><span>CVV <span id=cvv>•••</span></span></div></div>
+ <div class=circ id=placed style="left:300px;top:760px;width:480px;height:480px;border:18px solid var(--b);color:var(--b);background:rgba(13,7,38,.7);font-size:84px;line-height:1">ORDER<br>PLACED ✓</div>
+ <div class=cred id=cr2>VIDEO: C40115 · CC BY 4.0</div>
+</div>
+<!-- S3 hacked -->
+<div class=sc id=s3><div class=tint></div>
+ <div class=c style="top:250px"><span class=pill style="background:#fff;color:var(--bg)">2 WEEKS LATER</span></div>
+ <div class="c H" id=hk style="top:350px;font-size:150px;color:var(--alarm)">HACKED</div>
+ <div class=card id=sheet style="left:110px;top:620px;width:860px;height:640px;padding:30px;overflow:hidden">
+  <div class=row style="color:var(--b)"><span style="width:300px">NAME</span><span>CARD NUMBER</span></div>
+  <div id=rows></div></div>
+ <div class=cred id=cr3>VIDEO: ZDF/TERRA X · CC BY 4.0</div>
+</div>
+<!-- S4 replay with wallet -->
+<div class=sc id=s4><div class=solid></div><div class=grid id=g4></div>
+ <div class="c H" style="top:250px;font-size:80px"><span id=rw>⟲</span> NOW REPLAY IT<br>WITH <span class=hl>CHATGPT WALLET</span></div>
+ <div id=phone style="position:absolute;left:250px;top:520px;width:580px;height:1000px;border-radius:70px;overflow:hidden;border:14px solid #08051a;box-shadow:0 0 0 4px #A78BFA99,0 40px 100px rgba(0,0,0,.6)">
+  <div id=ui style="position:absolute;left:0;top:0;width:100%;height:100%;background:url(__UI__) top/cover"></div>
+  <div id=fid style="position:absolute;inset:0;background:rgba(13,7,38,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0">
+   <svg width=240 height=240 viewBox="0 0 100 100"><g fill=none stroke="#22D3EE" stroke-width=5 stroke-linecap=round><path d="M10 30 V18 a8 8 0 0 1 8-8 H30 M70 10 H82 a8 8 0 0 1 8 8 V30 M90 70 V82 a8 8 0 0 1-8 8 H70 M30 90 H18 a8 8 0 0 1-8-8 V70"/><path id=smile d="M35 62 q15 12 30 0"/><path d="M38 38 v6 M62 38 v6 M50 40 v14 h-5"/></g></svg>
+   <div id=fidt style="font-family:Mono;font-size:34px;letter-spacing:4px;margin-top:20px;color:#22D3EE">FACE ID</div></div></div>
+ <div class=bub id=grab style="position:absolute;left:600px;top:560px;background:var(--a);color:var(--bg);font-family:Disp;font-size:52px;padding:22px 40px;border-radius:50px 50px 8px 50px;box-shadow:0 18px 50px rgba(0,0,0,.5)">"grab it"</div>
+ <div style="position:absolute;right:30px;top:1490px;font-family:Mono;font-size:17px;color:rgba(255,255,255,.6)">IMAGE: OPENAI</div>
+</div>
+<!-- S5 token -->
+<div class=sc id=s5><div class=tint></div><div class=uv></div>
+ <div class="c H" style="top:250px;font-size:80px">THE STORE NEVER<br>GETS <span class=hl>YOUR CARD</span></div>
+ <div class=card id=card5 style="left:240px;top:640px;width:600px;height:380px">
+  <div style="position:absolute;left:44px;top:44px;width:100px;height:74px;border-radius:14px;background:linear-gradient(135deg,#FFD98A,#C9A24A)"></div>
+  <div class=digit style="position:absolute;left:44px;top:200px;font-size:34px;letter-spacing:3px;white-space:nowrap">4242 8812 0097 5531</div></div>
+ <div class=circ id=coin style="left:340px;top:560px;width:400px;height:400px;background:radial-gradient(circle at 35% 30%,#7CF0FF,#22D3EE 60%,#0E8FA6);color:var(--bg);font-size:56px;line-height:1;box-shadow:0 0 90px #22D3EE88">ONE-TIME<br>CODE</div>
+ <div class=c id=nets style="top:1060px"><span class=pill style="background:#fff;color:var(--bg)">VISA</span> <span class=pill style="background:#fff;color:var(--bg)">MASTERCARD</span> <span class=pill style="background:#fff;color:var(--bg)">AMEX</span></div>
+ <div class=circ id=vault style="flex-direction:column;left:290px;top:560px;width:500px;height:500px;border:18px dashed var(--a);background:rgba(13,7,38,.8);font-size:56px;line-height:1.05">STORE HACKED?<br><span class=cy style="font-size:66px">NOTHING<br>OF YOURS</span></div>
+ <div class=cred id=cr5>VIDEO: ZDF/TERRA X · CC BY 4.0</div>
+</div>
+<!-- F2 smart line (face) -->
+<div class=sc id=f2>
+ <div class=c style="top:200px"><span class=pill style="background:var(--b);color:var(--bg);font-size:26px;padding:10px 24px">✦ SMART LINE</span></div>
+ <div class="c H" style="top:262px;left:60px;right:60px;font-size:50px;letter-spacing:-1px">A VALET KEY: <span class=cy>STARTS THE CAR</span><br>CAN'T OPEN THE GLOVEBOX</div>
+</div>
+<!-- S6 rewards -->
+<div class=sc id=s6><div class=tint></div><div class=uv></div>
+ <div class="c H" style="top:260px;font-size:84px">WHAT YOU<br><span class=hl>NEED TO KNOW</span></div>
+ <div class=c id=ck1 style="top:700px"><span class=check>✓ CARD REWARDS STILL WORK</span></div>
+ <div class=c id=ck2 style="top:900px"><span class=check>✓ FRAUD DISPUTES STILL WORK</span></div>
+ <div class=cred id=cr6>VIDEO: TV BRASILGOV · CC BY 3.0</div>
+</div>
+<!-- S7 catch -->
+<div class=sc id=s7><div class=tint></div><div class=uv></div>
+ <div class=c style="top:250px"><span class=pill style="background:var(--alarm);color:#fff">THE CATCH</span></div>
+ <div class=c id=pro style="top:360px"><div class=card style="position:relative;display:inline-block;padding:34px 54px;font-size:70px;line-height:1.1">ONLY <span class=cy>CHATGPT PRO</span><br>🇺🇸 US USERS · 18+</div></div>
+ <div class=circ id=amz style="left:270px;top:760px;width:540px;height:540px;border:20px solid var(--alarm);color:var(--alarm);background:rgba(13,7,38,.75);font-size:74px;line-height:1.02">AMAZON<br>BLOCKS<br>AI AGENTS</div>
+ <div class=cred id=cr7>VIDEO: RN7 · CC BY 3.0</div>
+</div>
+<!-- F3 end (face) -->
+<div class=sc id=f3>
+ <div class="c H" style="top:150px;font-size:66px">WOULD YOU LET <span class=cy>CHATGPT</span><br><span class=hl>HOLD YOUR WALLET?</span></div>
+ <div class=c id=tell style="top:1440px"><span class=pill style="background:var(--b);color:var(--bg)">💬 TELL ME BELOW</span></div>
+</div>
+<div id=cap></div>
+</div>
+<script>
+const W=__WORDS__;
+const SC=[['f1',0,7.27],['s1',7.27,14.95],['s2',14.95,21.35],['s3',21.35,26.3],['s4',26.3,35.6],['s5',35.6,44.7],['f2',44.7,49.3],['s6',49.3,55.6],['s7',55.6,64.4],['f3',64.4,99]];
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),E=x=>1-Math.pow(1-cl(x),3),$=id=>document.getElementById(id);
+const BK=x=>{x=cl(x);const c=1.70158;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(id,lt,st,d=.35)=>{const e=$(id),x=cl((lt-st)/d);e.style.opacity=x>0?1:0;e.style.transform=`scale(${x>0?BK(x):0})`};
+const rise=(id,lt,st,d=.35)=>{const e=$(id),x=E((lt-st)/d);e.style.opacity=x;e.style.transform=`translateY(${(1-x)*60}px)`};
+const R=$('rows');['J. MILLER','A. PATEL','S. CHEN','R. GARCIA','K. OKAFOR','L. ROSSI','M. SATO','T. NGUYEN'].forEach((n,i)=>{const d=document.createElement('div');d.className='row';d.innerHTML=`<span style="width:300px">${n}</span><span>${(4000+i*713)} ${(1000+i*977)%9000+1000} •••• ${(1111*(i+1))%9000+1000}</span>`;R.appendChild(d)});
+const CH=[],CE={};{let st=0,c=0;for(let i=0;i<W.length;i++){CH[i]=st;c++;if(c==3||/[.,?!]$/.test(W[i].w)){CE[st]=i+1;st=i+1;c=0}}CE[st]=W.length}
+const at=w=>{const f=W.find(x=>x.w.toLowerCase().replace(/[^a-z0-9%]/g,'')==w);return f?f.s:0};
+function setT(t){
+ let cur=null,lt=0;SC.forEach(([id,a,b])=>{const e=$(id);if(t>=a&&t<b){cur=id;lt=t-a;e.style.opacity=id[0]=='f'?1:cl(lt/0.15)}else e.style.opacity=0});
+ if(cur=='f1'){const x=t<0.05?1:1;$('f1p').style.transform=`scale(${1+0.04*Math.sin(t*5)})`;}
+ if(cur=='s1'){const d=$('deal');const x=E((lt-0.6)/0.5);d.style.opacity=x;d.style.transform=`translateY(${(1-x)*200}px) rotate(${(1-x)*-6+Math.sin(t*2)*1.2}deg)`;
+  pop('off',lt,1.6);$('off').style.transform+=` rotate(${Math.sin(t*4)*8}deg)`;$('hp').style.transform=`rotate(${Math.sin(t*3)*8}deg) scale(${1+0.05*Math.sin(t*6)})`;
+  $('q').textContent=['???','x7k2','4uu9','???'][Math.floor(t*4)%4];rise('never',lt,13.5-7.27);$('cr1').style.opacity=1}
+ if(cur=='s2'){const n=Math.max(0,240-Math.floor(Math.max(0,t-15.2)*8));const mm=Math.floor(n/60),ss=('0'+n%60).slice(-2);$('tnum').textContent=`${mm}:${ss}`;$('tring').setAttribute('stroke-dasharray',`${942*n/240} 942`);
+  rise('tsvg',lt,0.1);const typ=cl((t-17.66)/0.9),full='4242 8812 0097 5531';let k=Math.floor(typ*16),s='',j=0;for(const ch of full){if(ch==' '){s+=' ';continue}s+=j<k?ch:'•';j++}$('num').textContent=s;
+  $('exp').textContent=t>18.44?'11/29':'••/••';$('cvv').textContent=t>19.3?'731':'•••';rise('cc',lt,1.2);
+  const p=$('placed');const x=cl((t-20.46)/0.3);p.style.opacity=x;p.style.transform=`rotate(-12deg) scale(${x>0?2.2-1.2*E(x):2})`;$('cc').style.filter=t>20.46?'blur(3px) brightness(.6)':'none'}
+ if(cur=='s3'){const g=Math.sin(t*40)>0.6?1:0;$('hk').style.transform=`translateX(${g*(Math.random()*20-10)}px) scale(${1+0.05*Math.sin(t*8)})`;$('hk').style.textShadow=`${g*8}px 0 #22D3EE,${-g*8}px 0 #FF4D8D`;
+  rise('sheet',lt,0.8);R.style.transform=`translateY(${-((lt*60)%120)}px)`;$('sheet').style.boxShadow=t>24.06?`0 0 0 6px #FF4D8D,0 30px 80px rgba(0,0,0,.55)`:''}
+ if(cur=='s4'){$('g4').style.transform=`translateY(${(t*50)%90}px)`;$('rw').style.display='inline-block';$('rw').style.transform=`rotate(${-lt*360}deg)`;
+  const ph=$('phone');const x=E((lt-0.3)/0.6);ph.style.opacity=x;ph.style.transform=`translateY(${(1-x)*300}px) rotate(${-3+Math.sin(t)*1.5}deg)`;
+  $('ui').style.transform=`scale(${1+0.08*cl((t-31.5)/2)})`;$('ui').style.transformOrigin='50% 80%';
+  pop('grab',lt,30.7-26.3);$('grab').style.opacity=(t>30.7&&t<33.2)?1:0;
+  const f=$('fid');f.style.opacity=t>34.2?1:0;$('smile').style.opacity=t>34.75?1:0;$('fidt').textContent=t>34.75?'APPROVED ✓':'FACE ID';f.style.background=t>34.75?'rgba(34,211,238,.25)':'rgba(13,7,38,.82)'}
+ if(cur=='s5'){const fl=cl((t-37.4)/0.5);const c=$('card5');c.style.opacity=t<38.0?1:0;c.style.transform=`perspective(900px) rotateY(${fl*90}deg)`;
+  const co=$('coin');const x=cl((t-37.9)/0.4);co.style.opacity=(t>37.9&&t<41.0)?1:0;co.style.transform=`perspective(900px) rotateY(${(1-x)*-90+Math.sin(t*3)*15}deg)`;
+  ['nets'].forEach(id=>rise(id,lt,38.4-35.6));$('nets').style.opacity=t<41?$('nets').style.opacity:0;
+  const v=$('vault');const vx=cl((t-41.06)/0.35);v.style.opacity=vx;v.style.transform=`scale(${vx>0?BK(vx):0}) rotate(${Math.sin(t*2)*3}deg)`}
+ if(cur=='f2'){}
+ if(cur=='s6'){pop('ck1',lt,51.06-49.3,.4);pop('ck2',lt,53.62-49.3,.4)}
+ if(cur=='s7'){pop('pro',lt,0.3,.4);const a=$('amz');const x=cl((t-60.5)/0.3);a.style.opacity=x;a.style.transform=`rotate(-12deg) scale(${x>0?2.4-1.4*E(x):2})`}
+ if(cur=='f3'){rise('tell',lt,1.0);$('tell').style.transform+=` scale(${1+0.04*Math.sin(t*5)})`}
+ let wi=-1;for(let i=0;i<W.length;i++)if(t>=W[i].s)wi=i;
+ if(wi<0||t>W[W.length-1].e+0.4){$('cap').innerHTML='';return}
+ const st=CH[wi];$('cap').innerHTML=W.slice(st,CE[st]).map((w,k)=>st+k===wi?`<b>${w.w}</b>`:w.w).join(' ');
+}
+setT(0);
+</script></body></html>

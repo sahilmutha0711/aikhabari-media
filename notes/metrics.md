@@ -139,3 +139,11 @@ LESSON: Anthropic IPO = record SHARES (21) and saves (8) in day 1: "what you nee
 ## 2026-11-13 run
 Composio/Instagram connector failed to connect (502) — no insights pulled, comments not checked. Built Notion/Fireworks breach carousel (mint/sky/lemon mesh, ink + teal #0E7C6B + alert #FF5A4E), media/2026-11-13/notion. Nvidia resignation script still awaiting owner recording.
 11-13 metrics: Anthropic 2,215 v / 21 sh / 8 sv; Nvidia 1,939 v / 10 sh; followers 533. Carousel Dfs1nVUnUCe posted 23:43Z, comment 18123455852071508.
+
+## 2026-11-14 run (followers 543, +10 since 11-12)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-13 Notion/Fireworks clone-voice Reel Dfs9HuAEhaD (day 1) | 236 | 179 | 0 | 1 | 6 | 3.9 s | 83.8% |
+| 11-11 Anthropic IPO DfnD_5aCYqm | 2,228 | 1,732 | 21 | 8 | 64 | 20.5 s | 60.1% |
+| 11-10 Nvidia/Jensen DfkmvnDgQW5 | 1,950 | 1,562 | 10 | 2 | 69 | 20.3 s | 45.9% |
+LESSON: the clone-voice, no-face Notion Reel flopped (84% skip, 3.9 s avg) vs ~20 s avg on owner-on-camera Reels. Owner's real face + voice in the hook is the single biggest lever; avoid faceless clone-voice Reels for news. Niche dev-security topic also has a small audience. Today: the owner-recorded ChatGPT Wallet Reel (face hook) is ready.
