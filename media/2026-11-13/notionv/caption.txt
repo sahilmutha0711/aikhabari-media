@@ -1,0 +1,12 @@
+Notion users: that password you pasted into Notion AI? Change it today.
+
+Hackers broke into Fireworks AI, Notion's AI supplier, and some Notion AI chats were exposed (fewer than 1% of workspaces). Deleting the chat doesn't cancel the key.
+
+Check yours: Sidebar → ? → Security incident review.
+
+Send this to the teammate who pastes API keys into AI.
+
+Would you still put work secrets in AI chats? 👇
+
+Voice: AI clone · Music: Synthwave goose · Photos: Wikimedia Commons (credited in video)
+#notion #cybersecurity #dataprivacy #aitools
