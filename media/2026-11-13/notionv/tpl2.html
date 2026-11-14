@@ -1,0 +1,189 @@
+<html><head><meta charset=utf-8><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BricolageGrotesque-Bold.ttf')}
+@font-face{font-family:Mono;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/JetBrainsMono-Bold.ttf')}
+@font-face{font-family:Sans;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSans-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+:root{--lime:#C6FF3D;--red:#FF2E4D;--ink:#05080C;--cyan:#38E8FF}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);font-family:Sans;color:#fff;position:relative}
+.ph{position:absolute;inset:0;overflow:hidden;opacity:0}
+.ph img{position:absolute;left:50%;top:50%;height:100%;min-width:100%;object-fit:cover;filter:saturate(1.25) contrast(1.15) brightness(.78);transform-origin:center}
+.grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,12,.88) 0%,rgba(5,8,12,.25) 30%,rgba(5,8,12,.2) 60%,rgba(5,8,12,.92) 100%)}
+.tint{position:absolute;inset:0;mix-blend-mode:color;opacity:.55}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(56,232,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(56,232,255,.07) 2px,transparent 2px);background-size:90px 90px}
+#scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 5px);pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 45%,rgba(0,0,0,.75) 100%)}
+#sweep{position:absolute;top:-20%;width:420px;height:140%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);transform:rotate(14deg)}
+.sc{position:absolute;inset:0;opacity:0}
+.c{position:absolute;left:0;right:0;text-align:center}
+.H{font-family:Disp;letter-spacing:-3px;line-height:.92;text-transform:uppercase;text-shadow:0 8px 40px rgba(0,0,0,.85)}
+.hl{background:var(--lime);color:var(--ink);padding:0 22px;border-radius:70px;text-shadow:none;display:inline-block;margin-top:8px}
+.hr{background:var(--red);color:#fff;padding:0 22px;border-radius:70px;text-shadow:none;display:inline-block;margin-top:8px}
+.pill{display:inline-block;font-family:Mono;font-size:34px;letter-spacing:4px;padding:16px 34px;border-radius:60px;text-transform:uppercase}
+.circ{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Disp}
+.hex{position:absolute;clip-path:polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%);display:flex;align-items:center;justify-content:center;text-align:center;font-family:Disp}
+.bub{position:absolute;background:#fff;color:var(--ink);border-radius:50px;padding:24px 36px;font-size:40px;font-family:Sans;box-shadow:0 18px 50px rgba(0,0,0,.6)}
+.cred{position:absolute;right:40px;bottom:250px;font-family:Mono;font-size:18px;color:rgba(255,255,255,.55);text-align:right}
+#cap{position:absolute;left:50px;right:50px;top:1530px;text-align:center;font-family:Disp;font-size:80px;letter-spacing:-1px;line-height:1.05;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-transform:uppercase}
+#cap b{color:var(--ink);background:var(--lime);padding:0 16px;border-radius:44px;-webkit-text-stroke:0}
+#brand{position:absolute;left:56px;top:66px;font-family:Mono;font-size:26px;letter-spacing:4px;color:#fff;opacity:.9}
+#brand i{display:inline-block;width:16px;height:16px;border-radius:8px;background:var(--red);margin-right:10px;vertical-align:middle}
+#rgb{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+.field{display:inline-block;background:rgba(255,255,255,.95);color:var(--ink);font-family:Mono;font-size:64px;padding:26px 46px;border-radius:70px;letter-spacing:10px;box-shadow:0 0 0 8px rgba(255,46,77,.0)}
+</style></head><body>
+<!-- photo layers -->
+<div class=ph id=p_aisle><img src="img/aisle.jpg"><div class=tint style="background:#0A5BFF"></div><div class=grade></div></div>
+<div class=ph id=p_racks><img src="img/racks_blue.jpg"><div class=grade></div></div>
+<div class=ph id=p_cables><img src="img/cables.jpg"><div class=tint style="background:#FF2E4D"></div><div class=grade></div></div>
+<div class=ph id=p_lock><img src="img/lock_circuit.jpg"><div class=grade></div></div>
+<div class=ph id=p_pad><img src="img/padlock_open.jpg"><div class=tint style="background:#1B2340"></div><div class=grade></div></div>
+<div id=grid></div><div id=sweep></div>
+
+<!-- S0 hook -->
+<div class=sc id=s0>
+ <div class=c style="top:250px"><span class=pill style="background:#fff;color:#05080C"><img src="img/notion_logo.svg" style="height:40px;vertical-align:-8px;margin-right:14px">NOTION USERS</span></div>
+ <div class="c H" style="top:380px;font-size:132px">THAT PASSWORD<br>YOU PASTED INTO<br><span class=hl>NOTION AI</span></div>
+ <div class=c style="top:900px"><span class=field id=pw>••••••••••</span></div>
+ <svg id=timer style="position:absolute;left:390px;top:1110px" width=300 height=300><circle cx=150 cy=150 r=120 stroke="rgba(255,255,255,.15)" stroke-width=22 fill=none /><circle id=tring cx=150 cy=150 r=120 stroke="#FF2E4D" stroke-width=22 fill=none stroke-linecap=round stroke-dasharray="754 754" transform="rotate(-90 150 150)"/><text x=150 y=172 text-anchor=middle font-family=Disp font-size=70 fill="#fff" id=tnum>45</text></svg>
+ <div class="c H" id=chg0 style="top:1440px;font-size:0px"></div>
+</div>
+<!-- S1 chain over aisle -->
+<div class=sc id=s1>
+ <div class="c H" style="top:250px;font-size:104px">HACKERS BROKE INTO<br><span class=hr>FIREWORKS AI</span></div>
+ <div class=circ id=n1 style="left:70px;top:800px;width:250px;height:250px;background:var(--lime);color:#05080C;font-size:56px">YOU</div>
+ <div class=circ id=n2 style="left:415px;top:800px;width:250px;height:250px;background:#fff"><img src="img/notion_logo.svg" style="width:150px"></div>
+ <div class=hex id=n3 style="left:745px;top:770px;width:300px;height:310px;background:var(--red);color:#fff;font-size:46px;line-height:1">FIRE-<br>WORKS<br>AI</div>
+ <div id=ar1 style="position:absolute;left:320px;top:918px;width:95px;height:14px;background:#fff;border-radius:7px"></div>
+ <div id=ar2 style="position:absolute;left:665px;top:918px;width:80px;height:14px;background:#fff;border-radius:7px"></div>
+ <div class=c id=n3l style="top:1140px"><span class=pill style="background:rgba(5,8,12,.8);font-size:30px;border:2px solid var(--cyan);color:var(--cyan)">NOTION'S AI SUPPLIER</span></div>
+ <div class=cred>Photo: Christopher Bowns, CC BY-SA 2.0</div>
+</div>
+<!-- S2 chats exposed over racks -->
+<div class=sc id=s2>
+ <div class="c H" style="top:250px;font-size:120px">NOTION AI CHATS<br><span class=hr>EXPOSED</span></div>
+ <div class=circ id=brc style="left:315px;top:780px;width:450px;height:450px;background:rgba(5,8,12,.75);border:14px dashed var(--red);font-size:66px;color:var(--red)">BREACH</div>
+ <div class=bub id=b1 style="left:60px;top:660px">"Here's our Q4 plan…"</div>
+ <div class=bub id=b2 style="left:520px;top:1260px">"API key: sk-•••"</div>
+ <div class=bub id=b3 style="left:90px;top:1300px">"Client list…"</div>
+ <div class=cred>Photo: BalticServers.com, CC BY-SA 3.0</div>
+</div>
+<!-- S3 retention over cables -->
+<div class=sc id=s3>
+ <div class=c style="top:250px"><span class=pill style="background:var(--red);color:#fff">⚠ THE SCARY PART</span></div>
+ <div class="c H" style="top:390px;font-size:82px">THE CONTRACT PROMISED</div>
+ <div class=c style="top:520px"><span class=pill id=zdr style="font-family:Disp;font-size:70px;letter-spacing:0;background:var(--lime);color:#05080C;padding:22px 50px">ZERO DATA RETENTION</span></div>
+ <div class=circ id=kept style="left:290px;top:820px;width:500px;height:500px;border:20px solid var(--red);background:rgba(5,8,12,.6);color:var(--red);font-size:150px;transform:rotate(-14deg)">KEPT</div>
+ <div class=cred>Photo: Kim Scarborough, CC BY-SA 2.0</div>
+</div>
+<!-- S4 <1% over lock -->
+<div class=sc id=s4>
+ <svg style="position:absolute;left:215px;top:330px" width=650 height=650><circle cx=325 cy=325 r=270 fill="rgba(5,8,12,.7)" stroke="rgba(255,255,255,.18)" stroke-width=60 /><circle id=ring cx=325 cy=325 r=270 stroke="#FF2E4D" stroke-width=60 fill=none stroke-linecap=round stroke-dasharray="0 2000" transform="rotate(-90 325 325)"/></svg>
+ <div class="c H" style="top:540px;font-size:210px">&lt;1%</div>
+ <div class="c H" style="top:1030px;font-size:84px">OF WORKSPACES HIT</div>
+ <div class=c style="top:1150px"><span class=pill style="background:#fff;color:#05080C;font-size:30px">SMALL % · HUGE NUMBER OF PEOPLE</span></div>
+ <div class=cred>Photo: mikemacmarketing, CC BY 2.0</div>
+</div>
+<!-- S5 fix -->
+<div class=sc id=s5>
+ <div class=c style="top:220px"><span class=pill style="background:var(--lime);color:#05080C">✓ THE FIX · 60 SECONDS</span></div>
+ <div id=lap style="position:absolute;left:90px;top:380px;width:900px;height:660px;background:#F4F7F6;border-radius:44px;overflow:hidden;box-shadow:0 0 0 6px rgba(198,255,61,.5),0 40px 100px rgba(0,0,0,.7)">
+  <div style="height:58px;background:#E2E8E6;display:flex;gap:12px;align-items:center;padding-left:26px"><i style="width:18px;height:18px;border-radius:9px;background:#FF5F57"></i><i style="width:18px;height:18px;border-radius:9px;background:#FEBC2E"></i><i style="width:18px;height:18px;border-radius:9px;background:#28C840"></i><span style="font-family:Mono;color:#555;font-size:22px;margin-left:16px">notion.so</span></div>
+  <div style="position:absolute;left:0;top:58px;bottom:0;width:300px;background:#EAEFED;padding:30px;color:#333;font-size:30px;line-height:2"><img src="img/notion_logo.svg" style="height:46px"><br>🏠 Home<br>🔍 Search<br><span id=qm style="display:inline-block;width:62px;height:62px;border-radius:31px;background:#05080C;color:#fff;text-align:center;line-height:62px;font-family:Disp">?</span></div>
+  <div id=menu style="position:absolute;left:210px;top:350px;background:#fff;border-radius:30px;box-shadow:0 10px 40px rgba(0,0,0,.25);padding:20px 26px;color:#333;font-size:32px;line-height:1.9">Help &amp; docs<br><span id=sir style="display:inline-block;background:#FF2E4D;color:#fff;padding:6px 20px;border-radius:30px">Security incident review</span><br>Send feedback</div>
+ </div>
+ <div class="c H" style="top:1120px;font-size:80px">SIDEBAR → ? →<br><span class=hl style="font-size:66px">SECURITY INCIDENT REVIEW</span></div>
+</div>
+<!-- S6 key + delete -->
+<div class=sc id=s6>
+ <div class="c H" style="top:240px;font-size:100px">PASTED A PASSWORD<br>OR <span class=hl>API KEY?</span></div>
+ <div class=circ id=key style="left:340px;top:640px;width:400px;height:400px;background:#FFD84D;font-size:220px;box-shadow:0 0 80px rgba(255,216,77,.5)">🔑</div>
+ <div class=c style="top:1130px"><span class=pill id=chg style="background:var(--red);font-family:Disp;letter-spacing:0;font-size:84px;padding:24px 60px">CHANGE IT TODAY</span></div>
+ <div class=cred>Photo: Lee Haywood, CC BY-SA 2.0</div>
+</div>
+<!-- S6b delete != cancel -->
+<div class=sc id=s10>
+ <div class="c H" style="top:240px;font-size:104px">DELETING THE CHAT<br><span class=hr style="font-size:86px">≠ CANCELLING THE KEY</span></div>
+ <div class=bub id=dchat style="left:150px;top:720px;font-size:46px;padding:30px 44px">"my key: sk-live-•••"</div>
+ <div class=circ id=trash style="left:720px;top:640px;width:220px;height:220px;background:#fff;font-size:120px">🗑️</div>
+ <div class=circ id=key2 style="left:390px;top:950px;width:300px;height:300px;background:#FFD84D;font-size:160px;box-shadow:0 0 0 18px rgba(198,255,61,.6)">🔑</div>
+ <div class=c id=sv style="top:1290px"><span class=pill style="background:var(--lime);color:#05080C;font-size:40px">STILL WORKS · ROTATE IT</span></div>
+</div>
+<!-- S7 secret chain -->
+<div class=sc id=s7>
+ <div class="c H" style="top:250px;font-size:96px">LIKE TELLING A <span class=hl>SECRET</span><br>TO A FRIEND…</div>
+ <div class=circ id=p1 style="left:80px;top:760px;width:240px;height:240px;background:var(--lime);font-size:130px">🤫</div>
+ <div class=circ id=p2 style="left:420px;top:760px;width:240px;height:240px;background:#fff;font-size:130px">🙂</div>
+ <div class=circ id=p3 style="left:760px;top:760px;width:240px;height:240px;background:#FFD84D;font-size:130px">😏</div>
+ <div class=bub id=w1 style="left:200px;top:640px;font-size:30px;padding:14px 24px">psst…</div>
+ <div class=bub id=w2 style="left:540px;top:640px;font-size:30px;padding:14px 24px">psst…</div>
+ <div class="c H" id=s7l style="top:1100px;font-size:72px;color:var(--cyan)">…WHO TELLS THEIR FRIEND</div>
+</div>
+<!-- S8 smart line -->
+<div class=sc id=s8>
+ <div class=c style="top:300px"><span class=pill style="background:var(--cyan);color:#05080C">SMART LINE</span></div>
+ <div class="c H" style="top:450px;font-size:124px">ZERO DATA<br>RETENTION IS A<br><span class=hl>PROMISE</span></div>
+ <div class="c H" id=ng style="top:1030px;font-size:116px"><span class=hr>NOT A GUARANTEE</span></div>
+</div>
+<!-- S9 CTA -->
+<div class=sc id=s9>
+ <div class="c H" style="top:250px;font-size:100px">WOULD YOU STILL PUT<br><span class=hl>WORK SECRETS</span><br>IN AI CHATS?</div>
+ <div class=c style="top:800px"><span class=pill style="background:#fff;color:#05080C;font-size:42px">💬 TELL ME BELOW</span></div>
+ <div class=c style="top:940px;font-family:Ser;font-size:58px;text-shadow:0 4px 20px #000">Send this to the teammate<br>who pastes API keys into AI.</div>
+ <div class=c style="top:1180px"><span class=pill style="background:var(--red);font-size:40px">FOLLOW @THEAIKHABARI</span></div>
+</div>
+<div id=vig></div><div id=scan></div>
+<div id=brand><i></i>THE AI KHABARI</div>
+<div id=cap></div>
+<div id=flash></div>
+<script>
+const W=__WORDS__,SC=__SCENES__;
+const ORDER=[0,1,2,3,4,5,6,10,7,8,9];
+const PH={0:'p_pad',1:'p_aisle',2:'p_racks',3:'p_cables',4:'p_lock',5:null,6:'p_pad',10:'p_racks',7:'p_aisle',8:'p_lock',9:'p_cables'};
+const TINT={5:'radial-gradient(circle at 30% 20%,#0A5BFF 0,transparent 50%),radial-gradient(circle at 80% 80%,#C6FF3D33 0,transparent 45%),#05080C'};
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)),E=x=>1-Math.pow(1-cl(x),3),$=id=>document.getElementById(id);
+const CH=[],CE={};{let st=0,c=0;for(let i=0;i<W.length;i++){CH[i]=st;c++;if(c==3||/[.,?!]$/.test(W[i].w)){CE[st]=i+1;st=i+1;c=0}}CE[st]=W.length}
+function rise(ids,lt,step,d=.3){ids.forEach((id,k)=>{const x=E((lt-k*step)/d);$(id).style.opacity=x;$(id).style.transform=`translateY(${(1-x)*70}px) scale(${.9+.1*x})`})}
+function setT(t){
+ let ci=0;for(let i=0;i<SC.length;i++)if(t>=SC[i])ci=i;
+ const cur=ORDER[ci],lt=t-SC[ci],dur=(SC[ci+1]||t+3)-SC[ci];
+ ORDER.forEach(k=>{const s=$('s'+k);if(k===cur){s.style.opacity=cl(lt/0.12);s.style.transform=`scale(${1.08-0.08*E(lt/0.3)})`}else s.style.opacity=0});
+ // photo bg with strong ken burns
+ document.querySelectorAll('.ph').forEach(p=>p.style.opacity=0);
+ document.body.style.background=TINT[cur]||'#05080C';
+ const pid=PH[cur];
+ if(pid){const p=$(pid),img=p.querySelector('img');p.style.opacity=1;const k=lt/dur;
+  let sc=1.15+0.35*k,tx=0,ty=0;
+  if(pid=='p_aisle'){sc=1.2+0.9*k}                 // dolly down the aisle
+  if(pid=='p_racks'){sc=1.35;tx=-180+360*k}        // pan along racks
+  if(pid=='p_cables'){sc=1.3+0.2*k;ty=60-120*k}
+  if(pid=='p_lock'){sc=1.25+0.3*k;tx=Math.sin(t)*30}
+  if(pid=='p_pad'){sc=1.4-0.2*k}
+  img.style.transform=`translate(calc(-50% + ${tx}px),calc(-50% + ${ty}px)) scale(${sc})`;
+  img.style.filter=`saturate(1.3) contrast(1.2) brightness(${.62+.06*Math.sin(t*9)*(pid=='p_racks'?1:0)})`}
+ $('grid').style.transform=`translateY(${(t*60)%90}px)`;$('grid').style.opacity=pid?0.5:1;
+ $('sweep').style.left=`${-500+((t*700)%2300)}px`;
+ // glitch flash on cut
+ $('flash').style.opacity=lt<0.08&&ci>0?0.35*(1-lt/0.08):0;
+ document.body.style.filter=lt<0.12&&ci>0?`hue-rotate(${(1-lt/0.12)*40}deg)`:'none';
+ const sh=lt<0.12&&ci>0?(1-lt/0.12)*24:0;$('s'+cur).style.filter=sh?`drop-shadow(${sh}px 0 0 rgba(255,46,77,.8)) drop-shadow(${-sh}px 0 0 rgba(56,232,255,.8))`:'none';
+ // scene motion
+ if(cur==0){const n=Math.max(0,45-Math.floor(t*7.5));$('tnum').textContent=n;$('tring').setAttribute('stroke-dasharray',`${754*(n/45)} 754`);
+  $('pw').style.boxShadow=`0 0 0 ${10+8*Math.sin(t*10)}px rgba(255,46,77,.55)`;$('pw').textContent='•'.repeat(4+Math.min(8,Math.floor(lt*4)))}
+ if(cur==1){rise(['n1','ar1','n2','ar2','n3','n3l'],lt,0.22);if(lt>1.2)$('n3').style.transform+=` rotate(${Math.sin(t*28)*5*cl(2.2-lt)}deg)`}
+ if(cur==2){$('brc').style.transform=`rotate(${t*20}deg)`;[['b1',-1],['b2',1],['b3',-1]].forEach(([id,d],k)=>{const x=E((lt-0.2-k*0.3)/0.5);$(id).style.opacity=x;$(id).style.transform=`translate(${d*(1-x)*260}px,${(1-x)*140}px) rotate(${d*4*Math.sin(t*2+k)}deg)`})}
+ if(cur==3){const x=E((lt-3.1)/0.25);$('kept').style.opacity=x;$('kept').style.transform=`rotate(-14deg) scale(${2.4-1.4*x})`;$('zdr').style.textDecoration=lt>3.1?'line-through 8px #FF2E4D':'none'}
+ if(cur==4){$('ring').setAttribute('stroke-dasharray',`${17*E(lt/0.8)} 2000`)}
+ if(cur==5){const x=E((lt-5.85)/0.3);$('menu').style.opacity=x;$('sir').style.transform=`scale(${1+0.07*Math.sin(t*8)*x})`;$('qm').style.boxShadow=lt>3.85&&lt<6.3?`0 0 0 ${10+6*Math.sin(t*12)}px rgba(255,46,77,.7)`:'none';$('lap').style.transform=`rotate(${Math.sin(t*.8)*1.2}deg) translateY(${Math.sin(t*1.3)*8}px)`}
+ if(cur==6){$('key').style.transform=`rotate(${lt*140}deg)`;const x=E((lt-4.84)/0.25);$('chg').style.opacity=x;$('chg').style.transform=`scale(${1.5-0.5*x})`}
+ if(cur==10){rise(['dchat'],lt,0,.25);const x=E((lt-0.4)/0.4);$('trash').style.opacity=x;$('dchat').style.opacity=lt>1.0?cl(1-(lt-1.0)/0.3):cl(lt/.25);$('dchat').style.transform=lt>1.0?`translate(${(lt-1)*900}px,${-(lt-1)*120}px) scale(${1-cl(lt-1)*.7}) rotate(${(lt-1)*40}deg)`:'none';
+  $('key2').style.opacity=E((lt-1.4)/0.3);$('key2').style.transform=`scale(${1+0.06*Math.sin(t*9)})`;$('sv').style.opacity=E((lt-1.7)/0.3)}
+ if(cur==7){rise(['p1','w1','p2','w2','p3','s7l'],lt,0.5)}
+ if(cur==8){const x=E((lt-2.2)/0.25);$('ng').style.opacity=x;$('ng').style.transform=`scale(${1.6-0.6*x})`}
+ // captions
+ let wi=-1;for(let i=0;i<W.length;i++)if(t>=W[i].s)wi=i;
+ if(wi<0||t>W[W.length-1].e+0.4){$('cap').innerHTML='';return}
+ const st=CH[wi];$('cap').innerHTML=W.slice(st,CE[st]).map((w,k)=>st+k===wi?`<b>${w.w}</b>`:w.w).join(' ');
+}
+setT(0);
+</script></body></html>
