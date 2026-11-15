@@ -1,0 +1,11 @@
+nvda_hq|Coolcaesar|CC BY-SA 4.0
+nvda_sign|Will Buckner|CC BY 2.0
+jensen|Anders Eidesvik|CC BY 4.0
+tsmc|4300streetcar|CC BY 4.0
+amd|Coolcaesar|CC BY-SA 4.0
+avgo|Coolcaesar|CC BY-SA 4.0
+mu|Thingreenline4546|CC BY-SA 4.0
+nasdaq|Nielsoncaetanosalmeron|CC BY 4.0
+nasdaq2|Luca Marfè at Italia all'ONU|CC BY 2.0
+amzn|Joe Mabel|CC BY-SA 4.0
+googl|Dietmar Rabich|CC BY-SA 4.0
