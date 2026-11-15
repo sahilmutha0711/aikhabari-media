@@ -31,6 +31,7 @@ Identity: open with ONE big-audience word the viewer is in (H-1B, OPT, laid off)
 Cuts: every cut must show what the voice says at that moment (mark [SHOW: ...] per line: the person, the filing, the number circled); no generic stock AI B-roll. Hold one clean ~2 s shot on the key number; add a sound cue (whoosh, music drop, short silence) at the re-commit and rehook.
 Ending: the last line is the most usable fact or the smart line, said with energy, then cut (no recap, outro card or "follow for more"). Write it so it runs straight into the first spoken line (seamless loop, same framing as frame 1). Never end a "part 1" without its payoff.
 Comments: end on one question about a real open point (not known yet) or a real two-sided disagreement, never "comment a word". Write the first comment too: one full sentence with an extra verified fact plus a question.
+Originality and sources: every Reel has the owner's face, voice and a take or "what it means for you" (Instagram stops recommending accounts that mostly repost others' content; credit or a watermark doesn't make it original). Mark one [SOURCE: ...] tag for ~1 s at the key fact and write a "Sources:" line for the caption.
 Pace and length: 25-45 s. By second 10 (about 30 words) say who it affects and what changed. Write for a natural fast pace (about 3 words/s); mark one [slow] beat with a short pause on the key number, and keep the rest brisk.
 
 ## 2c. Problem-led format: PAIN → POKE → FIX → PAYOFF → RECAP
