@@ -232,3 +232,4 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - 10-14: OpenAI v2 Reel (vivid moving gradients, coral/orange duotone cover) = "perfect".
 - 10-13: Motion-first v2 Reel style approved; keyword must be fully visible above the head; covers designed separately; hooks start from what people know.
 - 10-12/13: Don't repeat cover people/photos; no emoji in art; news only; 45-60 s Reels; don't overwhelm the owner.
+- 11-15 WEEK STOCKS REEL: owner picked Sky Peach (#60A5FA/#FDBA74/#0B1120). Face windows hook + smart line→end, B-roll of real company photos (Commons, credited in-video per scene) with Ken Burns; every named ticker shown as it is spoken. Posted 11-15 13:5x PT (DfxyjH6mVZy, id 18102480941193343, first comment 18180118330451838). Single-pass loudnorm gave -15.3 LUFS on 42 s; use two-pass (measured_*) for short clips.
