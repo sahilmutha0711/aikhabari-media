@@ -147,3 +147,12 @@ Composio/Instagram connector failed to connect (502) — no insights pulled, com
 | 11-11 Anthropic IPO DfnD_5aCYqm | 2,228 | 1,732 | 21 | 8 | 64 | 20.5 s | 60.1% |
 | 11-10 Nvidia/Jensen DfkmvnDgQW5 | 1,950 | 1,562 | 10 | 2 | 69 | 20.3 s | 45.9% |
 LESSON: the clone-voice, no-face Notion Reel flopped (84% skip, 3.9 s avg) vs ~20 s avg on owner-on-camera Reels. Owner's real face + voice in the hook is the single biggest lever; avoid faceless clone-voice Reels for news. Niche dev-security topic also has a small audience. Today: the owner-recorded ChatGPT Wallet Reel (face hook) is ready.
+
+## 2026-11-15 run (followers 544)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-14 ChatGPT Wallet Reel Dfu600CgIYR (day 1, 69 s) | 530 | 309 | 0 | 1 | 25 | 7.7 s | 72.5% |
+| 11-13 Notion clone Reel | 254 | 189 | 0 | 1 | 6 | 4.0 s | 82.7% |
+| 11-11 Anthropic IPO | 2,279 | 1,782 | 21 | 8 | 64 | 20.9 s | 59.7% |
+| 11-10 Nvidia/Jensen | 1,970 | 1,573 | 10 | 2 | 69 | 20.2 s | 46.0% |
+LESSON: Wallet Reel underperformed: 69 s is too long and the opener ("So guys, Black Friday is on…") is slow; consumer how-to < money-stakes stories for this audience. Winners (Anthropic IPO, Nvidia) = famous company + money at stake + "before you invest" + 40-45 s. Today: pitch "This week decides AI stocks" (Nvidia earnings Tue + Anthropic IPO Thu), ≤40 s, stakes in first 5 words.
