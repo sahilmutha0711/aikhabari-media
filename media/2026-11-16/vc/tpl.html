@@ -37,21 +37,26 @@ function cap(t){let k=-1;for(let i=0;i<CH.length;i++)if(CH[i][0].s<=t+0.05)k=i;i
 // shape outlines (box 900x980 at 90,470) must match broll.py
 const SH={arch:'M0,980 L0,450 A450,450 0 0 1 900,450 L900,980 Z',slant:'M140,0 L900,0 L760,980 L0,980 Z',hex:'M450,0 L900,230 L900,750 L450,980 L0,750 L0,230 Z',
  ticket:'M60,0 H840 A60,60 0 0 1 900,60 V420 A70,70 0 0 0 900,560 V920 A60,60 0 0 1 840,980 H60 A60,60 0 0 1 0,920 V560 A70,70 0 0 0 0,420 V60 A60,60 0 0 1 60,0 Z'};
-const SEG=[[13.3,15.25,'arch','PHOTO: SAPPHIREDREAMER · CC0'],[15.25,18.2,'slant','PHOTO: JD LASICA · CC BY 2.0'],[18.2,21.35,'hex','VIDEO: TODD ANDERSON · CC BY 3.0'],[21.35,25.0,'ticket','PHOTO: VPR BRASIL · CC BY 2.0'],
- [25.0,28.95,'arch','VIDEO: COMMONS · CC BY 3.0'],[28.95,35.1,'slant','PHOTO: SUIREN2022 · CC BY-SA 4.0'],[35.1,36.9,'hex','PHOTO: TECHCRUNCH · CC BY 2.0'],[36.9,38.5,'ticket','PHOTO: NEXT CONFERENCE · CC BY 2.0'],
- [38.5,41.4,'arch','PHOTO: TECHCRUNCH · CC BY 2.0'],[41.4,44.2,'slant','PHOTO: TECHYIZU · CC BY 2.0'],[44.2,49.25,'hex','VIDEO: COMMONS · CC BY 3.0'],[49.25,52.6,'ticket','VIDEO: ZDF/TERRA X · CC BY 4.0'],[52.6,56.6,'arch','PHOTO: NEXT CONFERENCE · CC BY 2.0']];
-function outline(t){const s=SEG.find(x=>t>=x[0]&&t<x[1]);if(!s)return '';const k=lin(t,s[0],.45);
- return `<svg class=ab style="left:90px;top:470px;overflow:visible" width=900 height=980><path d="${SH[s[2]]}" fill=none stroke="${PAL.a}" stroke-width=10 pathLength=1 stroke-dasharray="1" stroke-dashoffset="${1-eo(k)}" stroke-linejoin=round /></svg>
- <div class=ab style="right:60px;top:1462px;font-family:Mono;font-size:16px;color:rgba(255,255,255,.6)">${s[3]}</div>`}
+const SEG=[[13.3,15.25,'PHOTO: SAPPHIREDREAMER · CC0'],[15.25,18.2,'PHOTO: JD LASICA · CC BY 2.0'],[18.2,21.35,'VIDEO: TODD ANDERSON · CC BY 3.0'],[21.35,25.0,'PHOTO: VPR BRASIL · CC BY 2.0'],
+ [25.0,28.95,'VIDEO: COMMONS · CC BY 3.0'],[28.95,32.6,'PHOTO: SUIREN2022 · CC BY-SA 4.0'],[32.6,35.1,'PHOTO: NEXT CONFERENCE · CC BY 2.0'],[35.1,36.9,'PHOTO: TECHCRUNCH · CC BY 2.0'],[36.9,38.5,'PHOTO: NEXT CONFERENCE · CC BY 2.0'],
+ [38.5,41.4,'PHOTO: TECHCRUNCH · CC BY 2.0'],[41.4,44.2,'PHOTO: TECHYIZU · CC BY 2.0'],[44.2,49.25,'VIDEO: COMMONS · CC BY 3.0'],[49.25,52.6,'VIDEO: ZDF/TERRA X · CC BY 4.0'],[52.6,56.6,'PHOTO: NEXT CONFERENCE · CC BY 2.0']];
+function outline(t){const s=SEG.find(x=>t>=x[0]&&t<x[1]);if(!s)return '';
+ const dim=(t>=21.35&&t<28.95)||(t>=44.2)?.5:.18;
+ return `<div class=ab style="inset:0;background:rgba(${hex2(PAL.bg)},${dim})"></div><div class=ab style="right:40px;top:1462px;font-family:Mono;font-size:16px;color:rgba(255,255,255,.65)">${s[1]}</div>`}
 const tag=(t,t0,txt,x,y)=>`<div class=ab style="left:${x}px;top:${y}px;${rise(t,t0,20)}">${chip(txt,PAL.a,PAL.bg,26,'10px 22px')}</div>`;
 const head=(t,t0,kick,big)=>`<div class=c style="top:262px;${rise(t,t0)}">${kick?`<div style="margin-bottom:14px">${chip(kick,'transparent',PAL.a,28,'8px 22px',`border:3px solid ${PAL.a}`)}</div>`:''}<div class=H style="font-size:${big.length>22?64:big.length>18?74:92}px">${big}</div></div>`;
 function duty(t,n,title,items){let h=head(t,n==1?28.98:n==2?35.15:38.55,'THE JOB · 0'+n,title);
  h+=`<div class=c style="top:1230px">${items.map(([x,s])=>`<span style="margin:0 6px;${sp(t,s,.3)}">${chip(x,PAL.b,PAL.bg,38,'14px 28px')}</span>`).join('')}</div>`;return h}
 function setT(t){let h='';
- if(t<13.3){ // FACE 1: strip only
-  if(t<5.8) h+=`<div class=c style="top:${t<0.04?150:262}px">${chip('A16Z IS HIRING',PAL.a,PAL.bg,46,'12px 30px',sp(t,0,.3))} ${chip('NEW ROLE',card(),PAL.b,40,'12px 26px',`border:3px solid ${PAL.a};`+sp(t,3.76,.3))}</div>`+(t<0.04?`<div class="c H" style="top:260px;font-size:64px">NO FINANCE DEGREE NEEDED</div>`:'');
-  else if(t<8.9) h+=`<div class=c style="top:262px">${chip('UP TO',card(),PAL.b,40,'12px 24px',`border:3px solid ${PAL.a};`+sp(t,5.84,.3))} ${chip('$'+Math.round(266*eo(lin(t,6.36,.8)))+'K / YEAR',PAL.a,PAL.bg,48,'12px 30px',sp(t,6.3,.3))}</div>`;
-  else h+=`<div class=c style="top:262px">${chip('SEND THIS TO',PAL.b,PAL.bg,38,'12px 24px',sp(t,8.94,.3))} ${chip('THE FRIEND WHO WANTS INTO VC',PAL.a,PAL.bg,34,'14px 24px',sp(t,9.7,.3))}</div>`;
+ if(t<13.3){ // FACE 1: strip only (y 255-355), photo pill + word-synced chips
+  const pill=`<span style="display:inline-block;vertical-align:middle;width:190px;height:92px;border-radius:50px;border:4px solid ${PAL.a};background:url('file:///home/claude/reels/vc/img/a16z_bldg.jpg') 8% 52%/420px auto;margin-right:12px;${sp(t,0,.3)}"></span>`;
+  let row='';
+  if(t<3.76) row=chip('A16Z',PAL.a,PAL.bg,56,'12px 32px',sp(t,0,.3))+' '+chip('VENTURE CAPITAL',card(),PAL.b,40,'16px 24px',`border:3px solid ${PAL.a};`+sp(t,1.82,.3));
+  else if(t<5.84) row=chip('IS HIRING',PAL.a,PAL.bg,56,'12px 32px',sp(t,3.76,.3))+' '+chip('NEW ROLE',PAL.b,PAL.bg,44,'14px 26px',sp(t,4.44,.3));
+  else if(t<8.94) row=chip('UP TO',card(),PAL.b,42,'14px 24px',`border:3px solid ${PAL.a};`+sp(t,5.84,.3))+' '+chip('$'+Math.round(266*eo(lin(t,6.36,.8)))+'K / YR',PAL.a,PAL.bg,56,'12px 30px',sp(t,6.3,.3));
+  else row=chip('SEND THIS TO',PAL.b,PAL.bg,34,'16px 22px',sp(t,8.94,.3))+' '+chip('YOUR VC-DREAMER FRIEND',PAL.a,PAL.bg,32,'18px 22px',sp(t,9.74,.3));
+  h+=`<div class=c style="top:258px;white-space:nowrap">${pill}<span style="vertical-align:middle">${row}</span></div>`;
+  if(t<0.04) h+=`<div class=c style="top:50px"><div style="display:inline-block;background:${PAL.bg};border-radius:40px;padding:18px 40px 22px"><div class=H style="font-size:92px">A16Z IS <span style="background:${PAL.a};color:${PAL.bg};padding:0 22px;border-radius:70px;text-shadow:none">HIRING</span></div><div class=ser style="font-size:52px;color:${PAL.b};margin-top:6px">no finance degree needed</div></div></div>`;
  } else if(t<56.6){
   h+=`<div class=ab style="inset:0;background:linear-gradient(180deg,${PAL.bg}EE 0%,${PAL.bg}88 22%,${PAL.bg}00 30%,${PAL.bg}00 72%,${PAL.bg}CC 82%,${PAL.bg}F2 100%)"></div>`;
   h+=outline(t);
