@@ -33,6 +33,7 @@ Ending: the last line is the most usable fact or the smart line, said with energ
 Comments: end on one question about a real open point (not known yet) or a real two-sided disagreement, never "comment a word". Write the first comment too: one full sentence with an extra verified fact plus a question.
 Originality and sources: every Reel has the owner's face, voice and a take or "what it means for you" (Instagram stops recommending accounts that mostly repost others' content; credit or a watermark doesn't make it original). Mark one [SOURCE: ...] tag for ~1 s at the key fact and write a "Sources:" line for the caption.
 Pace and length: 25-45 s. By second 10 (about 30 words) say who it affects and what changed. Write for a natural fast pace (about 3 words/s); mark one [slow] beat with a short pause on the key number, and keep the rest brisk.
+Fix the last Reel's dip: check where its retention chart dropped most after 3 s and where likes peaked. Put a re-commit line just before that kind of moment (usually where background starts: "That's what happened. Here's what it does to your OPT clock.") and move the like-peak kind of line into the first 10 s.
 
 ## 2c. Problem-led format: PAIN → POKE → FIX → PAYOFF → RECAP
 Use for any 'what should I do' story (investing, visas, jobs, tools). 1) PAIN: a situation the viewer has already lived, in line 1. 2) POKE: 1-2 lines on why the obvious move fails. 3) FIX: up to 3 short steps. 4) PAYOFF: proof it works (a real number or case). 5) RECAP: last line returns to the line-1 pain, now solved.
