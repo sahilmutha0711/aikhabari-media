@@ -1,0 +1,84 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+@font-face{font-family:Ser;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/InstrumentSerif-Italic.ttf')}
+@font-face{font-family:Mono;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/GeistMono-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;position:relative;font-family:Disp;color:#fff}
+#st{position:absolute;inset:0;clip-path:inset(0 0 2px 0)}
+.ab{position:absolute}.c{position:absolute;left:0;right:0;text-align:center}
+.H{text-transform:uppercase;letter-spacing:-1px;line-height:.95;text-shadow:0 6px 28px rgba(0,0,0,.6)}
+.chip{display:inline-block;font-family:Mono;border-radius:60px;white-space:nowrap}
+.ser{font-family:Ser}
+#cap{position:absolute;left:40px;right:40px;top:1505px;text-align:center;font-size:62px;line-height:1.1;text-transform:uppercase}
+#cap b{padding:2px 16px;border-radius:44px;font-weight:normal}
+</style></head><body><div id=st></div><script>
+let PAL={a:'#F3D9A4',b:'#E9D5FF',bg:'#170A1F'};
+const W0=__WORDS__;
+// ASR fixes
+let W=[];for(let i=0;i<W0.length;i++){let w={...W0[i]};
+ if(w.w==='BC')w.w='VC';
+ if(w.w==='deal'&&W0[i-1]&&W0[i-1].w==='this')w.w='reel';
+ if(w.w==='funds'&&W0[i+1]&&/profits/.test(W0[i+1].w))w.w="fund's";
+ const n=W0[i+1];
+ if(n&&/^[,\-]/.test(n.w)){w={w:w.w+n.w.replace(/^,/,','),s:w.s,e:n.e};i++}
+ W.push(w)}
+const CH=[];let cur=[];W.forEach(w=>{cur.push(w);if(cur.length==3||/[.,?!]$/.test(w.w)){CH.push(cur);cur=[]}});if(cur.length)CH.push(cur);
+const cl=(x,a,b)=>Math.max(a,Math.min(b,x)),lin=(t,t0,d)=>cl((t-t0)/d,0,1),eo=x=>1-Math.pow(1-x,3);
+const bk=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(t,t0,d=.35)=>{const x=lin(t,t0,d);return x<=0?0:bk(x)},op=(t,t0,d=.25)=>eo(lin(t,t0,d));
+const rise=(t,t0,px=40,d=.4)=>`opacity:${op(t,t0,d)};transform:translateY(${(1-eo(lin(t,t0,d)))*px}px)`;
+const sp=(t,t0,d)=>`display:inline-block;opacity:${op(t,t0,.2)};transform:scale(${pop(t,t0,d)})`;
+const card=()=>`rgba(${hex2(PAL.bg)},.9)`;function hex2(h){h=h.replace('#','');return [0,2,4].map(i=>parseInt(h.substr(i,2),16)).join(',')}
+const chip=(txt,bg,fg,fs=40,pad='12px 26px',ex='')=>`<span class=chip style="background:${bg};color:${fg};font-size:${fs}px;padding:${pad};${ex}">${txt}</span>`;
+function cap(t){let k=-1;for(let i=0;i<CH.length;i++)if(CH[i][0].s<=t+0.05)k=i;if(k<0||t<0.02)return '';const c=CH[k];const nx=CH[k+1]?CH[k+1][0].s:99;if(t>c[c.length-1].e+0.6&&t<nx)return '';
+ let cur=-1;c.forEach((w,i)=>{if(w.s<=t+0.05)cur=i});
+ return `<div id=cap><span style="display:inline-block;background:rgba(${hex2(PAL.bg)},.78);border-radius:60px;padding:10px 24px">${c.map((w,i)=>i===cur?`<b style="background:${PAL.a};color:${PAL.bg}">${w.w}</b>`:w.w).join(' ')}</span></div>`}
+// shape outlines (box 900x980 at 90,470) must match broll.py
+const SH={arch:'M0,980 L0,450 A450,450 0 0 1 900,450 L900,980 Z',slant:'M140,0 L900,0 L760,980 L0,980 Z',hex:'M450,0 L900,230 L900,750 L450,980 L0,750 L0,230 Z',
+ ticket:'M60,0 H840 A60,60 0 0 1 900,60 V420 A70,70 0 0 0 900,560 V920 A60,60 0 0 1 840,980 H60 A60,60 0 0 1 0,920 V560 A70,70 0 0 0 0,420 V60 A60,60 0 0 1 60,0 Z'};
+const SEG=[[13.3,15.25,'arch','PHOTO: SAPPHIREDREAMER · CC0'],[15.25,18.2,'slant','PHOTO: JD LASICA · CC BY 2.0'],[18.2,21.35,'hex','VIDEO: TODD ANDERSON · CC BY 3.0'],[21.35,25.0,'ticket','PHOTO: VPR BRASIL · CC BY 2.0'],
+ [25.0,28.95,'arch','VIDEO: COMMONS · CC BY 3.0'],[28.95,35.1,'slant','PHOTO: SUIREN2022 · CC BY-SA 4.0'],[35.1,36.9,'hex','PHOTO: TECHCRUNCH · CC BY 2.0'],[36.9,38.5,'ticket','PHOTO: NEXT CONFERENCE · CC BY 2.0'],
+ [38.5,41.4,'arch','PHOTO: TECHCRUNCH · CC BY 2.0'],[41.4,44.2,'slant','PHOTO: TECHYIZU · CC BY 2.0'],[44.2,49.25,'hex','VIDEO: COMMONS · CC BY 3.0'],[49.25,52.6,'ticket','VIDEO: ZDF/TERRA X · CC BY 4.0'],[52.6,56.6,'arch','PHOTO: NEXT CONFERENCE · CC BY 2.0']];
+function outline(t){const s=SEG.find(x=>t>=x[0]&&t<x[1]);if(!s)return '';const k=lin(t,s[0],.45);
+ return `<svg class=ab style="left:90px;top:470px;overflow:visible" width=900 height=980><path d="${SH[s[2]]}" fill=none stroke="${PAL.a}" stroke-width=10 pathLength=1 stroke-dasharray="1" stroke-dashoffset="${1-eo(k)}" stroke-linejoin=round /></svg>
+ <div class=ab style="right:60px;top:1462px;font-family:Mono;font-size:16px;color:rgba(255,255,255,.6)">${s[3]}</div>`}
+const tag=(t,t0,txt,x,y)=>`<div class=ab style="left:${x}px;top:${y}px;${rise(t,t0,20)}">${chip(txt,PAL.a,PAL.bg,26,'10px 22px')}</div>`;
+const head=(t,t0,kick,big)=>`<div class=c style="top:262px;${rise(t,t0)}">${kick?`<div style="margin-bottom:14px">${chip(kick,'transparent',PAL.a,28,'8px 22px',`border:3px solid ${PAL.a}`)}</div>`:''}<div class=H style="font-size:${big.length>22?64:big.length>18?74:92}px">${big}</div></div>`;
+function duty(t,n,title,items){let h=head(t,n==1?28.98:n==2?35.15:38.55,'THE JOB · 0'+n,title);
+ h+=`<div class=c style="top:1230px">${items.map(([x,s])=>`<span style="margin:0 6px;${sp(t,s,.3)}">${chip(x,PAL.b,PAL.bg,38,'14px 28px')}</span>`).join('')}</div>`;return h}
+function setT(t){let h='';
+ if(t<13.3){ // FACE 1: strip only
+  if(t<5.8) h+=`<div class=c style="top:${t<0.04?150:262}px">${chip('A16Z IS HIRING',PAL.a,PAL.bg,46,'12px 30px',sp(t,0,.3))} ${chip('NEW ROLE',card(),PAL.b,40,'12px 26px',`border:3px solid ${PAL.a};`+sp(t,3.76,.3))}</div>`+(t<0.04?`<div class="c H" style="top:260px;font-size:64px">NO FINANCE DEGREE NEEDED</div>`:'');
+  else if(t<8.9) h+=`<div class=c style="top:262px">${chip('UP TO',card(),PAL.b,40,'12px 24px',`border:3px solid ${PAL.a};`+sp(t,5.84,.3))} ${chip('$'+Math.round(266*eo(lin(t,6.36,.8)))+'K / YEAR',PAL.a,PAL.bg,48,'12px 30px',sp(t,6.3,.3))}</div>`;
+  else h+=`<div class=c style="top:262px">${chip('SEND THIS TO',PAL.b,PAL.bg,38,'12px 24px',sp(t,8.94,.3))} ${chip('THE FRIEND WHO WANTS INTO VC',PAL.a,PAL.bg,34,'14px 24px',sp(t,9.7,.3))}</div>`;
+ } else if(t<56.6){
+  h+=`<div class=ab style="inset:0;background:linear-gradient(180deg,${PAL.bg}EE 0%,${PAL.bg}88 22%,${PAL.bg}00 30%,${PAL.bg}00 72%,${PAL.bg}CC 82%,${PAL.bg}F2 100%)"></div>`;
+  h+=outline(t);
+  if(t<15.25){h+=head(t,13.4,'A16Z · VENTURE CAPITAL','THE "ECOSYSTEM" ROLE');h+=tag(t,13.8,'A16Z OFFICE',120,1380)}
+  else if(t<21.35){h+=head(t,15.3,'THE NEW YORK TIMES · NOV 16','VC FIRMS ARE HIRING IT');
+   if(t<18.2)h+=tag(t,15.8,'MARC ANDREESSEN · CO-FOUNDER',120,1380);
+   else h+=`<div class=c style="top:1180px">${chip('A16Z',PAL.a,PAL.bg,52,'14px 34px',sp(t,18.25,.3))} ${chip('CLAY',PAL.b,PAL.bg,52,'14px 34px',sp(t,19.3,.3))}<br><span style="display:inline-block;margin-top:18px;${sp(t,20.76,.3)}">${chip('● HIRING RIGHT NOW',card(),PAL.a,36,'12px 28px',`border:3px solid ${PAL.a}`)}</span></div>`;}
+  else if(t<28.95){h+=head(t,21.45,'ONE A16Z ECOSYSTEM ROLE','THE PAY');
+   if(t<25)h+=tag(t,21.8,'BEN HOROWITZ · CO-FOUNDER',120,1380);
+   const v=Math.round(228+38*eo(lin(t,24.3,1.0)));
+   h+=`<div class=c style="top:${t<25?1080:640}px;transition:none"><span style="${sp(t,24.3,.35)};background:${card()};border:5px solid ${PAL.a};border-radius:200px;padding:18px 54px"><span class=H style="font-size:150px;color:${PAL.a};text-shadow:none">$${v}K</span></span></div>`;
+   if(t>=25)h+=`<div class=c style="top:870px;${rise(t,26.6,20)}"><span class=H style="font-size:44px">A YEAR</span></div><div class=c style="top:950px">${chip('+ SHARE OF FUND PROFITS (CARRY)',PAL.b,PAL.bg,34,'14px 28px',sp(t,27.6,.3))}</div>
+   <div class=c style="top:1300px;${rise(t,26,10)}"><span style="font-family:Mono;font-size:21px;background:${card()};padding:8px 18px;border-radius:30px;color:rgba(255,255,255,.85)">a16z speedrun "Investor Ecosystem" posting · $228K–$266K · now closed</span></div>`;}
+  else if(t<35.1)h+=duty(t,1,'BUILD AN INVESTOR NETWORK',[['ANGELS',32.72],['SEED FUNDS',33.56],['FAMILY OFFICES',34.1]]);
+  else if(t<38.5)h+=duty(t,2,'HOST THE ROOM',[['SUMMITS',35.82],['OFFICE HOURS',36.8],['PRIVATE DINNERS',37.82]]);
+  else if(t<44.2)h+=duty(t,3,'HELP STARTUPS RAISE',[['PITCH',40.52],['STORY',41.16],['WHO TO CALL',42.82]]);
+  else if(t<49.25){h+=head(t,44.25,'WHAT THEY ASKED FOR','THE REQUIREMENTS');
+   h+=`<div class=c style="top:720px">${chip('4–8 YEARS',PAL.a,PAL.bg,60,'16px 40px',sp(t,44.68,.3))}</div><div class=c style="top:850px">${chip('STARTUPS · VC · BIZ DEV',card(),PAL.b,40,'14px 30px',`border:3px solid ${PAL.a};`+sp(t,45.74,.3))}</div>`;
+   h+=`<div class=c style="top:1060px"><span style="${sp(t,48.3,.4)};transform:rotate(-6deg) scale(${pop(t,48.3,.4)})"><span class=H style="display:inline-block;font-size:96px;color:${PAL.bg};background:${PAL.b};padding:10px 40px;border-radius:30px;border:6px dashed ${PAL.bg};text-shadow:none">STRONG NETWORK</span></span></div>`;}
+  else {h+=head(t,49.35,'WHY THIS JOB EXISTS','INBOXES ARE FLOODED');
+   const M=[['AI Pitch Bot','Dear Investor, I hope this finds you well…',51.7],['GrowthGPT','Revolutionary AI-native platform for…',52.4],['Founder (AI draft)','Quick intro — we are disrupting…',53.0],['PitchWriter','Excited to share our seed round…',53.6]];
+   h+=M.map(([f,s,t0],i)=>`<div class=ab style="left:150px;top:${640+i*150}px;width:780px;${rise(t,t0,30,.3)}"><div style="background:${PAL.b};color:${PAL.bg};border-radius:40px;padding:22px 34px;font-family:Mono;font-size:26px;display:flex;gap:20px;align-items:center"><span style="width:40px;height:40px;border-radius:50%;background:${PAL.a};flex:none"></span><span><b>${f}</b><br><span style="opacity:.7">${s}</span></span></div></div>`).join('');
+   h+=`<div class=c style="top:1180px"><span style="${sp(t,55.6,.35)};transform:rotate(-8deg) scale(${pop(t,55.6,.35)})"><span class=H style="display:inline-block;font-size:110px;color:${PAL.a};border:8px solid ${PAL.a};padding:6px 36px;border-radius:24px;background:${card()};text-shadow:none">IGNORED</span></span></div>`;}
+ } else { // FACE 2
+  if(t<59) h+=`<div class=c style="top:262px">${chip('YOUR NETWORK',card(),PAL.b,42,'12px 26px',`border:3px solid ${PAL.a};`+sp(t,57.68,.3))} ${chip('= YOUR RESUME',PAL.a,PAL.bg,46,'12px 30px',sp(t,58.3,.3))}</div>`;
+  else h+=`<div class=c style="top:262px">${chip('FOLLOW @THEAIKHABARI',PAL.a,PAL.bg,42,'12px 28px',sp(t,59.08,.3))} ${chip('ROADMAP NEXT →',PAL.b,PAL.bg,38,'12px 24px',sp(t,61.5,.3))}</div>`;
+ }
+ h+=cap(t);document.getElementById('st').innerHTML=h}
+setT(0);
+</script></body></html>
