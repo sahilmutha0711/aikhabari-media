@@ -156,3 +156,14 @@ LESSON: the clone-voice, no-face Notion Reel flopped (84% skip, 3.9 s avg) vs ~2
 | 11-11 Anthropic IPO | 2,279 | 1,782 | 21 | 8 | 64 | 20.9 s | 59.7% |
 | 11-10 Nvidia/Jensen | 1,970 | 1,573 | 10 | 2 | 69 | 20.2 s | 46.0% |
 LESSON: Wallet Reel underperformed: 69 s is too long and the opener ("So guys, Black Friday is on…") is slow; consumer how-to < money-stakes stories for this audience. Winners (Anthropic IPO, Nvidia) = famous company + money at stake + "before you invest" + 40-45 s. Today: pitch "This week decides AI stocks" (Nvidia earnings Tue + Anthropic IPO Thu), ≤40 s, stakes in first 5 words.
+
+## 2026-11-16 run (followers 580, +36 since 11-15)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-15 Week stocks Reel DfxyjH6mVZy (day 1, 42 s) | 4,129 | 2,213 | 43 | 12 | 137 | 11.0 s | 52.9% |
+| 11-14 ChatGPT Wallet Dfu600CgIYR | 2,458 | 328 | 30 | 3 | 119 | 4.2 s | 36.0% |
+| 11-13 Notion clone Dfs9HuAEhaD | 2,444 | 193 | 30 | 1 | 102 | 1.3 s | 25.7% |
+| 11-11 Anthropic IPO DfnD_5aCYqm | 4,034 | 1,806 | 51 | 8 | 162 | 18.1 s | 50.3% |
+| 11-10 Nvidia/Jensen DfkmvnDgQW5 | 1,980 | 1,582 | 10 | 2 | 69 | 20.1 s | 46.0% |
+ANOMALY: overnight Wallet (+1,928 views, +30 shares, +94 likes) and Notion (+2,190 views, +30 shares, +96 likes) jumped with almost NO new reach (+19 / +4) and average watch collapsed (7.7→4.2 s, 4.0→1.3 s); Anthropic +30 shares on +24 reach. Identical +30 shares on two posts with flat reach looks like inauthentic/bot activity, not organic. We did NOT do this. Flagged to owner; exclude these jumps from lessons.
+LESSON: Week stocks Reel = best day-1 ever (2,213 reach, 43 shares, 12 saves, record): famous tickers + dated "this Tue/Thu" stakes + face hook ≤42 s. Today: keep dated, money-stakes stories; owner promised Tue/Thu after-the-bell breakdowns, so prep a Nvidia-earnings script framework for Tuesday.
