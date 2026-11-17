@@ -167,3 +167,12 @@ LESSON: Wallet Reel underperformed: 69 s is too long and the opener ("So guys, B
 | 11-10 Nvidia/Jensen DfkmvnDgQW5 | 1,980 | 1,582 | 10 | 2 | 69 | 20.1 s | 46.0% |
 ANOMALY: overnight Wallet (+1,928 views, +30 shares, +94 likes) and Notion (+2,190 views, +30 shares, +96 likes) jumped with almost NO new reach (+19 / +4) and average watch collapsed (7.7→4.2 s, 4.0→1.3 s); Anthropic +30 shares on +24 reach. Identical +30 shares on two posts with flat reach looks like inauthentic/bot activity, not organic. We did NOT do this. Flagged to owner; exclude these jumps from lessons.
 LESSON: Week stocks Reel = best day-1 ever (2,213 reach, 43 shares, 12 saves, record): famous tickers + dated "this Tue/Thu" stakes + face hook ≤42 s. Today: keep dated, money-stakes stories; owner promised Tue/Thu after-the-bell breakdowns, so prep a Nvidia-earnings script framework for Tuesday.
+
+## 2026-11-17 run (followers 643, +61 since 11-16 = mostly the paid service still delivering)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-16 A16Z VC jobs Reel Df0RaTzCHOI (day 1, 64 s) | 2,129 | 286 | 35 | 2 | 133 | 5.1 s | 29.3% |
+| 11-15 Week stocks Reel DfxyjH6mVZy (day 2) | 4,903 | 2,875 | 44 | 14 | 130 | 11.4 s | 54.9% |
+| 11-11 Anthropic IPO DfnD_5aCYqm | 4,093 | 1,855 | 53 | 8 | 152 | 18.5 s | 49.9% |
+INAUTHENTIC: A16Z Reel shows the bot pattern again (views 7.4x reach, ~30+ shares and ~130 likes on 286 reach). Real result = 286 reach, 2 saves: WEAK. Owner told to cancel the service 11-16; it is still delivering (+61 followers).
+LESSON: Week stocks Reel keeps compounding (2,875 reach, best ever). A16Z jobs Reel (64 s, career angle, no money stakes in the hook) under-reached on day 1; may be suppressed by the bot activity or too long. Today: keep ≤45 s, money/market stakes in hook; Nvidia earnings tonight = obvious story.
