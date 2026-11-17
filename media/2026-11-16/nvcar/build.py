@@ -29,7 +29,7 @@ def numslide(n,k,title,big,sub,note):
 S=[]
 S.append(page(1,f"""<div style="position:absolute;left:70px;right:70px;top:470px">
 <div class=pill>TUESDAY · NOV 17 · AFTER THE BELL</div>
-<div class=H style="font-size:170px;margin-top:40px">NVIDIA<br>REPORTS<br><span class=box>TOMORROW</span></div>
+<div class=H style="font-size:170px;margin-top:40px">NVIDIA<br>REPORTS<br><span class=box>TODAY</span></div>
 <div class=ser style="margin-top:40px">5 numbers that decide your AI stocks this week</div></div>""",'nvda_hq.jpg','PHOTO: COOLCAESAR · CC BY-SA 4.0'))
 S.append(page(2,f"""<div style="position:absolute;left:70px;right:70px;top:230px">
 <div class=H style="font-size:120px">FIRST REPORT<br>WITHOUT <span class=box>JENSEN</span></div>
@@ -48,7 +48,7 @@ S.append(page(6,f"""<div style="position:absolute;left:70px;right:70px;top:190px
 """ + ''.join(f"""<div style="display:flex;justify-content:space-between;align-items:center;border-radius:80px;background:#1E1A12;border:3px solid #3A3220;padding:26px 40px;margin-bottom:22px;font-family:MO;font-size:34px"><span>{a}</span><span style="color:{AC}">{b}</span></div>""" for a,b in [('Revenue','≈ $109B'),('Adj. EPS','≈ $2.47'),('Gross margin','74% ± 0.5'),('Q4 guide','growth?'),('CEO update','any name?')]) + """
 <div class=ser style="margin-top:34px;font-size:38px">If Nvidia moves, AMD, Broadcom, Micron and TSMC often move with it.</div></div>""",None))
 S.append(page(7,f"""<div style="position:absolute;left:70px;right:70px;top:300px;text-align:center">
-<div class=H style="font-size:150px"><span class=box>SAVE THIS</span><br>FOR TUESDAY</div>
+<div class=H style="font-size:150px"><span class=box>SAVE THIS</span><br>FOR TONIGHT</div>
 <div class=ser style="margin-top:60px">Send it to the friend who holds NVDA and checks the stock every hour.</div>
 <div class=H style="font-size:64px;margin-top:70px">FOLLOW @THEAIKHABARI</div>
 <div class=ser style="font-size:34px;opacity:.8;margin-top:14px">Full breakdown after the bell</div>
