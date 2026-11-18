@@ -176,3 +176,11 @@ LESSON: Week stocks Reel = best day-1 ever (2,213 reach, 43 shares, 12 saves, re
 | 11-11 Anthropic IPO DfnD_5aCYqm | 4,093 | 1,855 | 53 | 8 | 152 | 18.5 s | 49.9% |
 INAUTHENTIC: A16Z Reel shows the bot pattern again (views 7.4x reach, ~30+ shares and ~130 likes on 286 reach). Real result = 286 reach, 2 saves: WEAK. Owner told to cancel the service 11-16; it is still delivering (+61 followers).
 LESSON: Week stocks Reel keeps compounding (2,875 reach, best ever). A16Z jobs Reel (64 s, career angle, no money stakes in the hook) under-reached on day 1; may be suppressed by the bot activity or too long. Today: keep ≤45 s, money/market stakes in hook; Nvidia earnings tonight = obvious story.
+
+## 2026-11-18 run (followers 948, +305 in a day = paid service delivering; NOT organic)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-16 A16Z Reel Df0RaTzCHOI (day 2) | 2,173 | 316 | 36 | 2 | 102 | 5.4 s | 30.9% |
+| 11-15 Week stocks DfxyjH6mVZy (day 3) | 4,932 | 2,896 | 44 | 14 | 117 | 11.4 s | 54.9% |
+NOTE: likes are FALLING on bot-hit posts (A16Z 133→102, Notion 96→76, Wallet 111→96): Instagram appears to be purging fake likes. No posts 11-17 (Nvidia carousel never got "post").
+LESSON: no new organic data. Anthropic IPO prices tonight, trades Thu 11-19 (ANT): today = pre-IPO "read before you buy" carousel; owner promised a Thursday after-the-bell breakdown.
