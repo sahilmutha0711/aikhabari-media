@@ -46,6 +46,13 @@ function base(t){const s=SEG.find(x=>t>=x[0]&&t<x[1]);if(!s)return '';
 const head=(t,t0,kick,big,fs=104)=>`<div class=c style="top:262px;${rise(t,t0)}">${kick?`<div style="margin-bottom:14px">${chip(kick,PAL.a,PAL.bg,30,'10px 24px')}</div>`:''}<div class=H style="font-size:${fs}px">${big}</div></div>`;
 const x=(txt,t,t0)=>`<span style="margin:6px;${sp(t,t0)}">${chip(txt+' ✕',card(),PAL.b,40,'14px 28px',`border:3px solid ${PAL.a}`)}</span>`;
 const stamp=(txt,t,t0,fs=110,rot=-7)=>`<span style="${sp(t,t0,.35)};transform:rotate(${rot}deg) scale(${pop(t,t0,.35)})"><span class=H style="display:inline-block;font-size:${fs}px;color:${PAL.a};border:8px solid ${PAL.a};padding:4px 34px;border-radius:26px;background:${card()};text-shadow:none">${txt}</span></span>`;
+function tracker(t){if(t<11.4||t>=48.2)return '';
+ const L=[['THU','MICROSOFT',11.4],['TODAY','OUTLOOK',23.0],['FRI','FAA',25.2],['MON','CHASE',36.6],['TUE','APPLE',40.9]];
+ let cur=-1;L.forEach((x,i)=>{if(t>=x[2])cur=i});
+ return `<div class=c style="top:1330px;white-space:nowrap">${L.map(([d,n,s0],i)=>{
+  const shown=i<=cur;const on=i===cur;const y=shown?(1-eo(lin(t,s0,.45)))*-70:0;
+  const st=on?`background:${PAL.a};color:${PAL.bg};border:3px solid ${PAL.a}`:shown?`background:${card()};color:${PAL.b};border:3px solid ${PAL.a}`:`background:rgba(0,0,0,.25);color:rgba(255,255,255,.35);border:3px dashed rgba(255,255,255,.3)`;
+  return `<span style="display:inline-block;vertical-align:top;width:190px;margin:0 3px;border-radius:28px;padding:8px 0 10px;${st};opacity:${shown?op(t,s0,.3):1};transform:translateY(${y}px)"><div style="font-family:Mono;font-size:20px;opacity:.8">${shown?d:'· · ·'}</div><div style="font-family:Disp;font-size:38px;line-height:1">${shown?n:'?'}</div></span>`}).join('')}</div>`}
 function setT(t){let h='';
  if(t<9.75){ // FACE 1 hook: strip only
   if(t<2.4){h+=`<div class=c style="top:${t<0.04?150:262}px">${chip('OUTLOOK',PAL.a,PAL.bg,54,'12px 32px',sp(t,0.4))} ${chip('DOWN AGAIN · TODAY',card(),PAL.b,38,'16px 26px',`border:3px solid ${PAL.a};`+sp(t,1.3))}</div>`;
@@ -87,6 +94,6 @@ function setT(t){let h='';
   if(t<65.5)h+=`<div class=c style="top:262px">${chip('NO PROOF… YET',PAL.a,PAL.bg,56,'12px 36px',sp(t,63.7))}</div>`;
   else h+=`<div class=c style="top:262px">${chip('COINCIDENCE 🤷',PAL.b,PAL.bg,46,'14px 28px',sp(t,66.4))} ${chip('WARNING ⚠️',PAL.a,PAL.bg,46,'14px 28px',sp(t,67.4))}</div>`;
  }
- h+=cap(t);document.getElementById('st').innerHTML=h}
+ h+=tracker(t);h+=cap(t);document.getElementById('st').innerHTML=h}
 setT(0);
 </script></body></html>
