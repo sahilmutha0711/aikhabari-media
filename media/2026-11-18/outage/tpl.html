@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+@font-face{font-family:Disp;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/BigShoulders-Bold.ttf')}
+@font-face{font-family:Mono;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/GeistMono-Bold.ttf')}
+@font-face{font-family:Body;src:url('file:///mnt/skills/examples/canvas-design/canvas-fonts/Outfit-Bold.ttf')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+body{width:1080px;height:1920px;overflow:hidden;position:relative;font-family:Disp;color:#fff}
+#st{position:absolute;inset:0;clip-path:inset(0 0 2px 0)}
+.ab{position:absolute}.c{position:absolute;left:0;right:0;text-align:center}
+.H{text-transform:uppercase;line-height:.92;letter-spacing:0;text-shadow:0 6px 28px rgba(0,0,0,.6)}
+.chip{display:inline-block;font-family:Mono;border-radius:60px;white-space:nowrap}
+#cap{position:absolute;left:40px;right:40px;top:1505px;text-align:center;font-family:Body;font-size:58px;line-height:1.12;text-transform:uppercase}
+#cap b{padding:2px 16px;border-radius:44px;font-weight:normal}
+</style></head><body><div id=st></div><script>
+let PAL={a:'#A3FF12',b:'#E8FFD0',bg:'#060B04'};
+const W0=__WORDS__;
+const FIX={'cancers':'Arkansas.','their':'the','sell':'Zelle','overnight?':'warning?','an':'an','fortune,':'Fortune,','app':'App','store':'Store,','Care':'Care','4':'four'};
+let W=W0.map((w,i)=>{let x={...w};
+ if(x.w==='their'&&W0[i+1]&&W0[i+1].w==='cancers')x.w='the';
+ else if(x.w==='cancers')x.w='Arkansas';
+ else if(x.w==='sell')x.w='Zelle';
+ else if(x.w==='an'&&W0[i+1]&&W0[i+1].w==='overnight?')x.w='a';
+ else if(x.w==='overnight?')x.w='warning?';
+ else if(x.w==='fortune,')x.w='Fortune,';
+ else if(x.w==='app')x.w='App';
+ else if(x.w==='store')x.w='Store,';
+ else if(x.w==='4')x.w='four';
+ return x});
+// merge Apple Care -> AppleCare
+for(let i=0;i<W.length-1;i++){if(W[i].w==='Apple'&&W[i+1].w==='Care'){W[i]={w:'AppleCare',s:W[i].s,e:W[i+1].e};W.splice(i+1,1)}}
+const CH=[];let cur=[];W.forEach(w=>{cur.push(w);if(cur.length==3||/[.,?!]$/.test(w.w)){CH.push(cur);cur=[]}});if(cur.length)CH.push(cur);
+const cl=(x,a,b)=>Math.max(a,Math.min(b,x)),lin=(t,t0,d)=>cl((t-t0)/d,0,1),eo=x=>1-Math.pow(1-x,3);
+const bk=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const pop=(t,t0,d=.35)=>{const x=lin(t,t0,d);return x<=0?0:bk(x)},op=(t,t0,d=.25)=>eo(lin(t,t0,d));
+const rise=(t,t0,px=40,d=.4)=>`opacity:${op(t,t0,d)};transform:translateY(${(1-eo(lin(t,t0,d)))*px}px)`;
+const sp=(t,t0,d=.3)=>`display:inline-block;opacity:${op(t,t0,.2)};transform:scale(${pop(t,t0,d)})`;
+function hex2(h){h=h.replace('#','');return [0,2,4].map(i=>parseInt(h.substr(i,2),16)).join(',')}
+const card=()=>`rgba(${hex2(PAL.bg)},.9)`;
+const chip=(txt,bg,fg,fs=40,pad='12px 26px',ex='')=>`<span class=chip style="background:${bg};color:${fg};font-size:${fs}px;padding:${pad};${ex}">${txt}</span>`;
+function cap(t){let k=-1;for(let i=0;i<CH.length;i++)if(CH[i][0].s<=t+0.05)k=i;if(k<0)return '';const c=CH[k];const nx=CH[k+1]?CH[k+1][0].s:99;if(t>c[c.length-1].e+0.6&&t<nx)return '';
+ let cu=-1;c.forEach((w,i)=>{if(w.s<=t+0.05)cu=i});
+ return `<div id=cap><span style="display:inline-block;background:rgba(${hex2(PAL.bg)},.78);border-radius:60px;padding:10px 24px">${c.map((w,i)=>i===cu?`<b style="background:${PAL.a};color:${PAL.bg}">${w.w}</b>`:w.w).join(' ')}</span></div>`}
+const SEG=[[9.75,11.4,'VIDEO: ZDF/TERRA X · CC BY 4.0'],[11.4,16.5,'PHOTO: PUBLIC DOMAIN'],[16.5,23.0,'VIDEO: COMMONS'],[23.0,25.2,'VIDEO: ZDF/TERRA X · CC BY 4.0'],[25.2,29.5,'PHOTO: DILLAN PAYNE · CC BY-SA 4.0'],[29.5,32.1,'PHOTO: HARRISON KEELY · CC BY 4.0'],[32.1,36.6,'PHOTO: SANTERI VIINAMÄKI · CC BY-SA 4.0'],[36.6,40.9,'PHOTO: PHILLIP PESSAR · CC BY 2.0'],[40.9,48.2,'PHOTO: KIDFLY182 · CC BY-SA 4.0'],[50.6,52.6,'VIDEO: COMMONS · CC BY 3.0'],[52.6,56.0,'VIDEO: ZDF/TERRA X · CC BY 4.0'],[56.0,59.4,'VIDEO: TODD ANDERSON · CC BY 3.0'],[59.4,63.5,'PHOTO: PUBLIC DOMAIN']];
+function base(t){const s=SEG.find(x=>t>=x[0]&&t<x[1]);if(!s)return '';
+ return `<div class=ab style="inset:0;background:linear-gradient(180deg,${PAL.bg}F0 0%,${PAL.bg}90 20%,${PAL.bg}30 34%,${PAL.bg}30 66%,${PAL.bg}C8 80%,${PAL.bg}F5 100%)"></div><div class=ab style="right:40px;top:1462px;font-family:Mono;font-size:16px;color:rgba(255,255,255,.65)">${s[2]}</div>`}
+const head=(t,t0,kick,big,fs=104)=>`<div class=c style="top:262px;${rise(t,t0)}">${kick?`<div style="margin-bottom:14px">${chip(kick,PAL.a,PAL.bg,30,'10px 24px')}</div>`:''}<div class=H style="font-size:${fs}px">${big}</div></div>`;
+const x=(txt,t,t0)=>`<span style="margin:6px;${sp(t,t0)}">${chip(txt+' ✕',card(),PAL.b,40,'14px 28px',`border:3px solid ${PAL.a}`)}</span>`;
+const stamp=(txt,t,t0,fs=110,rot=-7)=>`<span style="${sp(t,t0,.35)};transform:rotate(${rot}deg) scale(${pop(t,t0,.35)})"><span class=H style="display:inline-block;font-size:${fs}px;color:${PAL.a};border:8px solid ${PAL.a};padding:4px 34px;border-radius:26px;background:${card()};text-shadow:none">${txt}</span></span>`;
+function setT(t){let h='';
+ if(t<9.75){ // FACE 1 hook: strip only
+  if(t<2.4){h+=`<div class=c style="top:${t<0.04?150:262}px">${chip('OUTLOOK',PAL.a,PAL.bg,54,'12px 32px',sp(t,0.4))} ${chip('DOWN AGAIN · TODAY',card(),PAL.b,38,'16px 26px',`border:3px solid ${PAL.a};`+sp(t,1.3))}</div>`;
+   if(t<0.04)h+=`<div class="c H" style="top:40px;font-size:88px">4 GIANTS BROKE THIS WEEK</div>`}
+  else if(t<6.7){const L=[['APPLE',3.12],['CHASE',3.5],['FAA',4.48]];
+   h+=`<div class=c style="top:262px">${chip('OUTLOOK',PAL.a,PAL.bg,40,'14px 24px')} ${L.map(([k,s])=>`<span style="margin:0 3px;${sp(t,s)}">${chip(k,PAL.b,PAL.bg,40,'14px 24px')}</span>`).join('')}</div>`;}
+  else {h+=`<div class=c style="top:262px">${t<8.7?stamp('OFFICIAL: NOT HACKED',t,7.6,62,-3):`<span style="${sp(t,8.8)}">${chip('BUT… MY THEORY',PAL.a,PAL.bg,56,'12px 36px')}</span>`}</div>`}
+ } else if(t<48.2||(t>=50.6&&t<63.5)){h+=base(t);
+  if(t<11.4){h+=head(t,9.8,'ONE BY ONE','WHAT ACTUALLY HAPPENED');
+   h+=`<div class=c style="top:800px">${['MICROSOFT','FAA','CHASE','APPLE'].map((k,i)=>`<span style="margin:8px;${sp(t,10.0+i*.25)}">${chip(k,i%2?PAL.b:PAL.a,PAL.bg,46,'16px 32px')}</span>`).join('')}</div>`}
+  else if(t<16.5){h+=head(t,11.45,'MICROSOFT · THU NOV 12','OUTLOOK + TEAMS DOWN');
+   h+=`<div class=c style="top:820px">${x('OUTLOOK',t,11.8)}${x('TEAMS',t,12.8)}</div><div class=c style="top:960px">${chip('MILLIONS OF USERS',PAL.a,PAL.bg,44,'14px 30px',sp(t,14.2))}</div><div class=c style="top:1090px">${chip('⏱ 1+ DAY',PAL.b,PAL.bg,52,'14px 34px',sp(t,15.3))}</div>`}
+  else if(t<23.0){h+=head(t,16.6,'MICROSOFT SAID','THE EXPLANATION');
+   const s1='"No sign of an attack."',n1=Math.floor(s1.length*lin(t,17.0,1.6));
+   h+=`<div class=ab style="left:90px;right:90px;top:720px;background:${card()};border:4px solid ${PAL.b};border-radius:50px;padding:34px 44px;font-family:Mono;font-size:44px;${rise(t,16.9,20)}">${s1.slice(0,n1)}${t>19.6?`<div class=ab style="left:30px;right:30px;top:50%;height:8px;background:${PAL.a};transform:scaleX(${eo(lin(t,19.7,.4))});transform-origin:left"></div>`:''}</div>`;
+   if(t>19.8){const s2='"A mistake in a network upgrade."',n2=Math.floor(s2.length*lin(t,20.2,1.8));h+=`<div class=ab style="left:90px;right:90px;top:940px;background:${PAL.a};color:${PAL.bg};border-radius:50px;padding:34px 44px;font-family:Mono;font-size:44px;${rise(t,19.9,20)}">LATER: ${s2.slice(0,n2)}</div>`}}
+  else if(t<25.2){h+=head(t,23.05,'TODAY · NOV 18','OUTLOOK BROKE AGAIN');
+   const v=Math.round(4408*eo(lin(t,23.4,1.2)));
+   let pts='';for(let i=0;i<=40;i++){const xx=i*20,k=lin(t,23.3,1.4)*40;if(i>k)break;const y=i<28?300-Math.sin(i)*8-i*.5:300-(i-27)*21;pts+=`${xx},${Math.max(20,y)} `}
+   h+=`<svg class=ab style="left:140px;top:760px" width=800 height=340><polyline points="${pts}" fill=none stroke="${PAL.a}" stroke-width=10 stroke-linejoin=round /></svg><div class=c style="top:1120px"><span class=H style="font-size:120px;color:${PAL.a}">${v.toLocaleString()}</span><div style="font-family:Mono;font-size:30px">PROBLEM REPORTS · DOWNDETECTOR</div></div>`}
+  else if(t<32.1){h+=head(t,25.3,'FAA · FRI NOV 13','US FLIGHTS STOPPED');
+   h+=`<div class=c style="top:1060px">${chip('⏱ ~4 HOURS',PAL.a,PAL.bg,52,'14px 34px',sp(t,28.9))}</div><div class=c style="top:1190px">${chip('THOUSANDS DELAYED / CANCELLED',card(),PAL.b,38,'14px 28px',`border:3px solid ${PAL.a};`+sp(t,30.1))}</div>`;
+   if(t<29.5)h+=`<div class=ab style="left:60px;top:500px">${chip('REAL BOARD · TORONTO · NOV 13',PAL.b,PAL.bg,24,'8px 18px',sp(t,25.8))}</div>`}
+  else if(t<36.6){h+=head(t,32.2,'THE OFFICIAL CAUSE','ONE NEW ROUTER');
+   h+=`<div class=c style="top:1150px">${chip('📍 ARKANSAS',PAL.a,PAL.bg,52,'14px 34px',sp(t,34.8))}</div>`}
+  else if(t<40.9){h+=head(t,36.7,'CHASE · MON NOV 16','BANKING TROUBLE');
+   h+=`<div class=c style="top:1060px">${x('ONLINE BANKING',t,38.7)}${x('ZELLE',t,39.7)}</div>`}
+  else if(t<48.2){h+=head(t,41.0,'APPLE · TUE NOV 17','APPLE SERVICES DOWN');
+   h+=`<div class=c style="top:900px">${x('APP STORE',t,41.5)}${x('APPLE MUSIC',t,42.2)}<br>${x('APPLECARE',t,43.1)}</div>`;
+   if(t>44.4)h+=`<div class=ab style="left:90px;right:90px;top:1180px;background:${PAL.a};color:${PAL.bg};border-radius:50px;padding:28px 40px;font-family:Mono;font-size:40px;text-align:center;${rise(t,44.5,20)}">APPLE: "OUR OWN INTERNAL UPDATE"</div>`}
+  else if(t<52.6){h+=`<div class=c style="top:700px">${stamp('MY THEORY',t,50.8,170,-4)}</div>`}
+  else if(t<59.4){h+=head(t,52.7,'US WARNING · 2024','VOLT TYPHOON');
+   h+=`<div class=c style="top:820px">${chip('CHINESE STATE HACKERS',PAL.a,PAL.bg,44,'14px 30px',sp(t,54.2))}</div><div class=c style="top:950px">${chip('HIDING IN US INFRASTRUCTURE',card(),PAL.b,38,'14px 28px',`border:3px solid ${PAL.a};`+sp(t,56.8))}</div><div class=c style="top:1080px">${chip('FOR YEARS',PAL.b,PAL.bg,52,'14px 34px',sp(t,58.3))}</div>`}
+  else {h+=head(t,59.5,'OPINION · FORTUNE','A YALE PROFESSOR ASKED');
+   h+=`<div class=ab style="left:90px;right:90px;top:820px;background:${card()};border:4px solid ${PAL.a};border-radius:50px;padding:40px 44px;font-family:Body;font-size:64px;text-align:center;${rise(t,61.7,24)}">"Could that really be a coincidence?"</div>`}
+ } else if(t<50.6){ // FACE 2: 4 giants strip
+  h+=`<div class=c style="top:262px">${chip('4 GIANTS',PAL.a,PAL.bg,54,'12px 32px',sp(t,48.3))} ${chip('4 EXCUSES',PAL.b,PAL.bg,54,'12px 32px',sp(t,49.1))} ${chip('1 WEEK',card(),PAL.b,42,'16px 26px',`border:3px solid ${PAL.a};`+sp(t,50.2))}</div>`;
+ } else { // FACE 3: end
+  if(t<65.5)h+=`<div class=c style="top:262px">${chip('NO PROOF… YET',PAL.a,PAL.bg,56,'12px 36px',sp(t,63.7))}</div>`;
+  else h+=`<div class=c style="top:262px">${chip('COINCIDENCE 🤷',PAL.b,PAL.bg,46,'14px 28px',sp(t,66.4))} ${chip('WARNING ⚠️',PAL.a,PAL.bg,46,'14px 28px',sp(t,67.4))}</div>`;
+ }
+ h+=cap(t);document.getElementById('st').innerHTML=h}
+setT(0);
+</script></body></html>
