@@ -184,3 +184,12 @@ LESSON: Week stocks Reel keeps compounding (2,875 reach, best ever). A16Z jobs R
 | 11-15 Week stocks DfxyjH6mVZy (day 3) | 4,932 | 2,896 | 44 | 14 | 117 | 11.4 s | 54.9% |
 NOTE: likes are FALLING on bot-hit posts (A16Z 133→102, Notion 96→76, Wallet 111→96): Instagram appears to be purging fake likes. No posts 11-17 (Nvidia carousel never got "post").
 LESSON: no new organic data. Anthropic IPO prices tonight, trades Thu 11-19 (ANT): today = pre-IPO "read before you buy" carousel; owner promised a Thursday after-the-bell breakdown.
+
+## 2026-11-19 run (followers 1,899, +951 in a day = paid service; real growth unknown)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-18 Outage 'my theory' Reel Df5vTNcAZ7B (15 h, 69 s) | 3,569 | 1,229 | 42 | 4 | 81 | 12.9 s | 45.3% |
+| 11-18 Anthropic IPO carousel Df5GCUkCay5 | 404 | 494 | 32 | 0 | 19 | – | – |
+| 11-15 Week stocks DfxyjH6mVZy | 4,947 | 2,908 | 44 | 14 | 100 | 11.4 s | 54.9% |
+NOTE: likes keep falling on bot-hit posts (A16Z 102→68, Wallet 96→79): Instagram purging fake likes. Carousel's 32 shares with 0 saves on 494 reach looks inflated.
+LESSON: Outage Reel = 2nd-best real day-1 reach (1,229 in 15 h) with the longest avg watch on a 69 s Reel (12.9 s): fresh multi-company news + 'my theory' + day-by-day tracker works. Carousels under-reach vs owner-face Reels; prioritise his face Reels. Today: Anthropic (ANT) trades its first day; owner promised a Thursday after-the-bell breakdown.
