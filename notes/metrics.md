@@ -203,3 +203,5 @@ LESSON: Outage Reel = 2nd-best real day-1 reach (1,229 in 15 h) with the longest
 | 11-15 Week stocks DfxyjH6mVZy | 4,954 | 2,912 | 44 | 14 | 94 | 11.4 s | 54.9% |
 NOTE: no posts 11-19. Outage Reel likes 81→52 overnight (fake-like purge continues); reach growth has flattened (+53). Follower growth stalled at +9 = the true organic pace without posting.
 LESSON: posting gaps cost us: no new Reel 11-19 = almost no growth. Owner's face + fresh news + a business 'why' still win. Today: get the owner a ready-to-record business-angle script early (GTA 6 / Take-Two 'sell the news' script already sent 11-20 00:4x PT) and ship one Reel today.
+
+- 11-20 posted GTA 6 Reel Df-pRTAlcT1 at 14:00 PT (72.6 s). Check reach/watch/shares at next run.
