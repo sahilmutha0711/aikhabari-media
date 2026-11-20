@@ -193,3 +193,13 @@ LESSON: no new organic data. Anthropic IPO prices tonight, trades Thu 11-19 (ANT
 | 11-15 Week stocks DfxyjH6mVZy | 4,947 | 2,908 | 44 | 14 | 100 | 11.4 s | 54.9% |
 NOTE: likes keep falling on bot-hit posts (A16Z 102→68, Wallet 96→79): Instagram purging fake likes. Carousel's 32 shares with 0 saves on 494 reach looks inflated.
 LESSON: Outage Reel = 2nd-best real day-1 reach (1,229 in 15 h) with the longest avg watch on a 69 s Reel (12.9 s): fresh multi-company news + 'my theory' + day-by-day tracker works. Carousels under-reach vs owner-face Reels; prioritise his face Reels. Today: Anthropic (ANT) trades its first day; owner promised a Thursday after-the-bell breakdown.
+
+## 2026-11-20 run (followers 1,908, +9 since 11-19: paid service seems to have stopped)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-18 Outage 'my theory' Reel Df5vTNcAZ7B (day 2) | 3,652 | 1,282 | 42 | 4 | 52 | 12.7 s | 46.4% |
+| 11-18 Anthropic IPO carousel Df5GCUkCay5 | 439 | 504 | 32 | 0 | 11 | – | – |
+| 11-16 A16Z Reel Df0RaTzCHOI | 2,210 | 338 | 36 | 2 | 68 | 5.5 s | 32.5% |
+| 11-15 Week stocks DfxyjH6mVZy | 4,954 | 2,912 | 44 | 14 | 94 | 11.4 s | 54.9% |
+NOTE: no posts 11-19. Outage Reel likes 81→52 overnight (fake-like purge continues); reach growth has flattened (+53). Follower growth stalled at +9 = the true organic pace without posting.
+LESSON: posting gaps cost us: no new Reel 11-19 = almost no growth. Owner's face + fresh news + a business 'why' still win. Today: get the owner a ready-to-record business-angle script early (GTA 6 / Take-Two 'sell the news' script already sent 11-20 00:4x PT) and ship one Reel today.
