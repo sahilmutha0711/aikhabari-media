@@ -205,3 +205,10 @@ NOTE: no posts 11-19. Outage Reel likes 81→52 overnight (fake-like purge conti
 LESSON: posting gaps cost us: no new Reel 11-19 = almost no growth. Owner's face + fresh news + a business 'why' still win. Today: get the owner a ready-to-record business-angle script early (GTA 6 / Take-Two 'sell the news' script already sent 11-20 00:4x PT) and ship one Reel today.
 
 - 11-20 posted GTA 6 Reel Df-pRTAlcT1 at 14:00 PT (72.6 s). Check reach/watch/shares at next run.
+
+## 2026-11-21 run (followers 1,908, flat)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-20 GTA 6 'built by hand' Reel Df-pRTAlcT1 (17 h) | 1,868 | 1,476 | 4 | 5 | 54 | 24.9 s | 48.9% |
+| 11-18 Outage Reel Df5vTNcAZ7B | 3,667 | 1,286 | 42 | 4 | 50 | 12.6 s | 46.5% |
+LESSON: GTA (pop-culture + business lesson, 3 face windows, trailer B-roll + pointer cards) = best 17-h reach yet and ~2x avg watch (24.9 s of 72 s) -> the story/structure holds attention. But shares only 4: the share trigger was cut from his recording. Next Reels: KEEP a spoken, specific 'send this to ___' line right after the hook (owner's own rule) and put it on screen too; keep pop-culture x business stories.
