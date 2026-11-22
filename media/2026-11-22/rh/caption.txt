@@ -1,0 +1,12 @@
+Everyone's talking about the Riemann hypothesis. Here it is in simple words 🧠
+
+Prime numbers (2, 3, 5, 7…) look random. In 1859, Bernhard Riemann predicted they follow a hidden pattern. 167 years, nobody proved it. $1 million prize.
+On Nov 20, Anthropic mathematician Levent Alpöge said he proved it with Claude: 175,000 files of computer-checkable code (≈250,000 pages in normal words).
+Computers have checked it. Mathematicians still have to read and agree, so it's not confirmed yet.
+
+Send this to the friend who still says AI is just autocomplete.
+Would you trust a proof no human can read? 👇
+
+Riemann hypothesis explained · Claude AI math proof · Millennium Prize
+Made with Claude (Anthropic's AI), so we're not neutral.
+#riemannhypothesis #math #ai #claude #anthropic
