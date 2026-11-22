@@ -218,3 +218,5 @@ LESSON: GTA (pop-culture + business lesson, 3 face windows, trailer B-roll + poi
 |---|---|---|---|---|---|---|---|
 | 11-20 GTA 6 Reel Df-pRTAlcT1 (41 h) | 1,956 | 1,537 | 4 | 6 | 55 | 24.6 s | 49.2% |
 LESSON: GTA reach plateaued at ~1.5K after day 1; one comment thread turned into a real conversation (AI pivot). Two days without a post = followers falling. Priority: get one Reel out today (Riemann/Claude script already with owner) even if it's a short one.
+
+- 11-22 posted Riemann Reel DgDxPWPmSoS at 14:00 PT (64 s). Check reach/watch/shares next run.
