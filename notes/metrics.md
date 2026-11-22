@@ -212,3 +212,9 @@ LESSON: posting gaps cost us: no new Reel 11-19 = almost no growth. Owner's face
 | 11-20 GTA 6 'built by hand' Reel Df-pRTAlcT1 (17 h) | 1,868 | 1,476 | 4 | 5 | 54 | 24.9 s | 48.9% |
 | 11-18 Outage Reel Df5vTNcAZ7B | 3,667 | 1,286 | 42 | 4 | 50 | 12.6 s | 46.5% |
 LESSON: GTA (pop-culture + business lesson, 3 face windows, trailer B-roll + pointer cards) = best 17-h reach yet and ~2x avg watch (24.9 s of 72 s) -> the story/structure holds attention. But shares only 4: the share trigger was cut from his recording. Next Reels: KEEP a spoken, specific 'send this to ___' line right after the hook (owner's own rule) and put it on screen too; keep pop-culture x business stories.
+
+## 2026-11-22 run (followers 1,898, -10: paid/bot followers dropping off; no new post since 11-20)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-20 GTA 6 Reel Df-pRTAlcT1 (41 h) | 1,956 | 1,537 | 4 | 6 | 55 | 24.6 s | 49.2% |
+LESSON: GTA reach plateaued at ~1.5K after day 1; one comment thread turned into a real conversation (AI pivot). Two days without a post = followers falling. Priority: get one Reel out today (Riemann/Claude script already with owner) even if it's a short one.
