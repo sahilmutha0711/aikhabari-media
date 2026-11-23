@@ -220,3 +220,12 @@ LESSON: GTA (pop-culture + business lesson, 3 face windows, trailer B-roll + poi
 LESSON: GTA reach plateaued at ~1.5K after day 1; one comment thread turned into a real conversation (AI pivot). Two days without a post = followers falling. Priority: get one Reel out today (Riemann/Claude script already with owner) even if it's a short one.
 
 - 11-22 posted Riemann Reel DgDxPWPmSoS at 14:00 PT (64 s). Check reach/watch/shares next run.
+
+## 2026-11-23 run (Mon; followers 1,897, flat/-11 for the week as paid followers drop off)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-22 Riemann Reel DgDxPWPmSoS (17 h) | 1,537 | 1,234 | 4 | 7 | 35 | 12.3 s | 51.9% |
+| 11-20 GTA 6 Reel Df-pRTAlcT1 (2.7 d) | 1,972 | 1,547 | 4 | 6 | 57 | 24.5 s | 49.2% |
+| 11-18 Outage Reel Df5vTNcAZ7B | 3,686 | 1,299 | 42 | 4 | 50 | 12.6 s | – |
+| 11-18 IPO carousel Df5GCUkCay5 | 462 | 511 | 32 | 0 | 10 | – | – |
+LESSON (week): Owner's face Reels now reach ~1.2-1.5K each within a day, but SHARES collapsed (42 on Outage → 4 on GTA and Riemann) and skip rate is ~50%. Outage had a strong 'send to the friend who...' spoken right after the hook + a debate angle ('my theory'); GTA dropped it; Riemann kept it but the topic was abstract. Today: pick stories with a clear person-to-person share reason + a debate/opinion angle, keep the spoken share line in the first 5 s, and target 35-45 s (Riemann 64 s halved avg watch vs GTA's story).
