@@ -229,3 +229,5 @@ LESSON: GTA reach plateaued at ~1.5K after day 1; one comment thread turned into
 | 11-18 Outage Reel Df5vTNcAZ7B | 3,686 | 1,299 | 42 | 4 | 50 | 12.6 s | – |
 | 11-18 IPO carousel Df5GCUkCay5 | 462 | 511 | 32 | 0 | 10 | – | – |
 LESSON (week): Owner's face Reels now reach ~1.2-1.5K each within a day, but SHARES collapsed (42 on Outage → 4 on GTA and Riemann) and skip rate is ~50%. Outage had a strong 'send to the friend who...' spoken right after the hook + a debate angle ('my theory'); GTA dropped it; Riemann kept it but the topic was abstract. Today: pick stories with a clear person-to-person share reason + a debate/opinion angle, keep the spoken share line in the first 5 s, and target 35-45 s (Riemann 64 s halved avg watch vs GTA's story).
+
+- 11-23 posted Nvidia 'Jensen is back' Reel DgGMgXBAuly at 13:00 PT (51 s). Check reach/watch/shares next run.
