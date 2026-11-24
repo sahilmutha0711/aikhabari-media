@@ -238,3 +238,5 @@ LESSON (week): Owner's face Reels now reach ~1.2-1.5K each within a day, but SHA
 | 11-23 Nvidia 'Jensen is back' Reel DgGMgXBAuly (18 h) | 1,751 | 1,335 | 1 | 2 | 35 | 11.3 s | 62.4% |
 | 11-22 Riemann Reel DgDxPWPmSoS (41 h) | 1,574 | 1,254 | 4 | 7 | 39 | 12.6 s | 52.0% |
 LESSON: Nvidia reach OK but skip rate jumped to 62% and only 1 share — 4th Nvidia/Jensen post in 2 weeks (audience fatigue + owner had warned 'not Nvidia again'); hook opened on a name, not a visual surprise. Today: no Nvidia/Anthropic; pick a fresh consumer/tool or surprising-tech story; first 2 s must show a striking visual + number on screen; keep the spoken share line.
+
+- 11-24 posted AI music Reel DgI0UTRDV9c at 13:00 PT (66 s). Check reach/watch/shares next run.
