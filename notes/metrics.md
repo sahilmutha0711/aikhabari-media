@@ -231,3 +231,10 @@ LESSON: GTA reach plateaued at ~1.5K after day 1; one comment thread turned into
 LESSON (week): Owner's face Reels now reach ~1.2-1.5K each within a day, but SHARES collapsed (42 on Outage → 4 on GTA and Riemann) and skip rate is ~50%. Outage had a strong 'send to the friend who...' spoken right after the hook + a debate angle ('my theory'); GTA dropped it; Riemann kept it but the topic was abstract. Today: pick stories with a clear person-to-person share reason + a debate/opinion angle, keep the spoken share line in the first 5 s, and target 35-45 s (Riemann 64 s halved avg watch vs GTA's story).
 
 - 11-23 posted Nvidia 'Jensen is back' Reel DgGMgXBAuly at 13:00 PT (51 s). Check reach/watch/shares next run.
+
+## 2026-11-24 run (followers 1,897, flat)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-23 Nvidia 'Jensen is back' Reel DgGMgXBAuly (18 h) | 1,751 | 1,335 | 1 | 2 | 35 | 11.3 s | 62.4% |
+| 11-22 Riemann Reel DgDxPWPmSoS (41 h) | 1,574 | 1,254 | 4 | 7 | 39 | 12.6 s | 52.0% |
+LESSON: Nvidia reach OK but skip rate jumped to 62% and only 1 share — 4th Nvidia/Jensen post in 2 weeks (audience fatigue + owner had warned 'not Nvidia again'); hook opened on a name, not a visual surprise. Today: no Nvidia/Anthropic; pick a fresh consumer/tool or surprising-tech story; first 2 s must show a striking visual + number on screen; keep the spoken share line.
