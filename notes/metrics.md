@@ -240,3 +240,10 @@ LESSON (week): Owner's face Reels now reach ~1.2-1.5K each within a day, but SHA
 LESSON: Nvidia reach OK but skip rate jumped to 62% and only 1 share — 4th Nvidia/Jensen post in 2 weeks (audience fatigue + owner had warned 'not Nvidia again'); hook opened on a name, not a visual surprise. Today: no Nvidia/Anthropic; pick a fresh consumer/tool or surprising-tech story; first 2 s must show a striking visual + number on screen; keep the spoken share line.
 
 - 11-24 posted AI music Reel DgI0UTRDV9c at 13:00 PT (66 s). Check reach/watch/shares next run.
+
+## 2026-11-25 run (followers 1,898, flat)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-24 AI music Reel DgI0UTRDV9c (18 h) | 1,207 | 867 | 3 | 2 | 25 | 9.0 s | 56.8% |
+| 11-23 Nvidia Reel DgGMgXBAuly (42 h) | 1,810 | 1,362 | 1 | 2 | 39 | 11.2 s | 62.6% |
+LESSON: 5th straight face Reel at 51-66 s with ~9-12 s avg watch and 52-63% skip; reach sliding (1.5K → 0.9K), shares ≤4. Length is now the biggest problem (playbook says 25-40 s). Next: pitch the owner a ≤35 s script (≈90 words) with the payoff in the first 3 s on screen, and suggest one non-face format (carousel or text-motion Reel) to break the pattern.
