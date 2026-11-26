@@ -247,3 +247,9 @@ LESSON: Nvidia reach OK but skip rate jumped to 62% and only 1 share — 4th Nvi
 | 11-24 AI music Reel DgI0UTRDV9c (18 h) | 1,207 | 867 | 3 | 2 | 25 | 9.0 s | 56.8% |
 | 11-23 Nvidia Reel DgGMgXBAuly (42 h) | 1,810 | 1,362 | 1 | 2 | 39 | 11.2 s | 62.6% |
 LESSON: 5th straight face Reel at 51-66 s with ~9-12 s avg watch and 52-63% skip; reach sliding (1.5K → 0.9K), shares ≤4. Length is now the biggest problem (playbook says 25-40 s). Next: pitch the owner a ≤35 s script (≈90 words) with the payoff in the first 3 s on screen, and suggest one non-face format (carousel or text-motion Reel) to break the pattern.
+
+## 2026-11-26 run (Thanksgiving; followers 1,897, flat; no post 11-25)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-24 AI music Reel DgI0UTRDV9c (42 h) | 1,353 | 992 | 3 | 2 | 28 | 8.8 s | 57.0% |
+LESSON: no owner reply to the 11-25 Black Friday fake-store script; it is still the most timely piece (Black Friday = 11-27). Re-offer it short (≤35 s) for a Thursday/Friday-morning post; keep pushing shorter Reels.
