@@ -146,6 +146,7 @@ Carousel formats that drive saves AND shares: tool-swap tables ("Paying for X? U
 - Repo hygiene: after every post of the day is live, delete that day's media and squash history (see daily message).
 
 ## 8. Feedback log (newest first) — add a line every time the owner reacts
+- 11-26 (owner, Black Friday reel): palette rule = pick from his previously selected palettes but NOT the last two used (rotation). Face only in hook + 3-tips ending. Recorded our ≤35 s script (final 41 s). Approved, scheduled 1 PM PT.
 - 11-24 (owner, AI music reel): rejected OpenWorks ($8K/month) as not informative enough; liked Tidal AI-music purge once tied to famous apps (Spotify/Apple Music) + a 'my theory' angle. Hooks must relate to brands people know; never imply unverified stats about a famous brand (e.g. 'half of Spotify is AI' is NOT known). Face in 3 windows incl. a one-line pivot ('But what about the big apps?'). Palette rotated to Plum Champagne. Approved render, scheduled 1 PM PT.
 - 11-23 (owner, Nvidia reel): wants hooks that open with the headline + a stock fact, and a promised 'tip at the end' (research a real upcoming, stock-moving date/event, e.g. Dec 1 Congress interview). Don't reuse the previous Reel's palette; rotate through his picked palettes. Approved render, scheduled 1 PM PT.
 - 11-22 (owner, Riemann reel): told us to SKIP colour samples and pick from his past picks ourselves (picked Ultraviolet). Approved the render, scheduled 2 PM PT. Face only at hook + ending; explanatory B-roll in between (number grid, portrait, counters, code editor, library).

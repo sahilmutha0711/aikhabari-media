@@ -253,3 +253,5 @@ LESSON: 5th straight face Reel at 51-66 s with ~9-12 s avg watch and 52-63% skip
 |---|---|---|---|---|---|---|---|
 | 11-24 AI music Reel DgI0UTRDV9c (42 h) | 1,353 | 992 | 3 | 2 | 28 | 8.8 s | 57.0% |
 LESSON: no owner reply to the 11-25 Black Friday fake-store script; it is still the most timely piece (Black Friday = 11-27). Re-offer it short (≤35 s) for a Thursday/Friday-morning post; keep pushing shorter Reels.
+
+- 11-26 posted Black Friday fake-stores Reel DgN4plIu09j at 13:00 PT (41 s, shortest in a week). Compare skip/watch vs the 51-66 s Reels next run.
