@@ -255,3 +255,11 @@ LESSON: 5th straight face Reel at 51-66 s with ~9-12 s avg watch and 52-63% skip
 LESSON: no owner reply to the 11-25 Black Friday fake-store script; it is still the most timely piece (Black Friday = 11-27). Re-offer it short (≤35 s) for a Thursday/Friday-morning post; keep pushing shorter Reels.
 
 - 11-26 posted Black Friday fake-stores Reel DgN4plIu09j at 13:00 PT (41 s, shortest in a week). Compare skip/watch vs the 51-66 s Reels next run.
+
+## 2026-11-27 run (Black Friday; followers 1,892, -5)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-26 Black Friday fake-stores Reel DgN4plIu09j (18 h, 41 s) | 451 | 279 | 0 | 2 | 17 | 5.7 s | 70.2% |
+| 11-24 AI music Reel DgI0UTRDV9c (3 d) | 1,504 | 1,105 | 4 | 2 | 29 | 8.8 s | 57.7% |
+LESSON: shorter alone did NOT fix it: the 41 s Black Friday Reel had our worst day-1 (279 reach, 70% skip). Likely causes: posted on Thanksgiving afternoon (low IG activity), a generic 'scam warning' topic many pages covered, and a hook that opened on advice ('Before you shop') rather than a surprising fact/visual. Today: pick a big, surprising, fresh story with a 'whoa' number on screen in frame 1, keep ≤35 s, and suggest a weekday morning slot (7-9 AM PT) rather than 1 PM.
+- Replied to 2 comments on the Black Friday Reel.
