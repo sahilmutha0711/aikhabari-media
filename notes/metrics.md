@@ -263,3 +263,9 @@ LESSON: no owner reply to the 11-25 Black Friday fake-store script; it is still 
 | 11-24 AI music Reel DgI0UTRDV9c (3 d) | 1,504 | 1,105 | 4 | 2 | 29 | 8.8 s | 57.7% |
 LESSON: shorter alone did NOT fix it: the 41 s Black Friday Reel had our worst day-1 (279 reach, 70% skip). Likely causes: posted on Thanksgiving afternoon (low IG activity), a generic 'scam warning' topic many pages covered, and a hook that opened on advice ('Before you shop') rather than a surprising fact/visual. Today: pick a big, surprising, fresh story with a 'whoa' number on screen in frame 1, keep ≤35 s, and suggest a weekday morning slot (7-9 AM PT) rather than 1 PM.
 - Replied to 2 comments on the Black Friday Reel.
+
+## 2026-11-28 run (Sat; followers 1,892, flat; no post 11-27)
+| post | views | reach | shares | saves | likes | avg watch | skip |
+|---|---|---|---|---|---|---|---|
+| 11-26 Black Friday Reel DgN4plIu09j (42 h) | 477 | 294 | 0 | 2 | 18 | 5.8 s | 70.1% |
+LESSON: Black Friday Reel stalled at ~300 reach (lowest of the face Reels); no reply yet to the 11-27 SpaceX 1M-satellites script. Re-offer it with a fresher angle if one exists, and keep the frame-1 'whoa' number. No unanswered comments.
